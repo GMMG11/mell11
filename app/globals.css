@@ -24,4 +24,138 @@
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+
+  /* Luxury glassmorphism effect */
+  .glass-card {
+    background: rgba(250, 247, 244, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(224, 212, 200, 0.3);
+  }
+
+  /* Premium gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, #C89B7B 0%, #8C5A3C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Subtle shadow for depth */
+  .luxury-shadow {
+    box-shadow: 0 4px 24px rgba(23, 21, 23, 0.06), 0 2px 8px rgba(23, 21, 23, 0.04);
+  }
+
+  /* Premium hover effect */
+  .luxury-hover {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .luxury-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(23, 21, 23, 0.12), 0 4px 16px rgba(23, 21, 23, 0.08);
+  }
+
+  /* Smooth fade in animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  /* Stagger animation delays */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+
+  /* Premium divider */
+  .luxury-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #E0D4C8 50%, transparent);
+  }
+
+  /* Elegant underline effect */
+  .elegant-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .elegant-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #C89B7B, #8C5A3C);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .elegant-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* Premium shimmer effect */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 3s infinite;
+  }
+}
+
+/* Custom scrollbar for luxury feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF7F4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C89B7B;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8C5A3C;
+}
+
+/* Selection color */
+::selection {
+  background: #C89B7B;
+  color: white;
+}
+
+::-moz-selection {
+  background: #C89B7B;
+  color: white;
 }

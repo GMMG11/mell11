@@ -26,7 +26,7 @@ interface TimeSlot {
 function BookingForm() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const preselectedService = searchParams.get('service');
+  const preselectedService = searchParams?.get('service') || null;
 
   const [step, setStep] = useState(1);
   const [services, setServices] = useState<Service[]>([]);
