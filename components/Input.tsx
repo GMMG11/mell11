@@ -11,6 +11,7 @@ interface InputProps {
   disabled?: boolean;
   error?: string;
   className?: string;
+  step?: string;
 }
 
 export default function Input({
@@ -24,6 +25,7 @@ export default function Input({
   disabled = false,
   error,
   className = '',
+  step,
 }: InputProps) {
   return (
     <div className={`mb-4 ${className}`}>
@@ -41,6 +43,7 @@ export default function Input({
         placeholder={placeholder}
         required={required}
         disabled={disabled}
+        step={step}
         className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all ${
           error ? 'border-red-500' : 'border-softLine'
         } ${disabled ? 'bg-gray-100 cursor-not-allowed' : 'bg-white'}`}
