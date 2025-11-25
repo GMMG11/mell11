@@ -43,7 +43,7 @@ export default function HomePage() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: 'url(https://images.unsplash.com/photo-1560750588-73207b1ef5b8?q=80&w=2000)',
+              backgroundImage: 'url(https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2000)',
               filter: 'brightness(0.4)'
             }}
           />
