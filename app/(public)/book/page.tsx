@@ -24,11 +24,10 @@ interface TimeSlot {
 }
 
 function BookingForm() {
-  const searchParams = useSearchParams();
+  // Non-null assertion is safe because this component is wrapped in Suspense
+  const searchParams = useSearchParams()!;
   const router = useRouter();
-
-  // TypeScript-safe way to get search params (component is wrapped in Suspense)
-  const preselectedService = searchParams !== null ? searchParams.get('service') : null;
+  const preselectedService = searchParams.get('service');
 
   const [step, setStep] = useState(1);
   const [services, setServices] = useState<Service[]>([]);
