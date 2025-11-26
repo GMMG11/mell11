@@ -87,8 +87,8 @@ export default function ServicesPage() {
                         </td>
                         <td className="py-4 px-4 text-center">
                           <Link
-                            href="/book"
-                            className="inline-block px-4 py-2 bg-accent text-white rounded hover:bg-hover transition-colors text-sm font-medium"
+                            href={`/book?service=${encodeURIComponent(service.name)}`}
+                            className="inline-block px-4 py-2 bg-accent text-white rounded hover:bg-hover transition-colors text-sm font-medium whitespace-nowrap"
                           >
                             Book Now
                           </Link>

@@ -1,446 +1,220 @@
 'use client';
 
 import React, { useEffect, useState, Suspense } from 'react';
-import { useSearchParams, useRouter } from 'next/navigation';
-import Button from '@/components/Button';
-import Input from '@/components/Input';
-import Select from '@/components/Select';
-import Textarea from '@/components/Textarea';
-import LoadingSpinner from '@/components/LoadingSpinner';
-import { formatTimeForDisplay } from '@/lib/availability';
-import { format } from 'date-fns';
+import { useSearchParams } from 'next/navigation';
 
-interface Service {
-  id: string;
-  name: string;
-  slug: string;
-  duration: number;
-  price: number;
-}
-
-interface TimeSlot {
-  time: string;
-  available: boolean;
-}
+// Static services list
+const SERVICES = [
+  { name: "Women's Haircut", price: 40, duration: 60 },
+  { name: "Men's Haircut", price: 32, duration: 45 },
+  { name: "Kids' Haircut", price: 27, duration: 30 },
+  { name: "Wash", price: 7, duration: 15 },
+  { name: "Style", price: 25, duration: 30 },
+  { name: "Partial Foil Highlights", price: 115, duration: 120 },
+  { name: "Full Foil Highlights", price: 150, duration: 150 },
+  { name: "Solid Color", price: 90, duration: 90 },
+  { name: "Fashion Colors", price: 175, duration: 180 },
+  { name: "Perms", price: 75, duration: 150 },
+  { name: "Chemical Straightening", price: 115, duration: 180 },
+  { name: "Hair Extensions", price: 150, duration: 180 },
+  { name: "Hair Tinsel", price: 15, duration: 30 },
+  { name: "Updo / Special Occasion Style", price: 75, duration: 90 },
+  { name: "Signature House Call Facial", price: 120, duration: 75 },
+  { name: "Hydrafacial Treatment", price: 175, duration: 60 },
+  { name: "Dermabrasion", price: 95, duration: 60 },
+  { name: "Chemical Peel", price: 110, duration: 60 },
+  { name: "Microneedling", price: 200, duration: 90 },
+  { name: "Lip Blush Tattoo", price: 350, duration: 120 },
+  { name: "Laser Hair Removal Session", price: 100, duration: 45 },
+  { name: "Brow Shaping & Tint", price: 35, duration: 30 },
+  { name: "Lash Lift & Tint", price: 85, duration: 60 },
+  { name: "Sugaring Hair Removal", price: 45, duration: 45 },
+  { name: "Professional Teeth Whitening", price: 125, duration: 60 },
+];
 
 function BookingForm() {
-  // Non-null assertion is safe because this component is wrapped in Suspense
-  const searchParams = useSearchParams()!;
-  const router = useRouter();
-  const preselectedService = searchParams.get('service');
+  const searchParams = useSearchParams();
+  const preselectedService = searchParams?.get('service') || '';
 
-  const [step, setStep] = useState(1);
-  const [services, setServices] = useState<Service[]>([]);
-  const [availableDates, setAvailableDates] = useState<string[]>([]);
-  const [availableSlots, setAvailableSlots] = useState<TimeSlot[]>([]);
-  const [loading, setLoading] = useState(false);
-
-  // Form data
-  const [selectedServiceId, setSelectedServiceId] = useState('');
-  const [selectedDate, setSelectedDate] = useState('');
-  const [selectedTime, setSelectedTime] = useState('');
+  const [selectedService, setSelectedService] = useState('');
   const [clientName, setClientName] = useState('');
   const [clientEmail, setClientEmail] = useState('');
   const [clientPhone, setClientPhone] = useState('');
-  const [address, setAddress] = useState('');
-  const [city, setCity] = useState('Tacoma');
-  const [zipCode, setZipCode] = useState('');
+  const [preferredDate, setPreferredDate] = useState('');
   const [notes, setNotes] = useState('');
+  const [submitted, setSubmitted] = useState(false);
 
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState(false);
-
-  // Load services
+  // Pre-select service from URL
   useEffect(() => {
-    fetch('/api/services')
-      .then((res) => res.json())
-      .then((data) => {
-        setServices(data);
-
-        // Pre-select service if slug is in URL
-        if (preselectedService) {
-          const service = data.find((s: Service) => s.slug === preselectedService);
-          if (service) {
-            setSelectedServiceId(service.id);
-          }
-        }
-      })
-      .catch((error) => console.error('Error loading services:', error));
+    if (preselectedService) {
+      setSelectedService(preselectedService);
+    }
   }, [preselectedService]);
 
-  // Load available dates when service is selected
-  useEffect(() => {
-    if (selectedServiceId) {
-      fetch('/api/availability/dates')
-        .then((res) => res.json())
-        .then((data) => setAvailableDates(data.dates))
-        .catch((error) => console.error('Error loading dates:', error));
-    }
-  }, [selectedServiceId]);
-
-  // Load available time slots when date is selected
-  useEffect(() => {
-    if (selectedDate && selectedServiceId) {
-      const service = services.find((s) => s.id === selectedServiceId);
-      if (service) {
-        fetch(`/api/availability/slots?date=${selectedDate}&duration=${service.duration}`)
-          .then((res) => res.json())
-          .then((data) => setAvailableSlots(data.slots))
-          .catch((error) => console.error('Error loading slots:', error));
-      }
-    }
-  }, [selectedDate, selectedServiceId, services]);
-
-  const selectedService = services.find((s) => s.id === selectedServiceId);
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-    setError('');
-
-    try {
-      const response = await fetch('/api/bookings/create', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          serviceId: selectedServiceId,
-          date: selectedDate,
-          time: selectedTime,
-          clientName,
-          clientEmail,
-          clientPhone,
-          address,
-          city,
-          zipCode,
-          notes,
-          requirePayment: false, // TODO: Implement payment flow
-        }),
-      });
-
-      if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.error || 'Failed to create booking');
-      }
-
-      const data = await response.json();
-      setSuccess(true);
-    } catch (err: any) {
-      setError(err.message || 'Something went wrong');
-    } finally {
-      setLoading(false);
-    }
+    setSubmitted(true);
   };
 
-  if (success) {
+  const service = SERVICES.find(s => s.name === selectedService);
+
+  if (submitted) {
     return (
-      <div className="bg-white max-w-2xl mx-auto p-8 rounded-lg shadow-lg text-center">
-        <div className="mb-6">
-          <svg
-            className="w-20 h-20 mx-auto text-accent"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path d="M5 13l4 4L19 7"></path>
-          </svg>
-        </div>
-        <h2 className="font-serif text-3xl mb-4 text-nearBlack">Booking confirmed!</h2>
-        <p className="text-gray-600 mb-6">
-          Your appointment request has been received. You'll receive a confirmation email shortly with all
-          the details.
-        </p>
-        <p className="text-sm text-gray-500 mb-8">
-          We'll reach out within 24 hours to confirm your appointment and answer any questions.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button onClick={() => router.push('/')} variant="primary">
-            Back to home
-          </Button>
-          <Button onClick={() => window.location.reload()} variant="outline">
-            Book another
-          </Button>
+      <div className="min-h-screen bg-cream py-20">
+        <div className="container-custom max-w-2xl">
+          <div className="bg-white rounded-2xl p-8 md:p-12 luxury-shadow text-center">
+            <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg className="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h2 className="font-serif text-3xl md:text-4xl text-nearBlack mb-4">Booking Request Received!</h2>
+            <p className="text-gray-600 mb-8">
+              Thank you, {clientName}! We'll review your request and contact you within 24 hours to confirm your appointment.
+            </p>
+            <a
+              href="/"
+              className="inline-block px-8 py-4 bg-accent text-white rounded hover:bg-hover transition-colors font-medium"
+            >
+              Return Home
+            </a>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="bg-white max-w-4xl mx-auto p-8 rounded-lg shadow-lg">
-      {/* Progress Steps */}
-      <div className="flex justify-between mb-12">
-        {[1, 2, 3].map((s) => (
-          <div key={s} className="flex items-center flex-1">
-            <div
-              className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold ${
-                step >= s ? 'bg-accent text-white' : 'bg-gray-200 text-gray-500'
-              }`}
+    <div className="min-h-screen bg-cream py-12 md:py-20">
+      <div className="container-custom max-w-3xl">
+        <div className="text-center mb-8 md:mb-12">
+          <h1 className="font-serif text-4xl md:text-5xl mb-4 text-nearBlack">Book Your Appointment</h1>
+          <p className="text-gray-600 text-lg">Let's bring luxury beauty to your door</p>
+        </div>
+
+        <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-6 md:p-10 luxury-shadow">
+          {/* Service Selection */}
+          <div className="mb-6">
+            <label className="block text-nearBlack font-semibold mb-3 text-lg">
+              Select Service *
+            </label>
+            <select
+              value={selectedService}
+              onChange={(e) => setSelectedService(e.target.value)}
+              required
+              className="w-full px-4 py-3 md:py-4 border-2 border-softLine rounded-lg focus:border-accent focus:outline-none transition-colors text-base md:text-lg"
             >
-              {s}
-            </div>
-            {s < 3 && <div className={`flex-1 h-1 ${step > s ? 'bg-accent' : 'bg-gray-200'}`} />}
+              <option value="">Choose a service...</option>
+              {SERVICES.map((svc) => (
+                <option key={svc.name} value={svc.name}>
+                  {svc.name} - ${svc.price}+ ({svc.duration} min)
+                </option>
+              ))}
+            </select>
           </div>
-        ))}
+
+          {/* Service Details */}
+          {service && (
+            <div className="mb-6 p-4 bg-accent/5 rounded-lg border border-accent/20">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
+                <div>
+                  <p className="font-semibold text-nearBlack">{service.name}</p>
+                  <p className="text-sm text-gray-600">{service.duration} minutes</p>
+                </div>
+                <p className="text-2xl font-serif text-accent">${service.price}+</p>
+              </div>
+            </div>
+          )}
+
+          {/* Contact Information */}
+          <div className="space-y-5 mb-6">
+            <div>
+              <label className="block text-nearBlack font-semibold mb-2">Your Name *</label>
+              <input
+                type="text"
+                value={clientName}
+                onChange={(e) => setClientName(e.target.value)}
+                required
+                placeholder="Full name"
+                className="w-full px-4 py-3 border-2 border-softLine rounded-lg focus:border-accent focus:outline-none transition-colors"
+              />
+            </div>
+
+            <div>
+              <label className="block text-nearBlack font-semibold mb-2">Email *</label>
+              <input
+                type="email"
+                value={clientEmail}
+                onChange={(e) => setClientEmail(e.target.value)}
+                required
+                placeholder="your@email.com"
+                className="w-full px-4 py-3 border-2 border-softLine rounded-lg focus:border-accent focus:outline-none transition-colors"
+              />
+            </div>
+
+            <div>
+              <label className="block text-nearBlack font-semibold mb-2">Phone *</label>
+              <input
+                type="tel"
+                value={clientPhone}
+                onChange={(e) => setClientPhone(e.target.value)}
+                required
+                placeholder="(253) 555-0123"
+                className="w-full px-4 py-3 border-2 border-softLine rounded-lg focus:border-accent focus:outline-none transition-colors"
+              />
+            </div>
+
+            <div>
+              <label className="block text-nearBlack font-semibold mb-2">Preferred Date</label>
+              <input
+                type="date"
+                value={preferredDate}
+                onChange={(e) => setPreferredDate(e.target.value)}
+                className="w-full px-4 py-3 border-2 border-softLine rounded-lg focus:border-accent focus:outline-none transition-colors"
+              />
+              <p className="text-sm text-gray-500 mt-1">We'll confirm availability and contact you to schedule</p>
+            </div>
+
+            <div>
+              <label className="block text-nearBlack font-semibold mb-2">Additional Notes</label>
+              <textarea
+                value={notes}
+                onChange={(e) => setNotes(e.target.value)}
+                rows={4}
+                placeholder="Any special requests or information we should know..."
+                className="w-full px-4 py-3 border-2 border-softLine rounded-lg focus:border-accent focus:outline-none transition-colors resize-none"
+              />
+            </div>
+          </div>
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="w-full bg-accent text-white py-4 rounded-lg hover:bg-hover transition-colors font-semibold text-lg shadow-lg"
+          >
+            Request Booking
+          </button>
+
+          <p className="text-sm text-gray-500 text-center mt-4">
+            We'll contact you within 24 hours to confirm your appointment
+          </p>
+        </form>
       </div>
-
-      <form onSubmit={handleSubmit}>
-        {/* Step 1: Select Service & Date/Time */}
-        {step === 1 && (
-          <div>
-            <h2 className="font-serif text-3xl mb-6 text-nearBlack">Choose your service</h2>
-
-            <Select
-              label="Service"
-              name="service"
-              value={selectedServiceId}
-              onChange={(e) => setSelectedServiceId(e.target.value)}
-              options={services.map((s) => ({ value: s.id, label: `${s.name} - $${s.price}` }))}
-              required
-              placeholder="Select a service"
-            />
-
-            {selectedService && (
-              <div className="bg-cream p-4 rounded-lg mb-6">
-                <h4 className="font-semibold mb-2">{selectedService.name}</h4>
-                <p className="text-sm text-gray-600 mb-2">
-                  Duration: {selectedService.duration} minutes
-                </p>
-                <p className="text-lg font-serif text-accent">Price: ${selectedService.price}</p>
-              </div>
-            )}
-
-            {selectedServiceId && availableDates.length > 0 && (
-              <>
-                <Select
-                  label="Date"
-                  name="date"
-                  value={selectedDate}
-                  onChange={(e) => setSelectedDate(e.target.value)}
-                  options={availableDates.map((date) => ({
-                    value: date,
-                    label: format(new Date(date), 'EEEE, MMMM dd, yyyy'),
-                  }))}
-                  required
-                  placeholder="Select a date"
-                />
-
-                {selectedDate && availableSlots.length > 0 && (
-                  <div className="mb-6">
-                    <label className="block text-sm font-medium text-nearBlack mb-3">
-                      Time <span className="text-accent">*</span>
-                    </label>
-                    <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
-                      {availableSlots.map((slot) => (
-                        <button
-                          key={slot.time}
-                          type="button"
-                          onClick={() => slot.available && setSelectedTime(slot.time)}
-                          disabled={!slot.available}
-                          className={`py-3 px-4 border rounded-lg transition-all ${
-                            selectedTime === slot.time
-                              ? 'bg-accent text-white border-accent'
-                              : slot.available
-                              ? 'border-softLine hover:border-accent hover:bg-cream'
-                              : 'border-gray-200 text-gray-400 cursor-not-allowed bg-gray-50'
-                          }`}
-                        >
-                          {formatTimeForDisplay(slot.time)}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </>
-            )}
-
-            <div className="flex justify-end">
-              <Button
-                type="button"
-                onClick={() => setStep(2)}
-                disabled={!selectedServiceId || !selectedDate || !selectedTime}
-              >
-                Continue
-              </Button>
-            </div>
-          </div>
-        )}
-
-        {/* Step 2: Client Details */}
-        {step === 2 && (
-          <div>
-            <h2 className="font-serif text-3xl mb-6 text-nearBlack">Your details</h2>
-
-            <Input
-              label="Full name"
-              name="name"
-              value={clientName}
-              onChange={(e) => setClientName(e.target.value)}
-              required
-              placeholder="Jane Doe"
-            />
-
-            <Input
-              label="Email"
-              name="email"
-              type="email"
-              value={clientEmail}
-              onChange={(e) => setClientEmail(e.target.value)}
-              required
-              placeholder="jane@example.com"
-            />
-
-            <Input
-              label="Phone number"
-              name="phone"
-              type="tel"
-              value={clientPhone}
-              onChange={(e) => setClientPhone(e.target.value)}
-              required
-              placeholder="(253) 555-1234"
-            />
-
-            <Input
-              label="Street address"
-              name="address"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              required
-              placeholder="123 Main St, Apt 4B"
-            />
-
-            <div className="grid grid-cols-2 gap-4">
-              <Input
-                label="City"
-                name="city"
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-                required
-              />
-
-              <Input
-                label="ZIP code"
-                name="zipCode"
-                value={zipCode}
-                onChange={(e) => setZipCode(e.target.value)}
-                required
-                placeholder="98401"
-              />
-            </div>
-
-            <div className="flex gap-4">
-              <Button type="button" onClick={() => setStep(1)} variant="outline">
-                Back
-              </Button>
-              <Button
-                type="button"
-                onClick={() => setStep(3)}
-                disabled={!clientName || !clientEmail || !clientPhone || !address || !city || !zipCode}
-              >
-                Continue
-              </Button>
-            </div>
-          </div>
-        )}
-
-        {/* Step 3: Review & Confirm */}
-        {step === 3 && (
-          <div>
-            <h2 className="font-serif text-3xl mb-6 text-nearBlack">Review & confirm</h2>
-
-            <div className="bg-cream p-6 rounded-lg mb-6 space-y-4">
-              <div>
-                <h4 className="font-semibold text-sm text-gray-500 mb-1">Service</h4>
-                <p className="text-nearBlack">{selectedService?.name}</p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <h4 className="font-semibold text-sm text-gray-500 mb-1">Date</h4>
-                  <p className="text-nearBlack">
-                    {selectedDate && format(new Date(selectedDate), 'MMM dd, yyyy')}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm text-gray-500 mb-1">Time</h4>
-                  <p className="text-nearBlack">{formatTimeForDisplay(selectedTime)}</p>
-                </div>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-sm text-gray-500 mb-1">Location</h4>
-                <p className="text-nearBlack">
-                  {address}, {city}, WA {zipCode}
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-sm text-gray-500 mb-1">Contact</h4>
-                <p className="text-nearBlack">{clientName}</p>
-                <p className="text-sm text-gray-600">{clientEmail}</p>
-                <p className="text-sm text-gray-600">{clientPhone}</p>
-              </div>
-
-              <div className="pt-4 border-t border-softLine">
-                <h4 className="font-semibold text-sm text-gray-500 mb-1">Total</h4>
-                <p className="font-serif text-2xl text-accent">${selectedService?.price}</p>
-              </div>
-            </div>
-
-            <Textarea
-              label="Additional notes (optional)"
-              name="notes"
-              value={notes}
-              onChange={(e) => setNotes(e.target.value)}
-              placeholder="Any special requests, parking instructions, allergies, etc."
-              rows={3}
-            />
-
-            {error && (
-              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded mb-4">
-                {error}
-              </div>
-            )}
-
-            <div className="flex gap-4">
-              <Button type="button" onClick={() => setStep(2)} variant="outline" disabled={loading}>
-                Back
-              </Button>
-              <Button type="submit" disabled={loading}>
-                {loading ? 'Booking...' : 'Confirm booking'}
-              </Button>
-            </div>
-
-            <p className="text-xs text-gray-500 mt-4">
-              By confirming, you agree to receive email and SMS confirmations about your appointment.
-            </p>
-          </div>
-        )}
-      </form>
     </div>
   );
 }
 
 export default function BookPage() {
   return (
-    <div className="bg-cream min-h-screen py-20">
-      <div className="container-custom">
-        <div className="text-center mb-12">
-          <h1 className="font-serif text-5xl mb-4 text-nearBlack">Book a house call</h1>
-          <p className="text-gray-600">Complete the form below to request an appointment</p>
+    <Suspense fallback={
+      <div className="min-h-screen bg-cream flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-accent border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading...</p>
         </div>
-
-        <Suspense
-          fallback={
-            <div className="py-20">
-              <LoadingSpinner size="lg" />
-            </div>
-          }
-        >
-          <BookingForm />
-        </Suspense>
       </div>
-    </div>
+    }>
+      <BookingForm />
+    </Suspense>
   );
 }
