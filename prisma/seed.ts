@@ -55,14 +55,24 @@ async function main() {
       order: 3,
     },
     {
-      name: 'Wash & Style',
-      slug: 'wash-style',
+      name: 'Wash',
+      slug: 'wash',
       category: ServiceCategory.HAIR_AND_COLOR,
-      description: 'Professional wash and styling service. Perfect for special occasions or when you want salon-quality results at home.',
-      duration: 45,
-      price: 32,
+      description: 'Professional hair wash service with quality products. Refreshing and relaxing treatment.',
+      duration: 15,
+      price: 7,
       isFeatured: false,
       order: 4,
+    },
+    {
+      name: 'Style',
+      slug: 'style',
+      category: ServiceCategory.HAIR_AND_COLOR,
+      description: 'Professional styling service for any occasion. From sleek blowouts to textured waves.',
+      duration: 30,
+      price: 25,
+      isFeatured: false,
+      order: 5,
     },
 
     // HAIR COLOR & TEXTURE
@@ -74,7 +84,7 @@ async function main() {
       duration: 120,
       price: 115,
       isFeatured: false,
-      order: 5,
+      order: 6,
     },
     {
       name: 'Full Foil Highlights',
@@ -84,7 +94,7 @@ async function main() {
       duration: 150,
       price: 150,
       isFeatured: true,
-      order: 6,
+      order: 7,
     },
     {
       name: 'Solid Color',
@@ -94,7 +104,7 @@ async function main() {
       duration: 90,
       price: 90,
       isFeatured: false,
-      order: 7,
+      order: 8,
     },
     {
       name: 'Fashion Colors',
@@ -104,17 +114,17 @@ async function main() {
       duration: 180,
       price: 175,
       isFeatured: true,
-      order: 8,
+      order: 9,
     },
     {
-      name: 'Perm',
+      name: 'Perms',
       slug: 'perm',
       category: ServiceCategory.HAIR_AND_COLOR,
       description: 'Long-lasting curls or waves customized to your desired look. Includes consultation, perm application, cut, and style.',
       duration: 150,
       price: 75,
       isFeatured: false,
-      order: 9,
+      order: 10,
     },
     {
       name: 'Chemical Straightening',
@@ -124,7 +134,7 @@ async function main() {
       duration: 180,
       price: 115,
       isFeatured: false,
-      order: 10,
+      order: 11,
     },
 
     // HAIR EXTRAS
@@ -136,7 +146,7 @@ async function main() {
       duration: 180,
       price: 150,
       isFeatured: false,
-      order: 11,
+      order: 12,
     },
     {
       name: 'Hair Tinsel',
@@ -146,7 +156,7 @@ async function main() {
       duration: 30,
       price: 15,
       isFeatured: false,
-      order: 12,
+      order: 13,
     },
     {
       name: 'Updo / Special Occasion Style',
@@ -156,7 +166,7 @@ async function main() {
       duration: 90,
       price: 75,
       isFeatured: false,
-      order: 13,
+      order: 14,
     },
 
     // SKIN & FACIALS
@@ -168,7 +178,7 @@ async function main() {
       duration: 75,
       price: 120,
       isFeatured: true,
-      order: 14,
+      order: 15,
     },
     {
       name: 'Hydrafacial Treatment',
@@ -178,7 +188,7 @@ async function main() {
       duration: 60,
       price: 175,
       isFeatured: true,
-      order: 15,
+      order: 16,
     },
     {
       name: 'Dermabrasion',
@@ -188,7 +198,7 @@ async function main() {
       duration: 60,
       price: 95,
       isFeatured: false,
-      order: 16,
+      order: 17,
     },
     {
       name: 'Chemical Peel',
@@ -198,7 +208,7 @@ async function main() {
       duration: 60,
       price: 110,
       isFeatured: false,
-      order: 17,
+      order: 18,
     },
     {
       name: 'Microneedling',
@@ -208,7 +218,7 @@ async function main() {
       duration: 90,
       price: 200,
       isFeatured: true,
-      order: 18,
+      order: 19,
     },
 
     // BROWS & LASHES
@@ -220,7 +230,7 @@ async function main() {
       duration: 30,
       price: 35,
       isFeatured: false,
-      order: 19,
+      order: 20,
     },
     {
       name: 'Lash Lift & Tint',
@@ -230,7 +240,7 @@ async function main() {
       duration: 60,
       price: 85,
       isFeatured: false,
-      order: 20,
+      order: 21,
     },
     {
       name: 'Sugaring Hair Removal',
@@ -240,7 +250,7 @@ async function main() {
       duration: 45,
       price: 45,
       isFeatured: false,
-      order: 21,
+      order: 22,
     },
 
     // ADVANCED AESTHETICS
@@ -252,7 +262,7 @@ async function main() {
       duration: 120,
       price: 350,
       isFeatured: false,
-      order: 22,
+      order: 23,
     },
     {
       name: 'Laser Hair Removal Session',
@@ -262,7 +272,7 @@ async function main() {
       duration: 45,
       price: 100,
       isFeatured: false,
-      order: 23,
+      order: 24,
     },
     {
       name: 'Professional Teeth Whitening',
@@ -272,7 +282,7 @@ async function main() {
       duration: 60,
       price: 125,
       isFeatured: false,
-      order: 24,
+      order: 25,
     },
   ];
 
