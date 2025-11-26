@@ -38,10 +38,10 @@ export default function HomePage() {
     <div className="bg-cream">
       {/* Hero Section - Ultra Premium */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
+        {/* Background Image with Overlay - Parallax Effect */}
         <div className="absolute inset-0 z-0">
           <div
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-center bg-fixed"
             style={{
               backgroundImage: 'url(https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2000)',
               filter: 'brightness(0.4)'

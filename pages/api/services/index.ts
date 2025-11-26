@@ -13,10 +13,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         },
       });
 
-      return res.status(200).json(services);
+      // Always return an array, even if empty
+      return res.status(200).json(services || []);
     } catch (error) {
       console.error('Error fetching services:', error);
-      return res.status(500).json({ error: 'Failed to fetch services' });
+      // Return empty array on error so frontend doesn't break
+      return res.status(200).json([]);
     }
   }
 
