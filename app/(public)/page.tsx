@@ -38,13 +38,16 @@ export default function HomePage() {
     <div className="bg-cream">
       {/* Hero Section - Ultra Premium */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay - Parallax Effect */}
-        <div className="absolute inset-0 z-0">
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-fixed"
+        {/* Background Image with Overlay - Optimized for Mobile */}
+        <div className="fixed inset-0 z-0 md:absolute">
+          <img
+            src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=90&w=2400&auto=format&fit=crop"
+            alt="Luxury spa treatment"
+            className="w-full h-full object-cover object-center"
             style={{
-              backgroundImage: 'url(https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=2000)',
-              filter: 'brightness(0.4)'
+              filter: 'brightness(0.4)',
+              minHeight: '100vh',
+              minWidth: '100vw'
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-nearBlack/60 via-nearBlack/50 to-cream" />
@@ -125,7 +128,7 @@ export default function HomePage() {
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-32 bg-white relative overflow-hidden">
+      <section className="py-32 bg-white relative overflow-hidden z-20">
         <div className="absolute top-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
 
@@ -183,7 +186,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Services */}
-      <section className="py-32 bg-gradient-to-b from-white to-cream relative">
+      <section className="py-32 bg-gradient-to-b from-white to-cream relative z-20">
         <div className="container-custom">
           <div className="text-center mb-20">
             <div className="inline-block mb-6 px-6 py-2 border border-softLine rounded-full">
@@ -235,7 +238,7 @@ export default function HomePage() {
       </section>
 
       {/* How It Works - Premium Process */}
-      <section className="py-32 bg-white">
+      <section className="py-32 bg-white relative z-20">
         <div className="container-custom">
           <div className="text-center mb-20">
             <div className="inline-block mb-6 px-6 py-2 border border-softLine rounded-full">
@@ -291,7 +294,7 @@ export default function HomePage() {
       </section>
 
       {/* Social Proof / Testimonials */}
-      <section className="py-32 bg-gradient-to-b from-white to-cream">
+      <section className="py-32 bg-gradient-to-b from-white to-cream relative z-20">
         <div className="container-custom">
           <div className="text-center mb-20">
             <div className="inline-block mb-6 px-6 py-2 border border-softLine rounded-full">
@@ -353,7 +356,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section - Premium */}
-      <section className="py-32 bg-nearBlack text-cream relative overflow-hidden">
+      <section className="py-32 bg-nearBlack text-cream relative overflow-hidden z-20">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent rounded-full blur-3xl" />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent rounded-full blur-3xl" />
