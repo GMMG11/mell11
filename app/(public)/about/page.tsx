@@ -72,10 +72,24 @@ export default function AboutPage() {
       {/* About Melissa */}
       <section className="py-20 bg-white">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="font-serif text-4xl mb-8 text-nearBlack text-center">Meet Mel</h2>
+          <div className="max-w-5xl mx-auto">
+            <h2 className="font-serif text-4xl mb-12 text-nearBlack text-center">Meet Mel</h2>
 
-            <div className="space-y-6 text-gray-700 leading-relaxed">
+            <div className="grid md:grid-cols-2 gap-12 items-start mb-12">
+              {/* Photo */}
+              <div className="relative">
+                <div className="aspect-[3/4] relative rounded-2xl overflow-hidden luxury-shadow">
+                  <img
+                    src="https://drive.google.com/uc?export=view&id=13DI2zvS_-wzwmtgUk0lgjM2h0a6bMOAz"
+                    alt="Melissa Green - Founder of MĒL11"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-accent/10 rounded-full blur-2xl -z-10" />
+              </div>
+
+              {/* Bio */}
+              <div className="space-y-6 text-gray-700 leading-relaxed">
               <p>
                 Melissa Green, the founder and lead aesthetician behind MĒL11, brings nearly two decades of
                 experience in the beauty industry. Licensed in both aesthetics and barbering, she has spent
@@ -95,24 +109,46 @@ export default function AboutPage() {
                 that don't serve them.
               </p>
 
-              <div className="bg-cream p-6 rounded-lg my-8">
-                <h4 className="font-semibold mb-3 text-nearBlack">Certifications & Training</h4>
-                <ul className="space-y-2 text-sm">
-                  <li>• Licensed Aesthetician (Washington State)</li>
-                  <li>• Licensed Barber & Hair Designer (Washington State)</li>
-                  <li>• Advanced Skincare & Microneedling Certification</li>
-                  <li>• Chemical Peel & Advanced Treatment Training</li>
-                  <li>• Brow Lamination & Lash Lift Specialist</li>
-                  <li>• 19+ years in the beauty and wellness industry</li>
-                </ul>
-              </div>
-
               <p>
                 When she's not transforming skin or perfecting a cut, Melissa is a proud mother of two and an
                 advocate for accessible, high-quality beauty care. She believes everyone deserves to feel
                 confident in their skin—and that the best environment for that is one where you already feel
                 at home.
               </p>
+              </div>
+            </div>
+
+            {/* Certifications - Full Width */}
+            <div className="max-w-3xl mx-auto">
+              <div className="bg-cream p-8 rounded-lg border border-softLine">
+                <h4 className="font-serif text-2xl mb-4 text-nearBlack">Certifications & Training</h4>
+                <ul className="grid md:grid-cols-2 gap-3">
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">✓</span>
+                    <span>Licensed Aesthetician (Washington State)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">✓</span>
+                    <span>Licensed Barber & Hair Designer (Washington State)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">✓</span>
+                    <span>Advanced Skincare & Microneedling Certification</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">✓</span>
+                    <span>Chemical Peel & Advanced Treatment Training</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">✓</span>
+                    <span>Brow Lamination & Lash Lift Specialist</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">✓</span>
+                    <span>19+ years in the beauty and wellness industry</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
