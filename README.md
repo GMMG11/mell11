@@ -2,6 +2,8 @@
 
 A complete, production-ready web application for MĒL11, a luxury mobile beauty and aesthetics brand serving Tacoma and Greater Seattle.
 
+<!-- Build: 2025-11-26 -->
+
 ## Overview
 
 This application includes:
