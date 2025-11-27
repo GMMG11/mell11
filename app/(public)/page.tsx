@@ -368,7 +368,7 @@ export default function HomePage() {
               <span className="text-sm tracking-[0.2em] uppercase text-cream/80">Limited Availability</span>
             </div>
 
-            <h3 className="font-serif text-5xl md:text-6xl mb-8 leading-tight">
+            <h3 className="font-serif text-5xl md:text-6xl mb-8 leading-tight text-cream">
               Elevate your self-care<br />to an art form
             </h3>
 
