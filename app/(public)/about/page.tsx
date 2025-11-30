@@ -174,7 +174,7 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="aspect-[3/4] relative rounded-2xl overflow-hidden luxury-shadow">
                   <img
-                    src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/mel11.jpg"
+                    src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/MG11.png"
                     alt="Melissa Green - Founder of MĒL11"
                     className="w-full h-full object-cover"
                   />
