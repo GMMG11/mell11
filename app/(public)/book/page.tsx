@@ -5,31 +5,40 @@ import { useSearchParams } from 'next/navigation';
 
 // Static services list
 const SERVICES = [
-  { name: "Women's Haircut", price: 40, duration: 60 },
-  { name: "Men's Haircut", price: 32, duration: 45 },
-  { name: "Kids' Haircut", price: 27, duration: 30 },
-  { name: "Wash", price: 7, duration: 15 },
-  { name: "Style", price: 25, duration: 30 },
-  { name: "Partial Foil Highlights", price: 115, duration: 120 },
-  { name: "Full Foil Highlights", price: 150, duration: 150 },
-  { name: "Solid Color", price: 90, duration: 90 },
-  { name: "Fashion Colors", price: 175, duration: 180 },
-  { name: "Perms", price: 75, duration: 150 },
-  { name: "Chemical Straightening", price: 115, duration: 180 },
-  { name: "Hair Extensions", price: 150, duration: 180 },
-  { name: "Hair Tinsel", price: 15, duration: 30 },
-  { name: "Updo / Special Occasion Style", price: 75, duration: 90 },
-  { name: "Signature House Call Facial", price: 120, duration: 75 },
-  { name: "Hydrafacial Treatment", price: 175, duration: 60 },
-  { name: "Dermabrasion", price: 95, duration: 60 },
-  { name: "Chemical Peel", price: 110, duration: 60 },
+  // Transformation Program
+  { name: "Signature Transformation Program (8-Week)", price: 899, duration: 480 },
+  { name: "Signature Transformation Program (12-Week)", price: 1350, duration: 720 },
+
+  // Advanced Aesthetic Treatments
   { name: "Microneedling", price: 200, duration: 90 },
-  { name: "Lip Blush Tattoo", price: 350, duration: 120 },
+  { name: "Hydrafacial Treatment", price: 175, duration: 60 },
+  { name: "Chemical Peel", price: 110, duration: 60 },
+  { name: "Dermabrasion", price: 95, duration: 60 },
   { name: "Laser Hair Removal Session", price: 100, duration: 45 },
+  { name: "Lip Blush Tattoo", price: 350, duration: 120 },
+
+  // Signature Skin & Facials
+  { name: "Signature House Call Facial", price: 120, duration: 75 },
+
+  // Brows & Lashes
   { name: "Brow Shaping & Tint", price: 35, duration: 30 },
   { name: "Lash Lift & Tint", price: 85, duration: 60 },
   { name: "Sugaring Hair Removal", price: 45, duration: 45 },
+
+  // Teeth Whitening
   { name: "Professional Teeth Whitening", price: 125, duration: 60 },
+
+  // Hair Services
+  { name: "Women's Precision Cut", price: 95, duration: 75 },
+  { name: "Men's Precision Cut & Finish", price: 65, duration: 45 },
+  { name: "Special Occasion Style", price: 150, duration: 90 },
+
+  // Luxury Color Services
+  { name: "Partial Foil Highlights", price: 155, duration: 120 },
+  { name: "Full Foil Highlights", price: 195, duration: 150 },
+  { name: "Solid Color Refresh", price: 140, duration: 90 },
+  { name: "Fashion / Vivid Colors", price: 225, duration: 180 },
+  { name: "Hair Extensions", price: 250, duration: 180 },
 ];
 
 function BookingForm() {
