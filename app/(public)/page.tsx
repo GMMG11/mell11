@@ -245,7 +245,7 @@ export default function HomePage() {
               <span className="text-xs tracking-widest uppercase text-cream/90">Premium Program</span>
             </div>
 
-            <h2 className="font-serif text-5xl md:text-6xl mb-4">
+            <h2 className="font-serif text-5xl md:text-6xl mb-4 text-white">
               The MĒL11 Signature Transformation
             </h2>
 
@@ -259,7 +259,7 @@ export default function HomePage() {
             </p>
 
             <Link href="/services#transformation">
-              <Button size="lg" variant="primary" className="min-w-[240px] luxury-hover bg-cream text-nearBlack hover:bg-white">
+              <Button size="lg" variant="outline" className="min-w-[240px] luxury-hover border-cream text-cream hover:bg-cream hover:text-nearBlack">
                 Learn More
               </Button>
             </Link>
