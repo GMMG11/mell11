@@ -3,8 +3,21 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-nearBlack text-cream py-12 mt-20 relative z-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-nearBlack text-cream py-12 mt-20 relative overflow-hidden z-20">
+      {/* Background Image - Same as Hero */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=90&w=2400&auto=format&fit=crop"
+          alt="Luxury spa background"
+          className="w-full h-full object-cover object-center"
+          style={{
+            filter: 'brightness(0.3)',
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-nearBlack via-nearBlack/80 to-nearBlack/60" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
