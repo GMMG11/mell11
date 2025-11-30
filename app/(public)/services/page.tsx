@@ -637,7 +637,8 @@ export default function ServicesPage() {
                   <span className="text-xs tracking-widest uppercase">Wellness & Longevity</span>
                 </div>
                 <h2 className="font-serif text-4xl md:text-5xl mb-4 text-white">Peptide Wellness Consultation</h2>
-                <p className="text-xl text-cream/90">Personalized Peptide Guidance & Referrals</p>
+                <p className="text-xl text-cream/90 mb-2">Personalized Peptide Guidance & Referrals</p>
+                <p className="text-2xl font-serif text-cream">Starting at $120</p>
               </div>
 
               <p className="text-lg text-cream/90 mb-8 leading-relaxed text-center">
@@ -675,9 +676,6 @@ export default function ServicesPage() {
               </div>
 
               <div className="text-center">
-                <p className="text-sm text-cream/80 mb-6">
-                  <strong>Note:</strong> This is an educational consultation only. Melissa does not prescribe or sell peptides. All medical recommendations are referred to licensed providers.
-                </p>
                 <Link
                   href="/contact"
                   className="inline-block px-8 py-4 bg-cream text-nearBlack rounded-lg hover:bg-white transition-colors font-semibold text-lg"
@@ -832,42 +830,18 @@ export default function ServicesPage() {
             Most clients choose MĒL11 because they want luxury without the salon chaos.
           </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <div className="text-center">
-              <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-3">
+              <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-accent text-xl">✓</span>
               </div>
-              <p className="text-gray-700">No parking, no traffic</p>
+              <p className="text-gray-700 leading-relaxed">No parking, no traffic, no public waiting rooms. Salon-quality results without the salon chaos.</p>
             </div>
             <div className="text-center">
-              <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-3">
+              <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-accent text-xl">✓</span>
               </div>
-              <p className="text-gray-700">Private, quiet, unhurried appointments</p>
-            </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-accent text-xl">✓</span>
-              </div>
-              <p className="text-gray-700">No public waiting rooms</p>
-            </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-accent text-xl">✓</span>
-              </div>
-              <p className="text-gray-700">Salon results without salon chaos</p>
-            </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-accent text-xl">✓</span>
-              </div>
-              <p className="text-gray-700">Fits around work, childcare, home duties</p>
-            </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-accent text-xl">✓</span>
-              </div>
-              <p className="text-gray-700">Complete privacy & discretion</p>
+              <p className="text-gray-700 leading-relaxed">Private, quiet, unhurried appointments that fit around work, childcare, and home duties. Complete privacy & discretion.</p>
             </div>
           </div>
 
