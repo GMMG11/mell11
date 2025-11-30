@@ -631,57 +631,59 @@ export default function ServicesPage() {
         {/* PEPTIDE WELLNESS */}
         <div className="mb-16">
           <div className="bg-gradient-to-br from-nearBlack/95 to-accent/80 text-cream rounded-2xl p-10 md:p-12 luxury-shadow">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-8">
-                <div className="inline-block px-4 py-1 bg-cream/20 rounded-full mb-4">
-                  <span className="text-xs tracking-widest uppercase">Wellness & Longevity</span>
+            <div className="max-w-6xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-12 items-start">
+                {/* Left Column */}
+                <div>
+                  <div className="inline-block px-4 py-1 bg-cream/20 rounded-full mb-4">
+                    <span className="text-xs tracking-widest uppercase">Wellness & Longevity</span>
+                  </div>
+                  <h2 className="font-serif text-4xl md:text-5xl mb-4 text-white">Peptide Wellness Consultation</h2>
+                  <p className="text-xl text-cream/90 mb-4">Personalized Peptide Guidance & Referrals</p>
+                  <p className="text-2xl font-serif text-cream mb-6">Starting at $120</p>
+
+                  <p className="text-lg text-cream/90 leading-relaxed mb-8">
+                    Melissa offers private consultations for clients interested in peptide therapy for skin rejuvenation, wellness, recovery, and longevity. This service includes education on safe sourcing, dosing guidance, and referrals to trusted medical providers when needed.
+                  </p>
+
+                  <Link
+                    href="/contact"
+                    className="inline-block px-8 py-4 bg-cream text-nearBlack rounded-lg hover:bg-white transition-colors font-semibold text-lg"
+                  >
+                    Schedule a Peptide Consultation
+                  </Link>
                 </div>
-                <h2 className="font-serif text-4xl md:text-5xl mb-4 text-white">Peptide Wellness Consultation</h2>
-                <p className="text-xl text-cream/90 mb-2">Personalized Peptide Guidance & Referrals</p>
-                <p className="text-2xl font-serif text-cream">Starting at $120</p>
-              </div>
 
-              <p className="text-lg text-cream/90 mb-8 leading-relaxed text-center">
-                Melissa offers private consultations for clients interested in peptide therapy for skin rejuvenation, wellness, recovery, and longevity. This service includes education on safe sourcing, dosing guidance, and referrals to trusted medical providers when needed.
-              </p>
-
-              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg mb-6">
-                <h4 className="font-semibold text-lg mb-4 text-white">What's Covered:</h4>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <span className="text-accent mr-3 mt-1">✓</span>
-                    <span>Overview of peptide therapy and benefits for skin, wellness, and aging</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent mr-3 mt-1">✓</span>
-                    <span>Personalized recommendations based on your goals</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent mr-3 mt-1">✓</span>
-                    <span>Safe sourcing and quality guidance</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent mr-3 mt-1">✓</span>
-                    <span>Dosing protocols and administration education</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent mr-3 mt-1">✓</span>
-                    <span>Medical provider referrals for prescription peptides</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent mr-3 mt-1">✓</span>
-                    <span>Integration with aesthetic treatments for enhanced results</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="text-center">
-                <Link
-                  href="/contact"
-                  className="inline-block px-8 py-4 bg-cream text-nearBlack rounded-lg hover:bg-white transition-colors font-semibold text-lg"
-                >
-                  Schedule a Peptide Consultation
-                </Link>
+                {/* Right Column */}
+                <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg">
+                  <h4 className="font-semibold text-lg mb-4 text-white">What's Covered:</h4>
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <span className="text-accent mr-3 mt-1">✓</span>
+                      <span>Overview of peptide therapy and benefits for skin, wellness, and aging</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-3 mt-1">✓</span>
+                      <span>Personalized recommendations based on your goals</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-3 mt-1">✓</span>
+                      <span>Safe sourcing and quality guidance</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-3 mt-1">✓</span>
+                      <span>Dosing protocols and administration education</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-3 mt-1">✓</span>
+                      <span>Medical provider referrals for prescription peptides</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-accent mr-3 mt-1">✓</span>
+                      <span>Integration with aesthetic treatments for enhanced results</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -830,18 +832,24 @@ export default function ServicesPage() {
             Most clients choose MĒL11 because they want luxury without the salon chaos.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="text-center">
               <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-accent text-xl">✓</span>
               </div>
-              <p className="text-gray-700 leading-relaxed">No parking, no traffic, no public waiting rooms. Salon-quality results without the salon chaos.</p>
+              <p className="text-gray-700 leading-relaxed">No parking, no traffic<br />No public waiting rooms</p>
             </div>
             <div className="text-center">
               <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-accent text-xl">✓</span>
               </div>
-              <p className="text-gray-700 leading-relaxed">Private, quiet, unhurried appointments that fit around work, childcare, and home duties. Complete privacy & discretion.</p>
+              <p className="text-gray-700 leading-relaxed">Private, quiet, unhurried appointments<br />Complete privacy & discretion</p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-accent text-xl">✓</span>
+              </div>
+              <p className="text-gray-700 leading-relaxed">Salon results without salon chaos<br />Fits around work, childcare, home duties</p>
             </div>
           </div>
 
