@@ -222,9 +222,12 @@ export default function ServicesPage() {
         {/* SKIN & FACIAL TREATMENTS */}
         <div className="mb-16">
           <h2 className="font-serif text-4xl mb-8 text-nearBlack text-center">Signature Skin & Facials</h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Tailored treatments for every skin type, goal, and concern. Each facial includes a personalized consultation and clinical-grade products.
+          </p>
 
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-white p-8 rounded-lg luxury-shadow mb-6">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="bg-white p-8 rounded-lg luxury-shadow">
               <h3 className="font-serif text-2xl text-nearBlack mb-2">The MĒL11 Signature House Call Facial</h3>
               <div className="flex justify-between items-center mb-4">
                 <span className="text-gray-600">75 min</span>
@@ -239,6 +242,227 @@ export default function ServicesPage() {
               >
                 Book Now
               </Link>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg luxury-shadow">
+              <h3 className="font-serif text-2xl text-nearBlack mb-2">Custom Facial Experience</h3>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-gray-600">60–90 min</span>
+                <span className="text-accent font-semibold text-xl">$95–$150</span>
+              </div>
+              <p className="text-gray-700 mb-4">
+                Build your own treatment. Choose from modalities like dermaplaning, peels, LED, ultrasound, extractions, and clinical serums based on your goals.
+              </p>
+              <Link
+                href="/book?service=Custom%20Facial%20Experience"
+                className="inline-block px-6 py-2 bg-accent text-white rounded hover:bg-hover transition-colors font-medium"
+              >
+                Book Now
+              </Link>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg luxury-shadow">
+              <h3 className="font-serif text-2xl text-nearBlack mb-2">Dermaplaning Facial</h3>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-gray-600">60 min</span>
+                <span className="text-accent font-semibold text-xl">$95+</span>
+              </div>
+              <p className="text-gray-700 mb-4">
+                Gentle exfoliation removes dead skin and peach fuzz, revealing smooth, glowing skin. Perfect before events or as a monthly refresh.
+              </p>
+              <Link
+                href="/book?service=Dermaplaning%20Facial"
+                className="inline-block px-6 py-2 bg-accent text-white rounded hover:bg-hover transition-colors font-medium"
+              >
+                Book Now
+              </Link>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg luxury-shadow">
+              <h3 className="font-serif text-2xl text-nearBlack mb-2">Classic European Facial</h3>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-gray-600">60 min</span>
+                <span className="text-accent font-semibold text-xl">$95+</span>
+              </div>
+              <p className="text-gray-700 mb-4">
+                A timeless, relaxing treatment with cleansing, exfoliation, steam, extractions, massage, and masking. Great for maintenance and balance.
+              </p>
+              <Link
+                href="/book?service=Classic%20European%20Facial"
+                className="inline-block px-6 py-2 bg-accent text-white rounded hover:bg-hover transition-colors font-medium"
+              >
+                Book Now
+              </Link>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg luxury-shadow">
+              <h3 className="font-serif text-2xl text-nearBlack mb-2">Deep Cleansing Facial</h3>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-gray-600">75 min</span>
+                <span className="text-accent font-semibold text-xl">$120+</span>
+              </div>
+              <p className="text-gray-700 mb-4">
+                Focused on congestion, blackheads, and clogged pores. Includes steam, extractions, purifying masks, and calming serums.
+              </p>
+              <Link
+                href="/book?service=Deep%20Cleansing%20Facial"
+                className="inline-block px-6 py-2 bg-accent text-white rounded hover:bg-hover transition-colors font-medium"
+              >
+                Book Now
+              </Link>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg luxury-shadow">
+              <h3 className="font-serif text-2xl text-nearBlack mb-2">Acne Facial</h3>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-gray-600">75 min</span>
+                <span className="text-accent font-semibold text-xl">$110+</span>
+              </div>
+              <p className="text-gray-700 mb-4">
+                Targeted acne treatment with deep cleansing, extractions, antibacterial serums, and LED light therapy. Reduces inflammation and breakouts.
+              </p>
+              <Link
+                href="/book?service=Acne%20Facial"
+                className="inline-block px-6 py-2 bg-accent text-white rounded hover:bg-hover transition-colors font-medium"
+              >
+                Book Now
+              </Link>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg luxury-shadow">
+              <h3 className="font-serif text-2xl text-nearBlack mb-2">Detox Facial</h3>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-gray-600">75 min</span>
+                <span className="text-accent font-semibold text-xl">$110+</span>
+              </div>
+              <p className="text-gray-700 mb-4">
+                Designed to detoxify and decongest dull, stressed skin. Includes lymphatic massage, charcoal or clay masks, and hydrating serums.
+              </p>
+              <Link
+                href="/book?service=Detox%20Facial"
+                className="inline-block px-6 py-2 bg-accent text-white rounded hover:bg-hover transition-colors font-medium"
+              >
+                Book Now
+              </Link>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg luxury-shadow">
+              <h3 className="font-serif text-2xl text-nearBlack mb-2">Glycolic or Enzyme Facial</h3>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-gray-600">60 min</span>
+                <span className="text-accent font-semibold text-xl">$110+</span>
+              </div>
+              <p className="text-gray-700 mb-4">
+                Exfoliating treatment using glycolic acid or fruit enzymes to brighten, smooth texture, and refine pores.
+              </p>
+              <Link
+                href="/book?service=Glycolic%20or%20Enzyme%20Facial"
+                className="inline-block px-6 py-2 bg-accent text-white rounded hover:bg-hover transition-colors font-medium"
+              >
+                Book Now
+              </Link>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg luxury-shadow">
+              <h3 className="font-serif text-2xl text-nearBlack mb-2">Men's Executive Facial</h3>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-gray-600">60 min</span>
+                <span className="text-accent font-semibold text-xl">$110+</span>
+              </div>
+              <p className="text-gray-700 mb-4">
+                Tailored for men's skin. Deep cleanse, exfoliation, extractions, and hydration. Addresses razor burn, oiliness, and sensitivity.
+              </p>
+              <Link
+                href="/book?service=Men's%20Executive%20Facial"
+                className="inline-block px-6 py-2 bg-accent text-white rounded hover:bg-hover transition-colors font-medium"
+              >
+                Book Now
+              </Link>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg luxury-shadow">
+              <h3 className="font-serif text-2xl text-nearBlack mb-2">Back Facial</h3>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-gray-600">60 min</span>
+                <span className="text-accent font-semibold text-xl">$110+</span>
+              </div>
+              <p className="text-gray-700 mb-4">
+                Cleansing, exfoliation, and extractions for the back. Perfect for congested skin, pre-wedding prep, or summer confidence.
+              </p>
+              <Link
+                href="/book?service=Back%20Facial"
+                className="inline-block px-6 py-2 bg-accent text-white rounded hover:bg-hover transition-colors font-medium"
+              >
+                Book Now
+              </Link>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg luxury-shadow">
+              <h3 className="font-serif text-2xl text-nearBlack mb-2">Intimate Glow Treatment</h3>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-gray-600">60 min</span>
+                <span className="text-accent font-semibold text-xl">$95+</span>
+              </div>
+              <p className="text-gray-700 mb-4">
+                A private, professional treatment for intimate areas. Exfoliation, brightening, and smoothing in a comfortable, discreet setting.
+              </p>
+              <Link
+                href="/book?service=Intimate%20Glow%20Treatment"
+                className="inline-block px-6 py-2 bg-accent text-white rounded hover:bg-hover transition-colors font-medium"
+              >
+                Book Now
+              </Link>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg luxury-shadow border-2 border-accent/30">
+              <h3 className="font-serif text-2xl text-nearBlack mb-2">Acne Boot Camp</h3>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-gray-600">Custom Program</span>
+                <span className="text-accent font-semibold text-xl">Custom Pricing</span>
+              </div>
+              <p className="text-gray-700 mb-4">
+                A comprehensive multi-week acne treatment plan with customized protocols, product guidance, and ongoing support. For serious skin transformation.
+              </p>
+              <Link
+                href="/contact"
+                className="inline-block px-6 py-2 bg-accent text-white rounded hover:bg-hover transition-colors font-medium"
+              >
+                Inquire
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* ADD-ON ENHANCEMENTS */}
+        <div className="mb-16">
+          <h2 className="font-serif text-4xl mb-8 text-nearBlack text-center">Treatment Add-Ons</h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Enhance any facial or treatment with these professional upgrades.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="bg-white p-6 rounded-lg luxury-shadow border border-softLine">
+              <h3 className="font-serif text-xl text-nearBlack mb-2">Ultrasound Skin Therapy</h3>
+              <p className="text-accent font-semibold text-2xl mb-3">+$35</p>
+              <p className="text-gray-700 text-sm">
+                Deep product penetration and skin tightening using ultrasonic waves.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg luxury-shadow border border-softLine">
+              <h3 className="font-serif text-xl text-nearBlack mb-2">LED Light Therapy</h3>
+              <p className="text-accent font-semibold text-2xl mb-3">+$25</p>
+              <p className="text-gray-700 text-sm">
+                Red or blue light therapy to reduce inflammation, boost collagen, or clear acne.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg luxury-shadow border border-softLine">
+              <h3 className="font-serif text-xl text-nearBlack mb-2">High-Frequency Treatment</h3>
+              <p className="text-accent font-semibold text-2xl mb-3">+$20</p>
+              <p className="text-gray-700 text-sm">
+                Antibacterial treatment to calm breakouts and improve circulation.
+              </p>
             </div>
           </div>
         </div>
@@ -293,6 +517,52 @@ export default function ServicesPage() {
           </div>
         </div>
 
+        {/* WAXING SERVICES */}
+        <div className="mb-16">
+          <h2 className="font-serif text-4xl mb-8 text-nearBlack text-center">Waxing Services</h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Professional waxing services using premium, gentle formulas. Quick, effective, and private.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="bg-white p-6 rounded-lg luxury-shadow">
+              <h3 className="font-serif text-xl text-nearBlack mb-2">Brow Wax</h3>
+              <p className="text-accent font-semibold text-xl mb-2">$30+</p>
+              <p className="text-gray-700 text-sm">Precise shaping and clean-up</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg luxury-shadow">
+              <h3 className="font-serif text-xl text-nearBlack mb-2">Lip or Chin</h3>
+              <p className="text-accent font-semibold text-xl mb-2">$30+</p>
+              <p className="text-gray-700 text-sm">Quick, gentle facial waxing</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg luxury-shadow">
+              <h3 className="font-serif text-xl text-nearBlack mb-2">Underarm</h3>
+              <p className="text-accent font-semibold text-xl mb-2">$40+</p>
+              <p className="text-gray-700 text-sm">Smooth results for weeks</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg luxury-shadow">
+              <h3 className="font-serif text-xl text-nearBlack mb-2">Brazilian</h3>
+              <p className="text-accent font-semibold text-xl mb-2">$75+</p>
+              <p className="text-gray-700 text-sm">Full bikini waxing with privacy</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg luxury-shadow">
+              <h3 className="font-serif text-xl text-nearBlack mb-2">Bikini Line</h3>
+              <p className="text-accent font-semibold text-xl mb-2">$50+</p>
+              <p className="text-gray-700 text-sm">Classic bikini area waxing</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg luxury-shadow">
+              <h3 className="font-serif text-xl text-nearBlack mb-2">Full Leg</h3>
+              <p className="text-accent font-semibold text-xl mb-2">$75+</p>
+              <p className="text-gray-700 text-sm">Smooth, silky legs</p>
+            </div>
+          </div>
+        </div>
+
         {/* TEETH WHITENING */}
         <div className="mb-16">
           <h2 className="font-serif text-4xl mb-8 text-nearBlack text-center">Teeth Whitening</h2>
@@ -313,6 +583,108 @@ export default function ServicesPage() {
               >
                 Book Now
               </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* MAKEUP & SPECIAL SERVICES */}
+        <div className="mb-16">
+          <h2 className="font-serif text-4xl mb-8 text-nearBlack text-center">Makeup & Special Services</h2>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="bg-white p-8 rounded-lg luxury-shadow">
+              <h3 className="font-serif text-2xl text-nearBlack mb-2">Makeup Application</h3>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-gray-600">60–90 min</span>
+                <span className="text-accent font-semibold text-xl">$120–$175</span>
+              </div>
+              <p className="text-gray-700 mb-4">
+                Professional makeup for events, photoshoots, weddings, or special occasions. Includes lashes, setting spray, and touch-up kit.
+              </p>
+              <Link
+                href="/book?service=Makeup%20Application"
+                className="inline-block px-6 py-2 bg-accent text-white rounded hover:bg-hover transition-colors font-medium"
+              >
+                Book Now
+              </Link>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg luxury-shadow">
+              <h3 className="font-serif text-2xl text-nearBlack mb-2">Ear or Nose Piercing</h3>
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-gray-600">20 min</span>
+                <span className="text-accent font-semibold text-xl">$45+</span>
+              </div>
+              <p className="text-gray-700 mb-4">
+                Professional piercing with sterile technique and premium jewelry. Includes aftercare instructions.
+              </p>
+              <Link
+                href="/contact"
+                className="inline-block px-6 py-2 bg-accent text-white rounded hover:bg-hover transition-colors font-medium"
+              >
+                Inquire
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* PEPTIDE WELLNESS */}
+        <div className="mb-16">
+          <div className="bg-gradient-to-br from-nearBlack/95 to-accent/80 text-cream rounded-2xl p-10 md:p-12 luxury-shadow">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-8">
+                <div className="inline-block px-4 py-1 bg-cream/20 rounded-full mb-4">
+                  <span className="text-xs tracking-widest uppercase">Wellness & Longevity</span>
+                </div>
+                <h2 className="font-serif text-4xl md:text-5xl mb-4 text-white">Peptide Wellness Consultation</h2>
+                <p className="text-xl text-cream/90">Personalized Peptide Guidance & Referrals</p>
+              </div>
+
+              <p className="text-lg text-cream/90 mb-8 leading-relaxed text-center">
+                Melissa offers private consultations for clients interested in peptide therapy for skin rejuvenation, wellness, recovery, and longevity. This service includes education on safe sourcing, dosing guidance, and referrals to trusted medical providers when needed.
+              </p>
+
+              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg mb-6">
+                <h4 className="font-semibold text-lg mb-4 text-white">What's Covered:</h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-accent mr-3 mt-1">✓</span>
+                    <span>Overview of peptide therapy and benefits for skin, wellness, and aging</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-3 mt-1">✓</span>
+                    <span>Personalized recommendations based on your goals</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-3 mt-1">✓</span>
+                    <span>Safe sourcing and quality guidance</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-3 mt-1">✓</span>
+                    <span>Dosing protocols and administration education</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-3 mt-1">✓</span>
+                    <span>Medical provider referrals for prescription peptides</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-3 mt-1">✓</span>
+                    <span>Integration with aesthetic treatments for enhanced results</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="text-center">
+                <p className="text-sm text-cream/80 mb-6">
+                  <strong>Note:</strong> This is an educational consultation only. Melissa does not prescribe or sell peptides. All medical recommendations are referred to licensed providers.
+                </p>
+                <Link
+                  href="/contact"
+                  className="inline-block px-8 py-4 bg-cream text-nearBlack rounded-lg hover:bg-white transition-colors font-semibold text-lg"
+                >
+                  Schedule a Peptide Consultation
+                </Link>
+              </div>
             </div>
           </div>
         </div>

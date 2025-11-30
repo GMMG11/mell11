@@ -19,14 +19,35 @@ const SERVICES = [
 
   // Signature Skin & Facials
   { name: "Signature House Call Facial", price: 120, duration: 75 },
+  { name: "Custom Facial Experience", price: 125, duration: 75 },
+  { name: "Dermaplaning Facial", price: 95, duration: 60 },
+  { name: "Classic European Facial", price: 95, duration: 60 },
+  { name: "Deep Cleansing Facial", price: 120, duration: 75 },
+  { name: "Acne Facial", price: 110, duration: 75 },
+  { name: "Detox Facial", price: 110, duration: 75 },
+  { name: "Glycolic or Enzyme Facial", price: 110, duration: 60 },
+  { name: "Men's Executive Facial", price: 110, duration: 60 },
+  { name: "Back Facial", price: 110, duration: 60 },
+  { name: "Intimate Glow Treatment", price: 95, duration: 60 },
 
   // Brows & Lashes
   { name: "Brow Shaping & Tint", price: 35, duration: 30 },
   { name: "Lash Lift & Tint", price: 85, duration: 60 },
   { name: "Sugaring Hair Removal", price: 45, duration: 45 },
 
+  // Waxing Services
+  { name: "Brow Wax", price: 30, duration: 20 },
+  { name: "Lip or Chin Wax", price: 30, duration: 20 },
+  { name: "Underarm Wax", price: 40, duration: 25 },
+  { name: "Brazilian Wax", price: 75, duration: 45 },
+  { name: "Bikini Line Wax", price: 50, duration: 30 },
+  { name: "Full Leg Wax", price: 75, duration: 60 },
+
   // Teeth Whitening
   { name: "Professional Teeth Whitening", price: 125, duration: 60 },
+
+  // Makeup & Special Services
+  { name: "Makeup Application", price: 150, duration: 75 },
 
   // Hair Services
   { name: "Women's Precision Cut", price: 95, duration: 75 },
