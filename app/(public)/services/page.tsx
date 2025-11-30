@@ -19,6 +19,9 @@ export default function ServicesPage() {
             <p className="text-sm text-gray-500 mt-4 italic">
               All pricing reflects in-home, concierge-level service.
             </p>
+            <p className="text-base text-nearBlack mt-4 font-bold">
+              Continue below to view individual à la carte service pricing.
+            </p>
           </div>
         </div>
 
@@ -29,7 +32,7 @@ export default function ServicesPage() {
               <div className="inline-block px-4 py-1 bg-cream/20 rounded-full mb-4">
                 <span className="text-xs tracking-widest uppercase">New Premium Offering</span>
               </div>
-              <h2 className="font-serif text-4xl md:text-5xl mb-4">The MĒL11 Signature Transformation</h2>
+              <h2 className="font-serif text-4xl md:text-5xl mb-4 text-white">The MĒL11 Signature Transformation</h2>
               <p className="text-xl text-cream/90">8–12 Week Private Program</p>
             </div>
 

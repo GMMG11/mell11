@@ -259,7 +259,7 @@ export default function HomePage() {
             </p>
 
             <Link href="/services#transformation">
-              <Button size="lg" variant="outline" className="min-w-[240px] luxury-hover border-cream text-cream hover:bg-cream hover:text-nearBlack">
+              <Button size="lg" variant="outline" className="min-w-[240px] luxury-hover border-cream text-cream hover:bg-accent hover:text-white">
                 Learn More
               </Button>
             </Link>
