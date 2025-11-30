@@ -11,7 +11,7 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-serif text-5xl md:text-6xl mb-6 text-nearBlack">About MĒL11</h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              A new approach to luxury beauty — one that meets you where you already feel safe, calm, and fully yourself.
+              A new approach to luxury beauty. One that meets you where you already feel safe, calm, and fully yourself.
             </p>
           </div>
         </div>
@@ -27,7 +27,7 @@ export default function AboutPage() {
             </p>
 
             <p>
-              After 19 years in the beauty industry, Melissa saw the same pattern everywhere she worked — clients loved the results, but dreaded the experience:
+              After 19 years in the beauty industry, Melissa saw the same pattern everywhere she worked. Clients loved the results, but dreaded the experience:
             </p>
 
             <div className="bg-white p-8 rounded-lg border border-softLine">
@@ -84,7 +84,7 @@ export default function AboutPage() {
               </p>
 
               <p className="text-xl italic text-center text-nearBlack">
-                Beauty should feel personal, private, and accessible — not intimidating or overpriced.
+                Beauty should feel personal, private, and accessible. Not intimidating or overpriced.
               </p>
 
               <p>
@@ -126,7 +126,7 @@ export default function AboutPage() {
         <div className="container-custom">
           <div className="max-w-3xl mx-auto space-y-6 text-lg text-gray-700 leading-relaxed">
             <h2 className="font-serif text-4xl mb-8 text-nearBlack text-center">
-              COVID changed everything — and confirmed her vision
+              COVID changed everything and confirmed her vision
             </h2>
 
             <p>
@@ -134,8 +134,8 @@ export default function AboutPage() {
             </p>
 
             <p className="text-xl italic text-center text-nearBlack">
-              Clients weren't just avoiding public spaces —<br />
-              they thrived in private ones.
+              Clients weren't just avoiding public spaces.<br />
+              They thrived in private ones.
             </p>
 
             <div className="bg-white p-8 rounded-lg border border-softLine">
@@ -148,12 +148,11 @@ export default function AboutPage() {
 
             <p>
               She realized what many professionals missed:<br />
-              <strong>beauty was never about the salon — it was about the connection.</strong>
+              <strong>beauty was never about the salon. It was about the connection.</strong>
             </p>
 
             <p>
-              Her house-call model didn't just survive the pandemic.<br />
-              It became the preferred experience for dozens of clients who refused to go back to the salon chair.
+              Her house-call model didn't just survive the pandemic. It became the preferred experience for dozens of clients who refused to go back to the salon chair.
             </p>
 
             <p className="text-center italic text-gray-600 pt-4">
@@ -186,7 +185,8 @@ export default function AboutPage() {
               {/* Bio */}
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p className="font-serif text-2xl text-nearBlack">
-                  Melissa Green — Founder & Lead Aesthetician, MĒL11
+                  Melissa Green<br />
+                  Founder & Lead Aesthetician, MĒL11
                 </p>
 
                 <p>
@@ -220,11 +220,11 @@ export default function AboutPage() {
                 </div>
 
                 <p>
-                  What sets Melissa apart isn't just her training — it's her ability to make people feel beautiful in their own skin, without ever stepping into a crowded salon.
+                  What sets Melissa apart isn't just her training. It's her ability to make people feel beautiful in their own skin, without ever stepping into a crowded salon.
                 </p>
 
                 <p>
-                  As a mother of two with a lifelong passion for aesthetics, she believes beauty should enhance your life — not complicate it, interrupt it, or drain your wallet.
+                  As a mother of two with a lifelong passion for aesthetics, she believes beauty should enhance your life. Not complicate it, interrupt it, or drain your wallet.
                 </p>
 
                 <p className="italic text-center text-nearBlack font-serif text-xl">
