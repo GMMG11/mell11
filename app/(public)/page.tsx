@@ -237,6 +237,36 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Signature Transformation Program */}
+      <section className="py-32 bg-gradient-to-br from-nearBlack to-accent/90 text-cream relative z-20">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-block mb-6 px-6 py-2 bg-cream/20 rounded-full">
+              <span className="text-xs tracking-widest uppercase text-cream/90">Premium Program</span>
+            </div>
+
+            <h2 className="font-serif text-5xl md:text-6xl mb-4">
+              The MĒL11 Signature Transformation
+            </h2>
+
+            <p className="text-xl text-cream/90 mb-8">
+              8–12 week private rejuvenation program<br />
+              Starting at $899
+            </p>
+
+            <p className="text-lg text-cream/80 mb-12 max-w-2xl mx-auto leading-relaxed">
+              A customized, in-home skin renewal experience featuring biweekly advanced treatments, curated product plans, and measurable results.
+            </p>
+
+            <Link href="/services#transformation">
+              <Button size="lg" variant="primary" className="min-w-[240px] luxury-hover bg-cream text-nearBlack hover:bg-white">
+                Learn More
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* How It Works - Premium Process */}
       <section className="py-32 bg-white relative z-20">
         <div className="container-custom">
