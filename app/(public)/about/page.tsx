@@ -190,7 +190,7 @@ export default function AboutPage() {
                 </p>
 
                 <p>
-                  With over 19 years of experience in aesthetics and barbering, Melissa has built a reputation for precision, patience, and an intuitive understanding of what makes each client feel confident.
+                  With 23 years of industry experience, Melissa brings a rare blend of advanced technique, clinical knowledge, and intuitive artistry to every session.
                 </p>
 
                 <div className="bg-cream p-6 rounded-lg border border-softLine">
@@ -234,33 +234,82 @@ export default function AboutPage() {
             </div>
 
             {/* Certifications - Full Width */}
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-4xl mx-auto">
               <div className="bg-cream p-8 rounded-lg border border-softLine">
-                <h4 className="font-serif text-2xl mb-4 text-nearBlack">Certifications & Training</h4>
+                <h4 className="font-serif text-2xl mb-6 text-nearBlack">Professional Training & Certifications</h4>
+                <p className="text-gray-700 mb-6 italic">She is professionally trained and certified in:</p>
                 <ul className="grid md:grid-cols-2 gap-3">
                   <li className="flex items-start">
-                    <span className="text-accent mr-2">✓</span>
-                    <span>Licensed Aesthetician (WA)</span>
+                    <span className="text-accent mr-2">•</span>
+                    <span>Licensed Esthetician (WA)</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-accent mr-2">✓</span>
+                    <span className="text-accent mr-2">•</span>
                     <span>Licensed Barber & Hair Designer (WA)</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-accent mr-2">✓</span>
-                    <span>Advanced Microneedling & Skin Rejuvenation</span>
+                    <span className="text-accent mr-2">•</span>
+                    <span>Paramedical Aesthetics Certification</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-accent mr-2">✓</span>
-                    <span>Chemical Peel & Dermabrasion Certified</span>
+                    <span className="text-accent mr-2">•</span>
+                    <span>Advanced Microneedling & Collagen Induction</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-accent mr-2">✓</span>
-                    <span>Brow Lamination & Lash Lift Specialist</span>
+                    <span className="text-accent mr-2">•</span>
+                    <span>Chemical Peel (Level I & II) + Dermabrasion</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-accent mr-2">✓</span>
-                    <span>19+ years in professional beauty + wellness</span>
+                    <span className="text-accent mr-2">•</span>
+                    <span>Dermaplaning + Enzyme Resurfacing</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">•</span>
+                    <span>Hydrafacial & Advanced Facial Protocols</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">•</span>
+                    <span>Ultrasound Skin Therapy</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">•</span>
+                    <span>LED Light Therapy for Skin Rejuvenation</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">•</span>
+                    <span>Laser Hair Reduction (Professional Technician)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">•</span>
+                    <span>PMU Lip Blush + Color Theory</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">•</span>
+                    <span>Brow Lamination, Tinting & Lash Lift</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">•</span>
+                    <span>Sugar Hair Removal Expert ("Queen of Sugaring")</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">•</span>
+                    <span>Cosmetic Teeth Whitening Technician</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">•</span>
+                    <span>Acne Treatment Specialist (Acne Boot Camp)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">•</span>
+                    <span>Trauma-Informed Aesthetics Training</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">•</span>
+                    <span>Mobile Aesthetic Safety & Field Protocols</span>
+                  </li>
+                  <li className="flex items-start md:col-span-2">
+                    <span className="text-accent mr-2">•</span>
+                    <span className="font-semibold">23+ years in professional beauty + wellness</span>
                   </li>
                 </ul>
               </div>

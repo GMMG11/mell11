@@ -57,8 +57,8 @@ export default function HomePage() {
         <div className="container-custom relative z-10 text-center py-32 animate-fade-in-up">
           <div className="max-w-5xl mx-auto">
             {/* Luxury Badge */}
-            <div className="inline-block mb-8 px-6 py-2 glass-card rounded-full">
-              <span className="text-sm tracking-[0.3em] uppercase text-cream/90">
+            <div className="inline-block mb-8 px-6 py-2 bg-accent border-2 border-white rounded-full">
+              <span className="text-sm tracking-[0.3em] uppercase text-white font-medium">
                 Est. Since 2005 • Licensed & Certified
               </span>
             </div>
@@ -128,7 +128,7 @@ export default function HomePage() {
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-32 bg-white relative overflow-hidden z-20">
+      <section className="py-20 bg-white relative overflow-hidden z-20">
         <div className="absolute top-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
 
@@ -186,7 +186,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Services */}
-      <section className="py-32 bg-gradient-to-b from-white to-cream relative z-20">
+      <section className="py-20 bg-gradient-to-b from-white to-cream relative z-20">
         <div className="container-custom">
           <div className="text-center mb-20">
             <div className="inline-block mb-6 px-6 py-2 border border-softLine rounded-full">
@@ -238,7 +238,7 @@ export default function HomePage() {
       </section>
 
       {/* Signature Transformation Program */}
-      <section className="py-32 bg-gradient-to-br from-nearBlack to-accent/90 text-cream relative z-20">
+      <section className="py-20 bg-gradient-to-br from-nearBlack to-accent/90 text-cream relative z-20">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-block mb-6 px-6 py-2 bg-cream/20 rounded-full">
@@ -268,7 +268,7 @@ export default function HomePage() {
       </section>
 
       {/* How It Works - Premium Process */}
-      <section className="py-32 bg-white relative z-20">
+      <section className="py-20 bg-white relative z-20">
         <div className="container-custom">
           <div className="text-center mb-20">
             <div className="inline-block mb-6 px-6 py-2 border border-softLine rounded-full">
@@ -324,7 +324,7 @@ export default function HomePage() {
       </section>
 
       {/* Social Proof / Testimonials */}
-      <section className="py-32 bg-gradient-to-b from-white to-cream relative z-20">
+      <section className="py-20 bg-gradient-to-b from-white to-cream relative z-20">
         <div className="container-custom">
           <div className="text-center mb-20">
             <div className="inline-block mb-6 px-6 py-2 border border-softLine rounded-full">
@@ -386,7 +386,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section - Premium */}
-      <section className="py-32 bg-nearBlack text-cream relative overflow-hidden z-20">
+      <section className="py-20 bg-nearBlack text-cream relative overflow-hidden z-20">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent rounded-full blur-3xl" />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent rounded-full blur-3xl" />
@@ -394,8 +394,8 @@ export default function HomePage() {
 
         <div className="container-custom text-center relative z-10">
           <div className="max-w-3xl mx-auto">
-            <div className="inline-block mb-6 px-6 py-2 glass-card rounded-full">
-              <span className="text-sm tracking-[0.2em] uppercase text-cream/80">Limited Availability</span>
+            <div className="inline-block mb-6 px-6 py-2 bg-accent border-2 border-white rounded-full">
+              <span className="text-sm tracking-[0.2em] uppercase text-white font-medium">Limited Availability</span>
             </div>
 
             <h3 className="font-serif text-5xl md:text-6xl mb-8 leading-tight text-cream">
