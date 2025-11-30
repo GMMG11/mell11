@@ -39,15 +39,15 @@ export default function ServicesPage() {
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-                  <h3 className="font-serif text-2xl mb-2">8-Week Program</h3>
-                  <p className="text-3xl font-serif mb-2">$899+</p>
-                  <p className="text-sm text-cream/80">Bi-weekly sessions</p>
+                <div className="bg-gradient-to-br from-cream/20 to-accent/15 backdrop-blur-sm p-6 rounded-lg border border-accent/40">
+                  <h3 className="font-serif text-2xl mb-2 text-cream">8-Week Program</h3>
+                  <p className="text-3xl font-serif mb-2 text-cream">$899+</p>
+                  <p className="text-sm text-cream/90">Bi-weekly sessions</p>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-                  <h3 className="font-serif text-2xl mb-2">12-Week Program</h3>
-                  <p className="text-3xl font-serif mb-2">$1,350+</p>
-                  <p className="text-sm text-cream/80">Bi-weekly sessions + extended care</p>
+                <div className="bg-gradient-to-br from-cream/20 to-accent/15 backdrop-blur-sm p-6 rounded-lg border border-accent/40">
+                  <h3 className="font-serif text-2xl mb-2 text-cream">12-Week Program</h3>
+                  <p className="text-3xl font-serif mb-2 text-cream">$1,350+</p>
+                  <p className="text-sm text-cream/90">Bi-weekly sessions + extended care</p>
                 </div>
               </div>
 
