@@ -55,7 +55,7 @@ export default function ServicesPage() {
               </div>
 
               <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg mb-6">
-                <h4 className="font-semibold text-lg mb-4">What's Included:</h4>
+                <h4 className="font-semibold text-lg mb-4 text-white">What's Included:</h4>
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <span className="text-accent mr-3 mt-1">✓</span>
@@ -507,10 +507,20 @@ export default function ServicesPage() {
         {/* Pricing Note */}
         <div className="mt-20 p-8 bg-white rounded-lg border border-softLine max-w-3xl mx-auto">
           <h3 className="font-serif text-2xl mb-4 text-nearBlack">A note about pricing</h3>
-          <p className="text-gray-600 leading-relaxed">
-            All rates listed are base pricing. Exact pricing depends on service time, travel distance, and specific treatment requirements.
-            Clients receive a final quote before an appointment is confirmed.
-          </p>
+          <div className="space-y-4 text-gray-600 leading-relaxed">
+            <p>
+              All rates listed are base pricing. Exact pricing depends on service time, travel distance, and specific treatment requirements.
+              Clients receive a final quote before an appointment is confirmed.
+            </p>
+
+            <p>
+              <strong>Travel:</strong> Generally, clients in the Tacoma/Puyallup area have travel costs included. Anything outside of that will add a $29 travel fee.
+            </p>
+
+            <p>
+              <strong>Booking holds:</strong> Confirmed bookings will automatically put a $45 hold on your card, which will be credited to the total cost of your session. Unfortunately, locking up a timeslot prevents me from servicing other clients. I can move an appointment within 72 hours but not refund it.
+            </p>
+          </div>
         </div>
       </div>
     </div>
