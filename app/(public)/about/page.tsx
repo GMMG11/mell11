@@ -255,83 +255,48 @@ export default function AboutPage() {
       </section>
 
       {/* The Pattern She Saw */}
-      <section
-        data-section="1"
-        className={`py-10 md:py-20 relative overflow-hidden z-20 transition-colors duration-500 ${
-          scrollSections['section-1'] ? 'bg-transparent' : 'bg-white'
-        }`}
-      >
+      <section className="py-10 md:py-20 bg-white relative overflow-hidden z-20">
         <div className="absolute top-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
 
         <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto">
-            <p className={`text-xl mb-8 leading-relaxed transition-colors duration-500 ${
-              scrollSections['section-1'] ? 'text-white/90' : 'text-gray-700'
-            }`}>
+            <p className="text-xl mb-8 leading-relaxed text-gray-700">
               After 23 years in the beauty industry, Melissa saw the same pattern everywhere she worked. Clients loved the results, but dreaded the experience:
             </p>
 
             <ul className="space-y-4 mb-12">
-              <li className={`flex items-start transition-colors duration-500 ${
-                scrollSections['section-1'] ? 'text-white/80' : 'text-gray-700'
-              }`}>
-                <span className={`mr-3 mt-1 transition-colors duration-500 ${
-                  scrollSections['section-1'] ? 'text-white' : 'text-accent'
-                }`}>•</span>
+              <li className="flex items-start text-gray-700">
+                <span className="text-accent mr-3 mt-1">•</span>
                 <span>Delayed appointments</span>
               </li>
-              <li className={`flex items-start transition-colors duration-500 ${
-                scrollSections['section-1'] ? 'text-white/80' : 'text-gray-700'
-              }`}>
-                <span className={`mr-3 mt-1 transition-colors duration-500 ${
-                  scrollSections['section-1'] ? 'text-white' : 'text-accent'
-                }`}>•</span>
+              <li className="flex items-start text-gray-700">
+                <span className="text-accent mr-3 mt-1">•</span>
                 <span>Harsh overhead lighting</span>
               </li>
-              <li className={`flex items-start transition-colors duration-500 ${
-                scrollSections['section-1'] ? 'text-white/80' : 'text-gray-700'
-              }`}>
-                <span className={`mr-3 mt-1 transition-colors duration-500 ${
-                  scrollSections['section-1'] ? 'text-white' : 'text-accent'
-                }`}>•</span>
+              <li className="flex items-start text-gray-700">
+                <span className="text-accent mr-3 mt-1">•</span>
                 <span>Crowded waiting rooms</span>
               </li>
-              <li className={`flex items-start transition-colors duration-500 ${
-                scrollSections['section-1'] ? 'text-white/80' : 'text-gray-700'
-              }`}>
-                <span className={`mr-3 mt-1 transition-colors duration-500 ${
-                  scrollSections['section-1'] ? 'text-white' : 'text-accent'
-                }`}>•</span>
+              <li className="flex items-start text-gray-700">
+                <span className="text-accent mr-3 mt-1">•</span>
                 <span>Noise, chaos, and rushed conversations</span>
               </li>
-              <li className={`flex items-start transition-colors duration-500 ${
-                scrollSections['section-1'] ? 'text-white/80' : 'text-gray-700'
-              }`}>
-                <span className={`mr-3 mt-1 transition-colors duration-500 ${
-                  scrollSections['section-1'] ? 'text-white' : 'text-accent'
-                }`}>•</span>
+              <li className="flex items-start text-gray-700">
+                <span className="text-accent mr-3 mt-1">•</span>
                 <span>Lost time in traffic or downtown parking</span>
               </li>
-              <li className={`flex items-start transition-colors duration-500 ${
-                scrollSections['section-1'] ? 'text-white/80' : 'text-gray-700'
-              }`}>
-                <span className={`mr-3 mt-1 transition-colors duration-500 ${
-                  scrollSections['section-1'] ? 'text-white' : 'text-accent'
-                }`}>•</span>
+              <li className="flex items-start text-gray-700">
+                <span className="text-accent mr-3 mt-1">•</span>
                 <span>Premium pricing inflated by salon rent, overhead, and commissions</span>
               </li>
             </ul>
 
-            <p className={`text-xl leading-relaxed mb-4 transition-colors duration-500 ${
-              scrollSections['section-1'] ? 'text-white/90' : 'text-gray-700'
-            }`}>
+            <p className="text-xl leading-relaxed mb-4 text-gray-700">
               So she decided to change the model entirely.
             </p>
 
-            <p className={`text-3xl md:text-4xl font-serif italic text-center leading-relaxed transition-colors duration-500 ${
-              scrollSections['section-1'] ? 'text-white' : 'text-nearBlack'
-            }`}>
+            <p className="text-3xl md:text-4xl font-serif italic text-center leading-relaxed text-nearBlack">
               Instead of bringing clients to the salon,<br />
               she would bring the salon to the client.
             </p>
