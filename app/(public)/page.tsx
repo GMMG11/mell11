@@ -45,6 +45,7 @@ function HeroBackground() {
 export default function HomePage() {
   const [featuredServices, setFeaturedServices] = useState<Service[]>([]);
   const [loading, setLoading] = useState(true);
+  const [scrollSections, setScrollSections] = useState<{ [key: string]: boolean }>({});
 
   useEffect(() => {
     fetch('/api/services')
@@ -58,6 +59,30 @@ export default function HomePage() {
         console.error('Error loading services:', error);
         setLoading(false);
       });
+  }, []);
+
+  // Scroll effect for text color transition
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll('section');
+      const videoHeight = window.innerHeight; // Video takes full viewport height
+      const newScrollSections: { [key: string]: boolean } = {};
+
+      sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        // Check if section is overlapping with the top portion (video area)
+        // Consider it overlapping if the section's top is in the upper 30% of viewport
+        const isInVideoZone = rect.top < videoHeight * 0.3 && rect.top > -rect.height;
+        newScrollSections[`section-${index}`] = isInVideoZone;
+      });
+
+      setScrollSections(newScrollSections);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -142,17 +167,28 @@ export default function HomePage() {
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-20 bg-white relative overflow-hidden z-20">
+      <section
+        data-section="1"
+        className={`py-10 md:py-20 relative overflow-hidden z-20 transition-colors duration-500 ${
+          scrollSections['section-1'] ? 'bg-transparent' : 'bg-white'
+        }`}
+      >
         <div className="absolute top-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
 
         <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block mb-6 px-6 py-2 border border-softLine rounded-full">
-              <span className="text-sm tracking-[0.2em] uppercase text-accent">Our Philosophy</span>
+            <div className={`inline-block mb-6 px-6 py-2 border rounded-full transition-colors duration-500 ${
+              scrollSections['section-1'] ? 'border-white/30' : 'border-softLine'
+            }`}>
+              <span className={`text-sm tracking-[0.2em] uppercase transition-colors duration-500 ${
+                scrollSections['section-1'] ? 'text-white' : 'text-accent'
+              }`}>Our Philosophy</span>
             </div>
 
-            <h2 className="font-serif text-5xl md:text-6xl mb-8 text-nearBlack leading-tight">
+            <h2 className={`font-serif text-5xl md:text-6xl mb-8 leading-tight transition-colors duration-500 ${
+              scrollSections['section-1'] ? 'text-white' : 'text-nearBlack'
+            }`}>
               Studio-level care,<br />in your sanctuary
             </h2>
 
@@ -160,37 +196,61 @@ export default function HomePage() {
 
             <div className="grid md:grid-cols-3 gap-12 text-left">
               <div className="space-y-4">
-                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 transition-colors duration-500 ${
+                  scrollSections['section-1'] ? 'bg-white/20' : 'bg-accent/10'
+                }`}>
+                  <svg className={`w-6 h-6 transition-colors duration-500 ${
+                    scrollSections['section-1'] ? 'text-white' : 'text-accent'
+                  }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h3 className="font-serif text-2xl text-nearBlack">Uncompromising Quality</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <h3 className={`font-serif text-2xl transition-colors duration-500 ${
+                  scrollSections['section-1'] ? 'text-white' : 'text-nearBlack'
+                }`}>Uncompromising Quality</h3>
+                <p className={`leading-relaxed transition-colors duration-500 ${
+                  scrollSections['section-1'] ? 'text-white/80' : 'text-gray-600'
+                }`}>
                   Medical-grade equipment, pharmaceutical skincare, and advanced techniques—delivered with the intimacy of your own space.
                 </p>
               </div>
 
               <div className="space-y-4">
-                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 transition-colors duration-500 ${
+                  scrollSections['section-1'] ? 'bg-white/20' : 'bg-accent/10'
+                }`}>
+                  <svg className={`w-6 h-6 transition-colors duration-500 ${
+                    scrollSections['section-1'] ? 'text-white' : 'text-accent'
+                  }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="font-serif text-2xl text-nearBlack">Your Time, Honored</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <h3 className={`font-serif text-2xl transition-colors duration-500 ${
+                  scrollSections['section-1'] ? 'text-white' : 'text-nearBlack'
+                }`}>Your Time, Honored</h3>
+                <p className={`leading-relaxed transition-colors duration-500 ${
+                  scrollSections['section-1'] ? 'text-white/80' : 'text-gray-600'
+                }`}>
                   No waiting rooms. No rushing. Every appointment is unhurried, one-on-one, and designed entirely around you.
                 </p>
               </div>
 
               <div className="space-y-4">
-                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 transition-colors duration-500 ${
+                  scrollSections['section-1'] ? 'bg-white/20' : 'bg-accent/10'
+                }`}>
+                  <svg className={`w-6 h-6 transition-colors duration-500 ${
+                    scrollSections['section-1'] ? 'text-white' : 'text-accent'
+                  }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
-                <h3 className="font-serif text-2xl text-nearBlack">Discretion Guaranteed</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <h3 className={`font-serif text-2xl transition-colors duration-500 ${
+                  scrollSections['section-1'] ? 'text-white' : 'text-nearBlack'
+                }`}>Discretion Guaranteed</h3>
+                <p className={`leading-relaxed transition-colors duration-500 ${
+                  scrollSections['section-1'] ? 'text-white/80' : 'text-gray-600'
+                }`}>
                   Complete privacy, professional confidentiality, and the comfort of receiving treatments in a familiar environment.
                 </p>
               </div>
@@ -200,9 +260,9 @@ export default function HomePage() {
       </section>
 
       {/* Featured Services */}
-      <section className="py-20 bg-gradient-to-b from-white to-cream relative z-20">
+      <section className="py-10 md:py-20 bg-gradient-to-b from-white to-cream relative z-20">
         <div className="container-custom">
-          <div className="text-center mb-20">
+          <div className="text-center mb-10 md:mb-20">
             <div className="inline-block mb-6 px-6 py-2 border border-softLine rounded-full">
               <span className="text-sm tracking-[0.2em] uppercase text-accent">Signature Services</span>
             </div>
@@ -252,7 +312,7 @@ export default function HomePage() {
       </section>
 
       {/* Signature Transformation Program */}
-      <section className="py-20 bg-gradient-to-br from-nearBlack to-accent/90 text-cream relative z-20">
+      <section className="py-10 md:py-20 bg-gradient-to-br from-nearBlack to-accent/90 text-cream relative z-20">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-block mb-6 px-6 py-2 bg-cream/20 rounded-full">
@@ -282,9 +342,9 @@ export default function HomePage() {
       </section>
 
       {/* How It Works - Premium Process */}
-      <section className="py-20 bg-white relative z-20">
+      <section className="py-10 md:py-20 bg-white relative z-20">
         <div className="container-custom">
-          <div className="text-center mb-20">
+          <div className="text-center mb-10 md:mb-20">
             <div className="inline-block mb-6 px-6 py-2 border border-softLine rounded-full">
               <span className="text-sm tracking-[0.2em] uppercase text-accent">The Experience</span>
             </div>
@@ -338,9 +398,9 @@ export default function HomePage() {
       </section>
 
       {/* Social Proof / Testimonials */}
-      <section className="py-20 bg-gradient-to-b from-white to-cream relative z-20">
+      <section className="py-10 md:py-20 bg-gradient-to-b from-white to-cream relative z-20">
         <div className="container-custom">
-          <div className="text-center mb-20">
+          <div className="text-center mb-10 md:mb-20">
             <div className="inline-block mb-6 px-6 py-2 border border-softLine rounded-full">
               <span className="text-sm tracking-[0.2em] uppercase text-accent">Client Experiences</span>
             </div>
@@ -400,7 +460,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section - Premium */}
-      <section className="py-20 bg-nearBlack text-cream relative overflow-hidden z-20">
+      <section className="py-10 md:py-20 bg-nearBlack text-cream relative overflow-hidden z-20">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent rounded-full blur-3xl" />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent rounded-full blur-3xl" />
