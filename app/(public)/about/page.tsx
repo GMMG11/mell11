@@ -255,17 +255,17 @@ export default function AboutPage() {
       </section>
 
       {/* The Pattern She Saw */}
-      <section className="py-10 md:py-20 bg-white relative overflow-hidden z-20">
+      <section className="py-10 md:py-20 bg-white relative overflow-hidden z-20" style={{ backgroundColor: '#ffffff' }}>
         <div className="absolute top-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
 
         <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto">
-            <p className="text-xl mb-8 leading-relaxed text-gray-700">
+            <p className="text-xl mb-8 leading-relaxed text-gray-700" style={{ color: '#374151' }}>
               After 23 years in the beauty industry, Melissa saw the same pattern everywhere she worked. Clients loved the results, but dreaded the experience:
             </p>
 
-            <ul className="space-y-4 mb-12">
+            <ul className="space-y-4 mb-12" style={{ color: '#374151' }}>
               <li className="flex items-start text-gray-700">
                 <span className="text-accent mr-3 mt-1">•</span>
                 <span>Delayed appointments</span>
@@ -292,11 +292,11 @@ export default function AboutPage() {
               </li>
             </ul>
 
-            <p className="text-xl leading-relaxed mb-4 text-gray-700">
+            <p className="text-xl leading-relaxed mb-4 text-gray-700" style={{ color: '#374151' }}>
               So she decided to change the model entirely.
             </p>
 
-            <p className="text-3xl md:text-4xl font-serif italic text-center leading-relaxed text-nearBlack">
+            <p className="text-3xl md:text-4xl font-serif italic text-center leading-relaxed text-nearBlack" style={{ color: '#1f2937' }}>
               Instead of bringing clients to the salon,<br />
               she would bring the salon to the client.
             </p>
