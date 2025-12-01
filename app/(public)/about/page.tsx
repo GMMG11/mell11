@@ -99,51 +99,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Philosophy Section - Simplified */}
-      <section
-        data-section="1"
-        className={`py-10 md:py-20 relative overflow-hidden z-20 transition-colors duration-500 ${
-          scrollSections['section-1'] ? 'bg-transparent' : 'bg-white'
-        }`}
-      >
-        <div className="absolute top-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-
-        <div className="container-custom relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className={`inline-block mb-6 px-6 py-2 border rounded-full transition-colors duration-500 ${
-              scrollSections['section-1'] ? 'border-white/30' : 'border-softLine'
-            }`}>
-              <span className={`text-sm tracking-[0.2em] uppercase transition-colors duration-500 ${
-                scrollSections['section-1'] ? 'text-white' : 'text-accent'
-              }`}>The Philosophy</span>
-            </div>
-
-            <h2 className={`font-serif text-5xl md:text-6xl mb-8 leading-tight transition-colors duration-500 ${
-              scrollSections['section-1'] ? 'text-white' : 'text-nearBlack'
-            }`}>
-              Beauty should feel personal,<br />private, and accessible
-            </h2>
-
-            <div className="luxury-divider max-w-xs mx-auto mb-12" />
-
-            <p className={`text-xl mb-12 leading-relaxed max-w-2xl mx-auto transition-colors duration-500 ${
-              scrollSections['section-1'] ? 'text-white/80' : 'text-gray-600'
-            }`}>
-              With no salon lease, no chair fees, and no commercial overhead, Melissa offers studio-level results in the comfort and privacy of your home.
-            </p>
-
-            <p className={`text-2xl font-serif italic max-w-2xl mx-auto transition-colors duration-500 ${
-              scrollSections['section-1'] ? 'text-white' : 'text-nearBlack'
-            }`}>
-              Beauty was never about the salon. It was about the connection.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* About Melissa */}
-      <section className="py-10 md:py-20 bg-white">
+      {/* About Melissa - Moved Up */}
+      <section className="py-10 md:py-20 bg-white relative z-20">
         <div className="container-custom">
           <div className="max-w-5xl mx-auto">
             <h2 className="font-serif text-4xl mb-12 text-nearBlack text-center">Meet Mel</h2>
@@ -293,6 +250,183 @@ export default function AboutPage() {
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Pattern She Saw */}
+      <section
+        data-section="1"
+        className={`py-10 md:py-20 relative overflow-hidden z-20 transition-colors duration-500 ${
+          scrollSections['section-1'] ? 'bg-transparent' : 'bg-white'
+        }`}
+      >
+        <div className="absolute top-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+
+        <div className="container-custom relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <p className={`text-xl mb-8 leading-relaxed transition-colors duration-500 ${
+              scrollSections['section-1'] ? 'text-white/90' : 'text-gray-700'
+            }`}>
+              After 23 years in the beauty industry, Melissa saw the same pattern everywhere she worked. Clients loved the results, but dreaded the experience:
+            </p>
+
+            <ul className="space-y-4 mb-12">
+              <li className={`flex items-start transition-colors duration-500 ${
+                scrollSections['section-1'] ? 'text-white/80' : 'text-gray-700'
+              }`}>
+                <span className={`mr-3 mt-1 transition-colors duration-500 ${
+                  scrollSections['section-1'] ? 'text-white' : 'text-accent'
+                }`}>•</span>
+                <span>Delayed appointments</span>
+              </li>
+              <li className={`flex items-start transition-colors duration-500 ${
+                scrollSections['section-1'] ? 'text-white/80' : 'text-gray-700'
+              }`}>
+                <span className={`mr-3 mt-1 transition-colors duration-500 ${
+                  scrollSections['section-1'] ? 'text-white' : 'text-accent'
+                }`}>•</span>
+                <span>Harsh overhead lighting</span>
+              </li>
+              <li className={`flex items-start transition-colors duration-500 ${
+                scrollSections['section-1'] ? 'text-white/80' : 'text-gray-700'
+              }`}>
+                <span className={`mr-3 mt-1 transition-colors duration-500 ${
+                  scrollSections['section-1'] ? 'text-white' : 'text-accent'
+                }`}>•</span>
+                <span>Crowded waiting rooms</span>
+              </li>
+              <li className={`flex items-start transition-colors duration-500 ${
+                scrollSections['section-1'] ? 'text-white/80' : 'text-gray-700'
+              }`}>
+                <span className={`mr-3 mt-1 transition-colors duration-500 ${
+                  scrollSections['section-1'] ? 'text-white' : 'text-accent'
+                }`}>•</span>
+                <span>Noise, chaos, and rushed conversations</span>
+              </li>
+              <li className={`flex items-start transition-colors duration-500 ${
+                scrollSections['section-1'] ? 'text-white/80' : 'text-gray-700'
+              }`}>
+                <span className={`mr-3 mt-1 transition-colors duration-500 ${
+                  scrollSections['section-1'] ? 'text-white' : 'text-accent'
+                }`}>•</span>
+                <span>Lost time in traffic or downtown parking</span>
+              </li>
+              <li className={`flex items-start transition-colors duration-500 ${
+                scrollSections['section-1'] ? 'text-white/80' : 'text-gray-700'
+              }`}>
+                <span className={`mr-3 mt-1 transition-colors duration-500 ${
+                  scrollSections['section-1'] ? 'text-white' : 'text-accent'
+                }`}>•</span>
+                <span>Premium pricing inflated by salon rent, overhead, and commissions</span>
+              </li>
+            </ul>
+
+            <p className={`text-xl leading-relaxed mb-4 transition-colors duration-500 ${
+              scrollSections['section-1'] ? 'text-white/90' : 'text-gray-700'
+            }`}>
+              So she decided to change the model entirely.
+            </p>
+
+            <p className={`text-3xl md:text-4xl font-serif italic text-center leading-relaxed transition-colors duration-500 ${
+              scrollSections['section-1'] ? 'text-white' : 'text-nearBlack'
+            }`}>
+              Instead of bringing clients to the salon,<br />
+              she would bring the salon to the client.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Why In-Home Beauty */}
+      <section className="py-10 md:py-20 bg-white relative z-20">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-serif text-4xl md:text-5xl mb-6 text-nearBlack text-center">
+              Why In-Home Beauty?
+            </h2>
+            <p className="text-xl text-center text-gray-600 mb-12 italic">Her Personal Philosophy</p>
+
+            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+              Melissa's philosophy is simple:
+            </p>
+
+            <p className="text-2xl md:text-3xl font-serif text-center text-nearBlack mb-12 leading-relaxed">
+              Beauty should feel personal, private, and accessible. Not intimidating or overpriced.
+            </p>
+
+            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+              With no salon lease, no chair fees, and no inflated commercial overhead, Melissa can offer:
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-6 mb-12">
+              <div className="flex items-start">
+                <span className="text-accent mr-3 mt-1 text-xl">✓</span>
+                <span className="text-gray-700 text-lg">Lower pricing than traditional studios</span>
+              </div>
+              <div className="flex items-start">
+                <span className="text-accent mr-3 mt-1 text-xl">✓</span>
+                <span className="text-gray-700 text-lg">Higher-end products and equipment</span>
+              </div>
+              <div className="flex items-start">
+                <span className="text-accent mr-3 mt-1 text-xl">✓</span>
+                <span className="text-gray-700 text-lg">Longer, more attentive appointments</span>
+              </div>
+              <div className="flex items-start">
+                <span className="text-accent mr-3 mt-1 text-xl">✓</span>
+                <span className="text-gray-700 text-lg">A level of privacy salons simply can't match</span>
+              </div>
+            </div>
+
+            <p className="text-2xl font-serif italic text-center text-nearBlack">
+              The value isn't in cutting corners.<br />
+              The value is in cutting out everything that doesn't serve the client.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* COVID Section */}
+      <section className="py-10 md:py-20 bg-gradient-to-br from-cream to-white relative z-20">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-serif text-4xl md:text-5xl mb-8 text-nearBlack text-center">
+              COVID changed everything and confirmed her vision
+            </h2>
+
+            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+              When COVID shut down salons, Melissa noticed something powerful:
+            </p>
+
+            <p className="text-2xl font-serif text-nearBlack mb-8 leading-relaxed">
+              Clients weren't just avoiding public spaces.<br />
+              They thrived in private ones.
+            </p>
+
+            <div className="space-y-4 mb-12">
+              <p className="text-xl text-gray-700 leading-relaxed">They felt calmer.</p>
+              <p className="text-xl text-gray-700 leading-relaxed">They felt safer.</p>
+              <p className="text-xl text-gray-700 leading-relaxed">
+                They felt truly cared for in a way they never had inside a commercial space.
+              </p>
+            </div>
+
+            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+              She realized what many professionals missed:<br />
+              <span className="font-serif text-2xl italic text-nearBlack">beauty was never about the salon. It was about the connection.</span>
+            </p>
+
+            <div className="bg-white p-8 rounded-lg luxury-shadow mb-8">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Her house-call model didn't just survive the pandemic. It became the preferred experience for dozens of clients who refused to go back to the salon chair.
+              </p>
+            </div>
+
+            <p className="text-xl text-gray-700 leading-relaxed text-center">
+              Today, the MĒL11 mobile studio is a fully optimized extension of that philosophy:<br />
+              <span className="font-serif text-2xl italic text-nearBlack">quiet, discreet, calming, and deeply personalized.</span>
+            </p>
           </div>
         </div>
       </section>
