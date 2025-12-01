@@ -17,99 +17,24 @@ interface Service {
 }
 
 function HeroBackground() {
-  const [showVideo, setShowVideo] = useState(false);
-  const [videoOpacity, setVideoOpacity] = useState(0);
-  const videoRef = React.useRef<HTMLVideoElement>(null);
-
-  const playVideo = () => {
-    if (videoRef.current) {
-      const playPromise = videoRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(error => {
-          console.log("Video autoplay prevented:", error);
-        });
-      }
-    }
-  };
-
-  useEffect(() => {
-    // Start video after 2 seconds
-    const startTimer = setTimeout(() => {
-      setShowVideo(true);
-      // Fade in video
-      setTimeout(() => {
-        setVideoOpacity(1);
-        // Try to play after fade starts
-        playVideo();
-      }, 100);
-    }, 2000);
-
-    return () => clearTimeout(startTimer);
-  }, []);
-
-  const handleVideoCanPlay = () => {
-    // Try to play when video is ready
-    if (videoOpacity === 1) {
-      playVideo();
-    }
-  };
-
-  const handleVideoEnded = () => {
-    // Fade out video
-    setVideoOpacity(0);
-    // Hide video and reset after fade completes
-    setTimeout(() => {
-      setShowVideo(false);
-      // Restart cycle after 3 seconds
-      setTimeout(() => {
-        setShowVideo(true);
-        setTimeout(() => {
-          setVideoOpacity(1);
-          if (videoRef.current) {
-            videoRef.current.currentTime = 0;
-            playVideo();
-          }
-        }, 100);
-      }, 3000);
-    }, 1000);
-  };
-
   return (
     <div className="fixed inset-0 z-0 md:absolute">
-      {/* Background Image */}
-      <img
-        src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=90&w=2400&auto=format&fit=crop"
-        alt="Luxury spa treatment"
+      {/* Video Background - Loops Continuously */}
+      <video
         className="w-full h-full object-cover object-center"
         style={{
           filter: 'brightness(0.4)',
           minHeight: '100vh',
           minWidth: '100vw'
         }}
-      />
-
-      {/* Video Overlay */}
-      {showVideo && (
-        <video
-          ref={videoRef}
-          className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000"
-          style={{
-            opacity: videoOpacity,
-            filter: 'brightness(0.4)',
-            minHeight: '100vh',
-            minWidth: '100vw'
-          }}
-          muted
-          playsInline
-          autoPlay
-          preload="auto"
-          onCanPlay={handleVideoCanPlay}
-          onLoadedData={handleVideoCanPlay}
-          onEnded={handleVideoEnded}
-        >
-          <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11COM.mp4" type="video/mp4" />
-        </video>
-      )}
+        muted
+        playsInline
+        autoPlay
+        loop
+        preload="auto"
+      >
+        <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11COM.mp4" type="video/mp4" />
+      </video>
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-nearBlack/60 via-nearBlack/50 to-cream" />
