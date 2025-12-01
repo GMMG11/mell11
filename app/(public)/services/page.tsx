@@ -655,34 +655,77 @@ export default function ServicesPage() {
                 </div>
 
                 {/* Right Column */}
-                <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg">
-                  <h4 className="font-semibold text-lg mb-4 text-white">What's Covered:</h4>
-                  <ul className="space-y-3">
-                    <li className="flex items-start">
-                      <span className="text-accent mr-3 mt-1">✓</span>
-                      <span>Overview of peptide therapy and benefits for skin, wellness, and aging</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-accent mr-3 mt-1">✓</span>
-                      <span>Personalized recommendations based on your goals</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-accent mr-3 mt-1">✓</span>
-                      <span>Safe sourcing and quality guidance</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-accent mr-3 mt-1">✓</span>
-                      <span>Dosing protocols and administration education</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-accent mr-3 mt-1">✓</span>
-                      <span>Medical provider referrals for prescription peptides</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-accent mr-3 mt-1">✓</span>
-                      <span>Integration with aesthetic treatments for enhanced results</span>
-                    </li>
-                  </ul>
+                <div className="space-y-6">
+                  <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg">
+                    <h4 className="font-semibold text-lg mb-4 text-white">What's Covered:</h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <span className="text-accent mr-3 mt-1">✓</span>
+                        <span>Overview of peptide therapy and benefits for skin, wellness, and aging</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-accent mr-3 mt-1">✓</span>
+                        <span>Personalized recommendations based on your goals</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-accent mr-3 mt-1">✓</span>
+                        <span>Safe sourcing and quality guidance</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-accent mr-3 mt-1">✓</span>
+                        <span>Dosing protocols and administration education</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-accent mr-3 mt-1">✓</span>
+                        <span>Medical provider referrals for prescription peptides</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-accent mr-3 mt-1">✓</span>
+                        <span>Integration with aesthetic treatments for enhanced results</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg">
+                    <h4 className="font-semibold text-lg mb-4 text-white">Guidance on:</h4>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <span className="text-accent mr-3 mt-1">•</span>
+                        <div>
+                          <span className="font-medium">GLP-1 programs</span>
+                          <p className="text-sm text-cream/80 mt-1">Weight management and metabolic support</p>
+                        </div>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-accent mr-3 mt-1">•</span>
+                        <div>
+                          <span className="font-medium">Tirzepatide / Retatrutide</span>
+                          <p className="text-sm text-cream/80 mt-1">Advanced weight loss peptides</p>
+                        </div>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-accent mr-3 mt-1">•</span>
+                        <div>
+                          <span className="font-medium">Glow peptides</span>
+                          <p className="text-sm text-cream/80 mt-1">Skin brightening and anti-aging support</p>
+                        </div>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-accent mr-3 mt-1">•</span>
+                        <div>
+                          <span className="font-medium">NAD+ options</span>
+                          <p className="text-sm text-cream/80 mt-1">Energy, recovery, and cellular health</p>
+                        </div>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-accent mr-3 mt-1">•</span>
+                        <div>
+                          <span className="font-medium">Partner-provider referral assistance</span>
+                          <p className="text-sm text-cream/80 mt-1">Trusted medical connections for prescriptions</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
