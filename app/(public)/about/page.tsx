@@ -6,6 +6,7 @@ import Button from '@/components/Button';
 
 export default function AboutPage() {
   const [scrollSections, setScrollSections] = useState<{ [key: string]: boolean }>({});
+  const videoRef = React.useRef<HTMLVideoElement>(null);
 
   // Scroll effect for text color transition
   useEffect(() => {
@@ -29,6 +30,16 @@ export default function AboutPage() {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Ensure video plays on mobile
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.log('Video autoplay failed:', error);
+      });
+    }
+  }, []);
+
   return (
     <div className="bg-cream min-h-screen">
       {/* Hero Section with Video Background */}
@@ -36,6 +47,7 @@ export default function AboutPage() {
         {/* Video Background */}
         <div className="fixed inset-0 z-0 md:absolute">
           <video
+            ref={videoRef}
             className="w-full h-full object-cover object-center"
             style={{
               filter: 'brightness(0.4)',
@@ -47,6 +59,7 @@ export default function AboutPage() {
             autoPlay
             loop
             preload="auto"
+            webkit-playsinline="true"
           >
             <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11about-NMSPD.mp4" type="video/mp4" />
           </video>

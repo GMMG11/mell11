@@ -17,10 +17,22 @@ interface Service {
 }
 
 function HeroBackground() {
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  React.useEffect(() => {
+    // Ensure video plays on mobile
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.log('Video autoplay failed:', error);
+      });
+    }
+  }, []);
+
   return (
     <div className="fixed inset-0 z-0 md:absolute">
       {/* Video Background - Loops Continuously */}
       <video
+        ref={videoRef}
         className="w-full h-full object-cover object-center"
         style={{
           filter: 'brightness(0.4)',
@@ -32,6 +44,7 @@ function HeroBackground() {
         autoPlay
         loop
         preload="auto"
+        webkit-playsinline="true"
       >
         <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11COM.mp4" type="video/mp4" />
       </video>
