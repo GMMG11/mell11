@@ -21,20 +21,38 @@ function HeroBackground() {
   const [videoOpacity, setVideoOpacity] = useState(0);
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
+  const playVideo = () => {
+    if (videoRef.current) {
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          console.log("Video autoplay prevented:", error);
+        });
+      }
+    }
+  };
+
   useEffect(() => {
     // Start video after 2 seconds
     const startTimer = setTimeout(() => {
       setShowVideo(true);
       // Fade in video
-      setTimeout(() => setVideoOpacity(1), 100);
-      // Play video
-      if (videoRef.current) {
-        videoRef.current.play();
-      }
+      setTimeout(() => {
+        setVideoOpacity(1);
+        // Try to play after fade starts
+        playVideo();
+      }, 100);
     }, 2000);
 
     return () => clearTimeout(startTimer);
   }, []);
+
+  const handleVideoCanPlay = () => {
+    // Try to play when video is ready
+    if (videoOpacity === 1) {
+      playVideo();
+    }
+  };
 
   const handleVideoEnded = () => {
     // Fade out video
@@ -45,11 +63,13 @@ function HeroBackground() {
       // Restart cycle after 3 seconds
       setTimeout(() => {
         setShowVideo(true);
-        setTimeout(() => setVideoOpacity(1), 100);
-        if (videoRef.current) {
-          videoRef.current.currentTime = 0;
-          videoRef.current.play();
-        }
+        setTimeout(() => {
+          setVideoOpacity(1);
+          if (videoRef.current) {
+            videoRef.current.currentTime = 0;
+            playVideo();
+          }
+        }, 100);
       }, 3000);
     }, 1000);
   };
@@ -81,6 +101,10 @@ function HeroBackground() {
           }}
           muted
           playsInline
+          autoPlay
+          preload="auto"
+          onCanPlay={handleVideoCanPlay}
+          onLoadedData={handleVideoCanPlay}
           onEnded={handleVideoEnded}
         >
           <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11COM.mp4" type="video/mp4" />
