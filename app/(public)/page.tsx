@@ -33,7 +33,7 @@ function HeroBackground() {
         loop
         preload="auto"
       >
-        <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11about-NMSPD.mp4" type="video/mp4" />
+        <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11COM.mp4" type="video/mp4" />
       </video>
 
       {/* Gradient Overlay */}
@@ -460,10 +460,21 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section - Premium */}
-      <section className="py-10 md:py-20 bg-nearBlack text-cream relative overflow-hidden z-20">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent rounded-full blur-3xl" />
+      <section className="py-10 md:py-20 text-cream relative overflow-hidden z-20">
+        {/* Video Background */}
+        <div className="absolute inset-0 z-0">
+          <video
+            className="w-full h-full object-cover"
+            style={{ filter: 'brightness(0.4)' }}
+            muted
+            playsInline
+            autoPlay
+            loop
+            preload="auto"
+          >
+            <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11about-NMSPD.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-nearBlack/60 via-nearBlack/50 to-nearBlack/60" />
         </div>
 
         <div className="container-custom text-center relative z-10">
