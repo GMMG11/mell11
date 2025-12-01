@@ -16,6 +16,83 @@ interface Service {
   isFeatured: boolean;
 }
 
+function HeroBackground() {
+  const [showVideo, setShowVideo] = useState(false);
+  const [videoOpacity, setVideoOpacity] = useState(0);
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // Start video after 2 seconds
+    const startTimer = setTimeout(() => {
+      setShowVideo(true);
+      // Fade in video
+      setTimeout(() => setVideoOpacity(1), 100);
+      // Play video
+      if (videoRef.current) {
+        videoRef.current.play();
+      }
+    }, 2000);
+
+    return () => clearTimeout(startTimer);
+  }, []);
+
+  const handleVideoEnded = () => {
+    // Fade out video
+    setVideoOpacity(0);
+    // Hide video and reset after fade completes
+    setTimeout(() => {
+      setShowVideo(false);
+      // Restart cycle after 3 seconds
+      setTimeout(() => {
+        setShowVideo(true);
+        setTimeout(() => setVideoOpacity(1), 100);
+        if (videoRef.current) {
+          videoRef.current.currentTime = 0;
+          videoRef.current.play();
+        }
+      }, 3000);
+    }, 1000);
+  };
+
+  return (
+    <div className="fixed inset-0 z-0 md:absolute">
+      {/* Background Image */}
+      <img
+        src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=90&w=2400&auto=format&fit=crop"
+        alt="Luxury spa treatment"
+        className="w-full h-full object-cover object-center"
+        style={{
+          filter: 'brightness(0.4)',
+          minHeight: '100vh',
+          minWidth: '100vw'
+        }}
+      />
+
+      {/* Video Overlay */}
+      {showVideo && (
+        <video
+          ref={videoRef}
+          className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000"
+          style={{
+            opacity: videoOpacity,
+            filter: 'brightness(0.4)',
+            minHeight: '100vh',
+            minWidth: '100vw'
+          }}
+          muted
+          playsInline
+          onEnded={handleVideoEnded}
+        >
+          <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11COM.mp4" type="video/mp4" />
+        </video>
+      )}
+
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-nearBlack/60 via-nearBlack/50 to-cream" />
+    </div>
+  );
+}
+
 export default function HomePage() {
   const [featuredServices, setFeaturedServices] = useState<Service[]>([]);
   const [loading, setLoading] = useState(true);
@@ -38,20 +115,8 @@ export default function HomePage() {
     <div className="bg-cream">
       {/* Hero Section - Ultra Premium */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay - Optimized for Mobile */}
-        <div className="fixed inset-0 z-0 md:absolute">
-          <img
-            src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=90&w=2400&auto=format&fit=crop"
-            alt="Luxury spa treatment"
-            className="w-full h-full object-cover object-center"
-            style={{
-              filter: 'brightness(0.4)',
-              minHeight: '100vh',
-              minWidth: '100vw'
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-nearBlack/60 via-nearBlack/50 to-cream" />
-        </div>
+        {/* Background Media with Video Transition */}
+        <HeroBackground />
 
         {/* Content */}
         <div className="container-custom relative z-10 text-center py-32 animate-fade-in-up">
