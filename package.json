@@ -17,6 +17,7 @@
     "@stripe/stripe-js": "^2.2.0",
     "bcryptjs": "^2.4.3",
     "date-fns": "^2.30.0",
+    "googleapis": "^166.0.0",
     "jsonwebtoken": "^9.0.2",
     "next": "14.0.4",
     "nodemailer": "^6.9.7",
