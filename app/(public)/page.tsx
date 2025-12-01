@@ -398,7 +398,7 @@ export default function HomePage() {
       </section>
 
       {/* Social Proof / Testimonials */}
-      <section className="py-10 md:py-20 bg-gradient-to-b from-white to-cream relative z-20">
+      <section className="py-10 md:py-20 pb-0 bg-gradient-to-b from-white to-cream relative z-20">
         <div className="container-custom">
           <div className="text-center mb-10 md:mb-20">
             <div className="inline-block mb-6 px-6 py-2 border border-softLine rounded-full">
@@ -460,7 +460,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section - Premium */}
-      <section className="py-10 md:py-20 text-cream relative overflow-hidden z-20">
+      <section className="py-10 md:py-20 text-cream relative overflow-hidden z-20" style={{ marginTop: '-2px' }}>
         {/* Video Background */}
         <div className="absolute inset-0 z-0">
           <video
