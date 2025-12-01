@@ -169,56 +169,6 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
-
-          {/* CTA Section with Video Background */}
-          <section className="mt-20 py-10 md:py-20 text-cream relative overflow-hidden rounded-2xl">
-            {/* Video Background */}
-            <div className="absolute inset-0 z-0 rounded-2xl overflow-hidden">
-              <video
-                className="w-full h-full object-cover"
-                style={{ filter: 'brightness(0.4)' }}
-                muted
-                playsInline
-                autoPlay
-                loop
-                preload="auto"
-              >
-                <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11about-NMSPD.mp4" type="video/mp4" />
-              </video>
-              <div className="absolute inset-0 bg-gradient-to-b from-nearBlack/60 via-nearBlack/50 to-nearBlack/60" />
-            </div>
-
-            <div className="max-w-3xl mx-auto text-center relative z-10 px-6">
-              <div className="inline-block mb-6 px-6 py-2 bg-accent border-2 border-white rounded-full">
-                <span className="text-sm tracking-[0.2em] uppercase text-white font-medium">Book Today</span>
-              </div>
-
-              <h3 className="font-serif text-5xl md:text-6xl mb-8 leading-tight text-cream">
-                Experience luxury<br />in your own home
-              </h3>
-
-              <p className="text-xl text-cream/80 mb-12 leading-relaxed max-w-2xl mx-auto">
-                Browse our services and book your appointment
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <Link href="/book">
-                  <Button size="lg" variant="primary" className="min-w-[260px] luxury-hover">
-                    Book Appointment
-                  </Button>
-                </Link>
-                <Link href="/services">
-                  <Button size="lg" variant="outline" className="min-w-[260px] border-cream text-cream hover:bg-cream hover:text-nearBlack">
-                    View Services
-                  </Button>
-                </Link>
-              </div>
-
-              <p className="mt-12 text-sm text-cream/60">
-                Serving Tacoma, Puyallup, and Greater Seattle • By Appointment Only
-              </p>
-            </div>
-          </section>
         </div>
       </div>
     </div>

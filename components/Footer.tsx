@@ -4,16 +4,19 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="bg-nearBlack text-cream py-12 mt-20 relative overflow-hidden z-20">
-      {/* Background Image - Same as Hero */}
+      {/* Video Background */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=90&w=2400&auto=format&fit=crop"
-          alt="Luxury spa background"
+        <video
           className="w-full h-full object-cover object-center"
-          style={{
-            filter: 'brightness(0.3)',
-          }}
-        />
+          style={{ filter: 'brightness(0.3)' }}
+          muted
+          playsInline
+          autoPlay
+          loop
+          preload="auto"
+        >
+          <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11about-NMSPD.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-t from-nearBlack via-nearBlack/80 to-nearBlack/60" />
       </div>
 
