@@ -77,10 +77,10 @@ export default function HomePage() {
               minHeight: '100vh',
               minWidth: '100vw'
             }}
-            muted
-            playsInline
-            autoPlay
-            loop
+            autoPlay={true}
+            muted={true}
+            playsInline={true}
+            loop={true}
             preload="auto"
           >
             <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11COM.mp4" type="video/mp4" />

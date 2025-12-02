@@ -9,10 +9,10 @@ export default function Footer() {
         <video
           className="w-full h-full object-cover object-center"
           style={{ filter: 'brightness(0.3)' }}
-          muted
-          playsInline
-          autoPlay
-          loop
+          autoPlay={true}
+          muted={true}
+          playsInline={true}
+          loop={true}
           preload="auto"
         >
           <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11about-NMSPD.mp4" type="video/mp4" />
