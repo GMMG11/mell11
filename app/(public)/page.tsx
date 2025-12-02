@@ -20,7 +20,6 @@ export default function HomePage() {
   const [featuredServices, setFeaturedServices] = useState<Service[]>([]);
   const [loading, setLoading] = useState(true);
   const [scrollSections, setScrollSections] = useState<{ [key: string]: boolean }>({});
-  const videoRef = React.useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     fetch('/api/services')
@@ -60,15 +59,6 @@ export default function HomePage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Ensure video plays on mobile
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(error => {
-        console.log('Homepage video autoplay failed:', error);
-      });
-    }
-  }, []);
-
   return (
     <div className="bg-cream">
       {/* Hero Section - Ultra Premium */}
@@ -76,7 +66,6 @@ export default function HomePage() {
         {/* Video Background */}
         <div className="fixed inset-0 z-0 md:absolute">
           <video
-            ref={videoRef}
             className="w-full h-full object-cover object-center"
             style={{
               filter: 'brightness(0.4)',
@@ -88,10 +77,6 @@ export default function HomePage() {
             autoPlay
             loop
             preload="auto"
-            controls={false}
-            disablePictureInPicture
-            webkit-playsinline="true"
-            x-webkit-airplay="deny"
           >
             <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11COM.mp4" type="video/mp4" />
           </video>
@@ -272,8 +257,8 @@ export default function HomePage() {
           <div
             className="w-full h-full bg-cover bg-center"
             style={{
-              backgroundImage: 'url(https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/salon-procedures-the-face-of-a-caucasian-girl-lyi-2025-03-10-06-28-52-utc.jpg)',
-              opacity: 0.6
+              backgroundImage: 'url(https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/laser-treatment.jpg)',
+              opacity: 0.45
             }}
           />
         </div>

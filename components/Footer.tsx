@@ -1,26 +1,12 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
 
 export default function Footer() {
-  const videoRef = React.useRef<HTMLVideoElement>(null);
-
-  React.useEffect(() => {
-    // Ensure video plays on mobile
-    if (videoRef.current) {
-      videoRef.current.play().catch(error => {
-        console.log('Footer video autoplay failed:', error);
-      });
-    }
-  }, []);
-
   return (
     <footer className="bg-nearBlack text-cream py-12 mt-20 relative overflow-hidden z-20">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
-          ref={videoRef}
           className="w-full h-full object-cover object-center"
           style={{ filter: 'brightness(0.3)' }}
           muted
@@ -28,10 +14,6 @@ export default function Footer() {
           autoPlay
           loop
           preload="auto"
-          controls={false}
-          disablePictureInPicture
-          webkit-playsinline="true"
-          x-webkit-airplay="deny"
         >
           <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11about-NMSPD.mp4" type="video/mp4" />
         </video>
