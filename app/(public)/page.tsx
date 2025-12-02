@@ -20,24 +20,40 @@ export default function HomePage() {
   const [featuredServices, setFeaturedServices] = useState<Service[]>([]);
   const [loading, setLoading] = useState(true);
   const [scrollSections, setScrollSections] = useState<{ [key: string]: boolean }>({});
+  const servicesRef = React.useRef<HTMLElement>(null);
 
+  // Lazy load services only when section comes into view
   useEffect(() => {
-    // Delay services fetch to not interfere with video autoplay
-    const timer = setTimeout(() => {
-      fetch('/api/services')
-        .then((res) => res.json())
-        .then((data) => {
-          const featured = data.filter((s: Service) => s.isFeatured).slice(0, 3);
-          setFeaturedServices(featured);
-          setLoading(false);
-        })
-        .catch((error) => {
-          console.error('Error loading services:', error);
-          setLoading(false);
-        });
-    }, 100); // Small delay to let video start
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Services section is visible, now fetch the data
+            fetch('/api/services')
+              .then((res) => res.json())
+              .then((data) => {
+                const featured = data.filter((s: Service) => s.isFeatured).slice(0, 3);
+                setFeaturedServices(featured);
+                setLoading(false);
+              })
+              .catch((error) => {
+                console.error('Error loading services:', error);
+                setLoading(false);
+              });
 
-    return () => clearTimeout(timer);
+            // Unobserve after fetching once
+            observer.disconnect();
+          }
+        });
+      },
+      { rootMargin: '200px' } // Start loading 200px before section is visible
+    );
+
+    if (servicesRef.current) {
+      observer.observe(servicesRef.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
 
   // Scroll effect for text color transition
@@ -256,7 +272,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Services */}
-      <section className="py-10 md:py-20 relative z-20 overflow-hidden">
+      <section ref={servicesRef} className="py-10 md:py-20 relative z-20 overflow-hidden">
         {/* Single Background Image - Auto-sized for device */}
         <div className="absolute inset-0">
           <div
