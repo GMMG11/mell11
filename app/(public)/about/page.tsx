@@ -29,13 +29,12 @@ export default function AboutPage() {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   return (
     <div className="bg-cream min-h-screen">
       {/* Hero Section with Video Background */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Video Background */}
-        <div className="absolute inset-0 z-0">
+        <div className="fixed inset-0 z-0 md:absolute">
           <video
             className="w-full h-full object-cover object-center"
             style={{
@@ -43,10 +42,10 @@ export default function AboutPage() {
               minHeight: '100vh',
               minWidth: '100vw'
             }}
-            autoPlay={true}
-            muted={true}
-            playsInline={true}
-            loop={true}
+            muted
+            playsInline
+            autoPlay
+            loop
             preload="auto"
           >
             <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11about-NMSPD.mp4" type="video/mp4" />

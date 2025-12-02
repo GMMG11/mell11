@@ -16,44 +16,49 @@ interface Service {
   isFeatured: boolean;
 }
 
+function HeroBackground() {
+  return (
+    <div className="fixed inset-0 z-0 md:absolute">
+      {/* Video Background - Loops Continuously */}
+      <video
+        className="w-full h-full object-cover object-center"
+        style={{
+          filter: 'brightness(0.4)',
+          minHeight: '100vh',
+          minWidth: '100vw'
+        }}
+        muted
+        playsInline
+        autoPlay
+        loop
+        preload="auto"
+      >
+        <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11COM.mp4" type="video/mp4" />
+      </video>
+
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-nearBlack/60 via-nearBlack/50 to-cream" />
+    </div>
+  );
+}
+
 export default function HomePage() {
   const [featuredServices, setFeaturedServices] = useState<Service[]>([]);
   const [loading, setLoading] = useState(true);
   const [scrollSections, setScrollSections] = useState<{ [key: string]: boolean }>({});
-  const servicesRef = React.useRef<HTMLElement>(null);
 
-  // Lazy load services only when section comes into view
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Services section is visible, now fetch the data
-            fetch('/api/services')
-              .then((res) => res.json())
-              .then((data) => {
-                const featured = data.filter((s: Service) => s.isFeatured).slice(0, 3);
-                setFeaturedServices(featured);
-                setLoading(false);
-              })
-              .catch((error) => {
-                console.error('Error loading services:', error);
-                setLoading(false);
-              });
-
-            // Unobserve after fetching once
-            observer.disconnect();
-          }
-        });
-      },
-      { rootMargin: '200px' } // Start loading 200px before section is visible
-    );
-
-    if (servicesRef.current) {
-      observer.observe(servicesRef.current);
-    }
-
-    return () => observer.disconnect();
+    fetch('/api/services')
+      .then((res) => res.json())
+      .then((data) => {
+        const featured = data.filter((s: Service) => s.isFeatured).slice(0, 3);
+        setFeaturedServices(featured);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error loading services:', error);
+        setLoading(false);
+      });
   }, []);
 
   // Scroll effect for text color transition
@@ -84,25 +89,8 @@ export default function HomePage() {
     <div className="bg-cream">
       {/* Hero Section - Ultra Premium */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Video Background */}
-        <div className="absolute inset-0 z-0">
-          <video
-            className="w-full h-full object-cover object-center"
-            style={{
-              filter: 'brightness(0.4)',
-              minHeight: '100vh',
-              minWidth: '100vw'
-            }}
-            autoPlay={true}
-            muted={true}
-            playsInline={true}
-            loop={true}
-            preload="auto"
-          >
-            <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11COM.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-nearBlack/60 via-nearBlack/50 to-cream" />
-        </div>
+        {/* Background Media with Video Transition */}
+        <HeroBackground />
 
         {/* Content */}
         <div className="container-custom relative z-10 text-center py-32 animate-fade-in-up">
@@ -272,24 +260,10 @@ export default function HomePage() {
       </section>
 
       {/* Featured Services */}
-      <section ref={servicesRef} className="py-10 md:py-20 relative z-20 overflow-hidden">
-        {/* Single Background Image - Auto-sized for device */}
-        <div className="absolute inset-0">
-          <div
-            className="w-full h-full bg-cover bg-center"
-            style={{
-              backgroundImage: 'url(https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/laser-treatment.jpg)',
-              opacity: 0.45
-            }}
-          />
-        </div>
-
-        {/* White overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/35 via-white/40 to-white/45" />
-
-        <div className="container-custom relative z-10">
+      <section className="py-10 md:py-20 bg-gradient-to-b from-white to-cream relative z-20">
+        <div className="container-custom">
           <div className="text-center mb-10 md:mb-20">
-            <div className="inline-block mb-6 px-6 py-2 border border-softLine rounded-full bg-white/80 backdrop-blur-sm">
+            <div className="inline-block mb-6 px-6 py-2 border border-softLine rounded-full">
               <span className="text-sm tracking-[0.2em] uppercase text-accent">Signature Services</span>
             </div>
 
@@ -308,7 +282,7 @@ export default function HomePage() {
               <LoadingSpinner size="lg" />
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               {featuredServices.map((service, index) => (
                 <div
                   key={service.id}
