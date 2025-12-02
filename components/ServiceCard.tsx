@@ -21,7 +21,7 @@ export default function ServiceCard({
 }: ServiceCardProps) {
   return (
     <div
-      className={`bg-white rounded-2xl p-8 luxury-shadow luxury-hover relative overflow-hidden ${
+      className={`bg-white/80 backdrop-blur-sm rounded-2xl p-8 luxury-shadow luxury-hover relative overflow-hidden ${
         featured ? 'ring-2 ring-accent ring-offset-4 ring-offset-cream' : ''
       }`}
     >
