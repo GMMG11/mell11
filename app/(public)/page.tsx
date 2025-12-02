@@ -44,7 +44,10 @@ function HeroBackground() {
         autoPlay
         loop
         preload="auto"
+        controls={false}
+        disablePictureInPicture
         webkit-playsinline="true"
+        x-webkit-airplay="deny"
       >
         <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11COM.mp4" type="video/mp4" />
       </video>
@@ -273,10 +276,38 @@ export default function HomePage() {
       </section>
 
       {/* Featured Services */}
-      <section className="py-10 md:py-20 bg-gradient-to-b from-white to-cream relative z-20">
-        <div className="container-custom">
+      <section className="py-10 md:py-20 relative z-20 overflow-hidden">
+        {/* Unified Background - Three Images Side by Side */}
+        <div className="absolute inset-0 flex">
+          <div
+            className="flex-1 bg-cover bg-center"
+            style={{
+              backgroundImage: 'url(https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/cosmetic-procedure-with-an-ultrasonic-face-cleanin-2025-02-13-17-27-04-utc.jpg)',
+              opacity: 0.2
+            }}
+          />
+          <div
+            className="flex-1 bg-cover bg-center"
+            style={{
+              backgroundImage: 'url(https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/salon-procedures-the-face-of-a-caucasian-girl-lyi-2025-03-10-06-28-52-utc.jpg)',
+              opacity: 0.2
+            }}
+          />
+          <div
+            className="flex-1 bg-cover bg-center"
+            style={{
+              backgroundImage: 'url(https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/micro-blade.jpg)',
+              opacity: 0.2
+            }}
+          />
+        </div>
+
+        {/* White overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/85 to-white/90" />
+
+        <div className="container-custom relative z-10">
           <div className="text-center mb-10 md:mb-20">
-            <div className="inline-block mb-6 px-6 py-2 border border-softLine rounded-full">
+            <div className="inline-block mb-6 px-6 py-2 border border-softLine rounded-full bg-white/80 backdrop-blur-sm">
               <span className="text-sm tracking-[0.2em] uppercase text-accent">Signature Services</span>
             </div>
 
@@ -295,46 +326,22 @@ export default function HomePage() {
               <LoadingSpinner size="lg" />
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-16">
-              {featuredServices.map((service, index) => {
-                // Background images for each service card
-                const backgroundImages = [
-                  'https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/cosmetic-procedure-with-an-ultrasonic-face-cleanin-2025-02-13-17-27-04-utc.jpg',
-                  'https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/salon-procedures-the-face-of-a-caucasian-girl-lyi-2025-03-10-06-28-52-utc.jpg',
-                  'https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/micro-blade.jpg'
-                ];
-
-                return (
-                  <div
-                    key={service.id}
-                    className={`relative overflow-hidden animate-fade-in-up delay-${index * 100} min-h-[400px] md:min-h-[500px]`}
-                  >
-                    {/* Background Image with Reduced Opacity */}
-                    <div
-                      className="absolute inset-0 bg-cover bg-center"
-                      style={{
-                        backgroundImage: `url(${backgroundImages[index]})`,
-                        opacity: 0.25
-                      }}
-                    />
-
-                    {/* Gradient Overlay for Better Text Readability */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/70 to-white/80" />
-
-                    {/* Content */}
-                    <div className="relative z-10 p-8 md:p-10 flex flex-col justify-center h-full min-h-[400px] md:min-h-[500px]">
-                      <ServiceCard
-                        name={service.name}
-                        description={service.description}
-                        duration={service.duration}
-                        price={service.price}
-                        slug={service.slug}
-                        featured={service.isFeatured}
-                      />
-                    </div>
-                  </div>
-                );
-              })}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+              {featuredServices.map((service, index) => (
+                <div
+                  key={service.id}
+                  className={`animate-fade-in-up delay-${index * 100}`}
+                >
+                  <ServiceCard
+                    name={service.name}
+                    description={service.description}
+                    duration={service.duration}
+                    price={service.price}
+                    slug={service.slug}
+                    featured={service.isFeatured}
+                  />
+                </div>
+              ))}
             </div>
           )}
 

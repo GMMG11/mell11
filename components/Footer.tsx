@@ -28,7 +28,10 @@ export default function Footer() {
           autoPlay
           loop
           preload="auto"
+          controls={false}
+          disablePictureInPicture
           webkit-playsinline="true"
+          x-webkit-airplay="deny"
         >
           <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11about-NMSPD.mp4" type="video/mp4" />
         </video>
