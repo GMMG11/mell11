@@ -22,17 +22,22 @@ export default function HomePage() {
   const [scrollSections, setScrollSections] = useState<{ [key: string]: boolean }>({});
 
   useEffect(() => {
-    fetch('/api/services')
-      .then((res) => res.json())
-      .then((data) => {
-        const featured = data.filter((s: Service) => s.isFeatured).slice(0, 3);
-        setFeaturedServices(featured);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error('Error loading services:', error);
-        setLoading(false);
-      });
+    // Delay services fetch to not interfere with video autoplay
+    const timer = setTimeout(() => {
+      fetch('/api/services')
+        .then((res) => res.json())
+        .then((data) => {
+          const featured = data.filter((s: Service) => s.isFeatured).slice(0, 3);
+          setFeaturedServices(featured);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error('Error loading services:', error);
+          setLoading(false);
+        });
+    }, 100); // Small delay to let video start
+
+    return () => clearTimeout(timer);
   }, []);
 
   // Scroll effect for text color transition
