@@ -64,7 +64,7 @@ export default function HomePage() {
       {/* Hero Section - Ultra Premium */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Video Background */}
-        <div className="fixed inset-0 z-0 md:absolute">
+        <div className="absolute inset-0 z-0">
           <video
             className="w-full h-full object-cover object-center"
             style={{
