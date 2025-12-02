@@ -283,27 +283,27 @@ export default function HomePage() {
             className="flex-1 bg-cover bg-center"
             style={{
               backgroundImage: 'url(https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/cosmetic-procedure-with-an-ultrasonic-face-cleanin-2025-02-13-17-27-04-utc.jpg)',
-              opacity: 0.2
+              opacity: 0.6
             }}
           />
           <div
             className="flex-1 bg-cover bg-center"
             style={{
               backgroundImage: 'url(https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/salon-procedures-the-face-of-a-caucasian-girl-lyi-2025-03-10-06-28-52-utc.jpg)',
-              opacity: 0.2
+              opacity: 0.6
             }}
           />
           <div
             className="flex-1 bg-cover bg-center"
             style={{
               backgroundImage: 'url(https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/micro-blade.jpg)',
-              opacity: 0.2
+              opacity: 0.6
             }}
           />
         </div>
 
         {/* White overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/85 to-white/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/35 via-white/40 to-white/45" />
 
         <div className="container-custom relative z-10">
           <div className="text-center mb-10 md:mb-20">
