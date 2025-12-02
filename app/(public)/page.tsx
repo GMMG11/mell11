@@ -16,52 +16,11 @@ interface Service {
   isFeatured: boolean;
 }
 
-function HeroBackground() {
-  const videoRef = React.useRef<HTMLVideoElement>(null);
-
-  React.useEffect(() => {
-    // Ensure video plays on mobile
-    if (videoRef.current) {
-      videoRef.current.play().catch(error => {
-        console.log('Video autoplay failed:', error);
-      });
-    }
-  }, []);
-
-  return (
-    <div className="fixed inset-0 z-0 md:absolute">
-      {/* Video Background - Loops Continuously */}
-      <video
-        ref={videoRef}
-        className="w-full h-full object-cover object-center"
-        style={{
-          filter: 'brightness(0.4)',
-          minHeight: '100vh',
-          minWidth: '100vw'
-        }}
-        muted
-        playsInline
-        autoPlay
-        loop
-        preload="auto"
-        controls={false}
-        disablePictureInPicture
-        webkit-playsinline="true"
-        x-webkit-airplay="deny"
-      >
-        <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11COM.mp4" type="video/mp4" />
-      </video>
-
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-nearBlack/60 via-nearBlack/50 to-cream" />
-    </div>
-  );
-}
-
 export default function HomePage() {
   const [featuredServices, setFeaturedServices] = useState<Service[]>([]);
   const [loading, setLoading] = useState(true);
   const [scrollSections, setScrollSections] = useState<{ [key: string]: boolean }>({});
+  const videoRef = React.useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     fetch('/api/services')
@@ -101,12 +60,43 @@ export default function HomePage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Ensure video plays on mobile
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.log('Homepage video autoplay failed:', error);
+      });
+    }
+  }, []);
+
   return (
     <div className="bg-cream">
       {/* Hero Section - Ultra Premium */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Media with Video Transition */}
-        <HeroBackground />
+        {/* Video Background */}
+        <div className="fixed inset-0 z-0 md:absolute">
+          <video
+            ref={videoRef}
+            className="w-full h-full object-cover object-center"
+            style={{
+              filter: 'brightness(0.4)',
+              minHeight: '100vh',
+              minWidth: '100vw'
+            }}
+            muted
+            playsInline
+            autoPlay
+            loop
+            preload="auto"
+            controls={false}
+            disablePictureInPicture
+            webkit-playsinline="true"
+            x-webkit-airplay="deny"
+          >
+            <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11COM.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-nearBlack/60 via-nearBlack/50 to-cream" />
+        </div>
 
         {/* Content */}
         <div className="container-custom relative z-10 text-center py-32 animate-fade-in-up">
@@ -277,26 +267,12 @@ export default function HomePage() {
 
       {/* Featured Services */}
       <section className="py-10 md:py-20 relative z-20 overflow-hidden">
-        {/* Unified Background - Three Images Side by Side */}
-        <div className="absolute inset-0 flex">
+        {/* Single Background Image - Auto-sized for device */}
+        <div className="absolute inset-0">
           <div
-            className="flex-1 bg-cover bg-center"
-            style={{
-              backgroundImage: 'url(https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/cosmetic-procedure-with-an-ultrasonic-face-cleanin-2025-02-13-17-27-04-utc.jpg)',
-              opacity: 0.6
-            }}
-          />
-          <div
-            className="flex-1 bg-cover bg-center"
+            className="w-full h-full bg-cover bg-center"
             style={{
               backgroundImage: 'url(https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/salon-procedures-the-face-of-a-caucasian-girl-lyi-2025-03-10-06-28-52-utc.jpg)',
-              opacity: 0.6
-            }}
-          />
-          <div
-            className="flex-1 bg-cover bg-center"
-            style={{
-              backgroundImage: 'url(https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/micro-blade.jpg)',
               opacity: 0.6
             }}
           />
