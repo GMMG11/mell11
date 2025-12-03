@@ -471,15 +471,18 @@ export default function AboutPage() {
               <style>
                 {`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');`}
               </style>
-              {/* Rich champagne gradient - deeper brown tones */}
+              {/* Rich champagne gradient - deeper brown tones with more variation */}
               <linearGradient id="champagneGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#A67C52" />
+                <stop offset="0%" stopColor="#C89B7B" />
+                <stop offset="25%" stopColor="#A67C52" />
                 <stop offset="50%" stopColor="#8C5A3C" />
-                <stop offset="100%" stopColor="#7A4E35" />
+                <stop offset="75%" stopColor="#7A4E35" />
+                <stop offset="100%" stopColor="#5D3A28" />
               </linearGradient>
-              {/* Radial glow effect */}
-              <radialGradient id="centerGlow" cx="50%" cy="50%" r="60%">
-                <stop offset="0%" stopColor="#B8956A" stopOpacity="0.2" />
+              {/* Radial glow effect for depth */}
+              <radialGradient id="centerGlow" cx="50%" cy="50%" r="70%">
+                <stop offset="0%" stopColor="#C89B7B" stopOpacity="0.25" />
+                <stop offset="50%" stopColor="#A67C52" stopOpacity="0.1" />
                 <stop offset="100%" stopColor="#8C5A3C" stopOpacity="0" />
               </radialGradient>
             </defs>
@@ -560,7 +563,7 @@ export default function AboutPage() {
         {/* Content overlay - no card background */}
         <div className="container-custom relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="font-serif text-4xl md:text-5xl mb-8 text-nearBlack">Service Area</h2>
+            <h2 className="font-serif text-4xl md:text-5xl mb-8 text-white drop-shadow-lg">Service Area</h2>
 
             {/* Location Markers */}
             <div className="flex flex-wrap justify-center gap-4 mb-8">

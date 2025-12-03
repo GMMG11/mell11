@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState, Suspense } from 'react';
+import React, { useEffect, useState, Suspense, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { format, addDays, startOfWeek, isSameDay, parseISO } from 'date-fns';
 
@@ -102,6 +102,20 @@ function BookingForm() {
 
   // FOMO state - initialize with null to avoid hydration mismatch
   const [recentBooking, setRecentBooking] = useState<{ name: string; location: string; service: string; time: number } | null>(null);
+
+  // Ref for continue button to auto-scroll on mobile
+  const continueButtonRef = useRef<HTMLButtonElement>(null);
+
+  // Handle slot selection with auto-scroll on mobile
+  const handleSlotSelect = (slotTime: Date) => {
+    setSelectedSlot(slotTime);
+    // Auto-scroll to continue button on mobile after a short delay
+    setTimeout(() => {
+      if (continueButtonRef.current && window.innerWidth < 768) {
+        continueButtonRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 100);
+  };
 
   // Pre-select service from URL
   useEffect(() => {
@@ -415,7 +429,7 @@ function BookingForm() {
                                 return (
                                   <button
                                     key={slotTime.toISOString()}
-                                    onClick={() => isAvailable && setSelectedSlot(slotTime)}
+                                    onClick={() => isAvailable && handleSlotSelect(slotTime)}
                                     disabled={!isAvailable}
                                     className={`w-full text-xs py-2 px-1 rounded transition-all ${
                                       isSelected
@@ -441,6 +455,7 @@ function BookingForm() {
 
               {selectedSlot && (
                 <button
+                  ref={continueButtonRef}
                   onClick={() => setStep(3)}
                   className="w-full bg-accent text-white py-4 rounded-lg hover:bg-hover transition-colors font-semibold text-lg shadow-lg"
                 >

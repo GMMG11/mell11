@@ -45,6 +45,27 @@ export const BUSINESS_HOURS = {
   minimumNoticeHours: 2, // Can't book within 2 hours of current time
 };
 
+// Helper to check if a date is in PDT (Pacific Daylight Time)
+function isPDT(date: Date): boolean {
+  // PDT is observed from 2nd Sunday of March to 1st Sunday of November
+  const year = date.getFullYear();
+
+  // Find 2nd Sunday of March
+  const marchFirst = new Date(year, 2, 1); // March 1
+  let secondSundayMarch = 8 + (7 - marchFirst.getDay()) % 7;
+  if (marchFirst.getDay() === 0) secondSundayMarch = 8; // If March 1 is Sunday
+  const dstStart = new Date(year, 2, secondSundayMarch, 2, 0, 0); // 2am local
+
+  // Find 1st Sunday of November
+  const novFirst = new Date(year, 10, 1); // November 1
+  let firstSundayNov = 1 + (7 - novFirst.getDay()) % 7;
+  if (novFirst.getDay() === 0) firstSundayNov = 1; // If Nov 1 is Sunday
+  const dstEnd = new Date(year, 10, firstSundayNov, 2, 0, 0); // 2am local
+
+  // Check if date falls within DST period
+  return date >= dstStart && date < dstEnd;
+}
+
 // Generate all time slots for a given date (includes past slots for display)
 export function generateTimeSlots(date: Date): Date[] {
   const slots: Date[] = [];
@@ -55,11 +76,23 @@ export function generateTimeSlots(date: Date): Date[] {
     return slots;
   }
 
-  // Create slots from 9am to 5pm
+  // Get the date string in PST timezone (YYYY-MM-DD)
+  const dateStr = date.toLocaleDateString('en-CA', { timeZone: BUSINESS_HOURS.timezone });
+
+  // Create slots from 9am to 5pm PST/PDT
   for (let hour = BUSINESS_HOURS.startHour; hour < BUSINESS_HOURS.endHour; hour++) {
-    const slotTime = new Date(date);
-    slotTime.setHours(hour, 0, 0, 0);
-    slots.push(slotTime);
+    // Create a date string in ISO format
+    const timeStr = `${dateStr}T${hour.toString().padStart(2, '0')}:00:00`;
+
+    // Check if this date is in PDT or PST
+    // Use -07:00 for PDT (March-November), -08:00 for PST (November-March)
+    const checkDate = new Date(timeStr + 'Z'); // temporary for DST check
+    const offset = isPDT(new Date(dateStr)) ? '-07:00' : '-08:00';
+
+    // Create the correct slot time with proper timezone offset
+    const correctSlotTime = new Date(timeStr + offset);
+
+    slots.push(correctSlotTime);
   }
 
   return slots;
