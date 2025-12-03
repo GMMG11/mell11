@@ -22,7 +22,7 @@ export default function Button({
   const baseClasses = 'font-sans font-medium rounded transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed';
 
   const variantClasses = {
-    primary: 'bg-accent text-white hover:bg-hover',
+    primary: 'bg-hover text-white hover:bg-accent',
     secondary: 'bg-nearBlack text-white hover:bg-gray-800',
     outline: 'border-2 border-accent text-accent hover:bg-accent hover:text-white',
   };

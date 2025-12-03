@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-nearBlack text-cream py-12 mt-20 relative overflow-hidden z-20">
+    <footer className="bg-nearBlack text-cream py-12 relative overflow-hidden z-20">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -25,7 +25,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <h3 className="font-serif text-3xl tracking-wider mb-4 text-cream">MĒL11</h3>
-            <p className="text-sm text-cream/90 mb-2">In-home luxury skin + aesthetics</p>
+            <p className="text-sm text-cream/90 mb-2">Clinical Anti-Aging Aesthetics</p>
             <p className="text-sm text-cream/90">Tacoma & Greater Seattle area</p>
           </div>
 
