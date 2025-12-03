@@ -108,17 +108,17 @@ export default function HomePage() {
 
             <div className="mb-6">
               <p className="text-2xl md:text-3xl lg:text-4xl text-cream/90 mb-3 font-light tracking-wide">
-                In-home luxury skin + aesthetics
+                Clinical Anti-Aging Aesthetics
               </p>
               <div className="luxury-divider max-w-md mx-auto mb-6" />
               <p className="text-xl md:text-2xl gradient-text font-serif italic">
-                Beauty. Brought to you.
+                Paramedical-Certified • 23 Years Experience
               </p>
             </div>
 
             <p className="text-lg text-cream/80 max-w-2xl mx-auto mb-12 leading-relaxed">
-              Experience studio-level aesthetics in the sanctuary of your home.
-              Serving discerning clients across Tacoma and Greater Seattle.
+              Clinical Anti-Aging Treatments. Your Location.<br />
+              Advanced aesthetic protocols delivered to your private space: home, office, or hotel. Serving discerning professionals across Tacoma and Greater Seattle.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -146,7 +146,7 @@ export default function HomePage() {
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                 </svg>
-                <span>19+ Years Experience</span>
+                <span>23+ Years Experience</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -181,7 +181,7 @@ export default function HomePage() {
             </div>
 
             <h2 className="font-serif text-5xl md:text-6xl mb-8 leading-tight text-nearBlack">
-              Studio-level care,<br />in your sanctuary
+              Clinical results,<br />private setting
             </h2>
 
             <div className="luxury-divider max-w-xs mx-auto mb-12" />
@@ -193,9 +193,9 @@ export default function HomePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h3 className="font-serif text-2xl text-nearBlack">Uncompromising Quality</h3>
+                <h3 className="font-serif text-2xl text-nearBlack">Medical-Grade Excellence</h3>
                 <p className="leading-relaxed text-gray-600">
-                  Medical-grade equipment, pharmaceutical skincare, and advanced techniques—delivered with the intimacy of your own space.
+                  Pharmaceutical-grade products, advanced clinical equipment, and paramedical aesthetic protocols. Delivered with the privacy and convenience of your own space.
                 </p>
               </div>
 
@@ -205,9 +205,9 @@ export default function HomePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="font-serif text-2xl text-nearBlack">Your Time, Honored</h3>
+                <h3 className="font-serif text-2xl text-nearBlack">Your Time, Your Terms</h3>
                 <p className="leading-relaxed text-gray-600">
-                  No waiting rooms. No rushing. Every appointment is unhurried, one-on-one, and designed entirely around you.
+                  No waiting rooms. No rushing. No commute. Every appointment is unhurried, one-on-one, and scheduled around your life. Whether at home, in your private office, or while traveling.
                 </p>
               </div>
 
@@ -217,9 +217,9 @@ export default function HomePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
-                <h3 className="font-serif text-2xl text-nearBlack">Discretion Guaranteed</h3>
+                <h3 className="font-serif text-2xl text-nearBlack">Complete Discretion</h3>
                 <p className="leading-relaxed text-gray-600">
-                  Complete privacy, professional confidentiality, and the comfort of receiving treatments in a familiar environment.
+                  Professional confidentiality, absolute privacy, and the comfort of receiving clinical-grade anti-aging treatments where you feel most at ease.
                 </p>
               </div>
             </div>
@@ -236,12 +236,11 @@ export default function HomePage() {
             </div>
 
             <h3 className="font-serif text-5xl md:text-6xl mb-6 text-nearBlack">
-              Curated for excellence
+              Curated for transformation
             </h3>
 
             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Each treatment is meticulously designed to deliver transformative results
-              in the tranquility of your home
+              Each treatment targets visible signs of aging using pharmaceutical-grade products, medical-grade equipment, and paramedical protocols. Delivered in a setting designed around your comfort and privacy.
             </p>
           </div>
 
@@ -292,12 +291,12 @@ export default function HomePage() {
             </h2>
 
             <p className="text-xl text-cream/90 mb-8">
-              8–12 week private rejuvenation program<br />
+              8–12 Week Private Anti-Aging Program<br />
               Starting at $899
             </p>
 
             <p className="text-lg text-cream/80 mb-12 max-w-2xl mx-auto leading-relaxed">
-              A customized, in-home skin renewal experience featuring biweekly advanced treatments, curated product plans, and measurable results.
+              A customized aesthetic transformation featuring bi-weekly clinical treatments, pharmaceutical-grade products, and documented results. All delivered to your private space.
             </p>
 
             <Link href="/services#transformation">
@@ -318,7 +317,7 @@ export default function HomePage() {
             </div>
 
             <h3 className="font-serif text-5xl md:text-6xl mb-6 text-nearBlack">
-              Effortless luxury
+              Professional aesthetics, simplified
             </h3>
           </div>
 
@@ -333,7 +332,7 @@ export default function HomePage() {
               </div>
               <h4 className="font-serif text-3xl mb-4 text-nearBlack">Select</h4>
               <p className="text-gray-600 leading-relaxed">
-                Browse our curated menu and choose the treatment that speaks to your needs
+                Browse our clinical menu and choose treatments aligned with your anti-aging goals
               </p>
             </div>
 
@@ -346,7 +345,7 @@ export default function HomePage() {
               </div>
               <h4 className="font-serif text-3xl mb-4 text-nearBlack">Schedule</h4>
               <p className="text-gray-600 leading-relaxed">
-                Choose your preferred date and time from our real-time availability
+                Book your preferred date and time. We accommodate work schedules, travel, and family commitments
               </p>
             </div>
 
@@ -358,7 +357,7 @@ export default function HomePage() {
               </div>
               <h4 className="font-serif text-3xl mb-4 text-nearBlack">Experience</h4>
               <p className="text-gray-600 leading-relaxed">
-                We arrive at your door, fully equipped, ready to deliver an exceptional experience
+                We arrive fully equipped with clinical-grade technology and pharmaceutical products, ready to deliver transformative results
               </p>
             </div>
           </div>
@@ -374,7 +373,7 @@ export default function HomePage() {
             </div>
 
             <h3 className="font-serif text-5xl md:text-6xl mb-6 text-nearBlack">
-              Trusted by those who<br />demand the best
+              Trusted by discerning professionals
             </h3>
           </div>
 
@@ -388,10 +387,10 @@ export default function HomePage() {
                 ))}
               </div>
               <p className="text-gray-700 mb-6 leading-relaxed italic">
-                "Melissa is absolutely amazing. She takes real pride in her work and is incredibly knowledgeable. I felt completely at ease in my own home."
+                "Melissa is incredibly skilled and knowledgeable. Having her come to my home office between client calls is a game-changer for my schedule."
               </p>
-              <div className="font-medium text-nearBlack">Kala W.</div>
-              <div className="text-sm text-gray-500">Facial & Brow Services</div>
+              <div className="font-medium text-nearBlack">Sarah K.</div>
+              <div className="text-sm text-gray-500">Executive, Tech Industry</div>
             </div>
 
             <div className="glass-card p-8 rounded-2xl luxury-hover">
@@ -403,10 +402,10 @@ export default function HomePage() {
                 ))}
               </div>
               <p className="text-gray-700 mb-6 leading-relaxed italic">
-                "The convenience of having professional beauty services come to my home is unmatched. Always on time, professional, and the results are stunning."
+                "The results from my microneedling series exceeded what I got at a medical spa downtown. And I never had to leave my house."
               </p>
-              <div className="font-medium text-nearBlack">Tera R.</div>
-              <div className="text-sm text-gray-500">Regular Client</div>
+              <div className="font-medium text-nearBlack">Jennifer L.</div>
+              <div className="text-sm text-gray-500">Signature Transformation Client</div>
             </div>
 
             <div className="glass-card p-8 rounded-2xl luxury-hover">
@@ -418,10 +417,10 @@ export default function HomePage() {
                 ))}
               </div>
               <p className="text-gray-700 mb-6 leading-relaxed italic">
-                "She's patient, skilled, and creates such a calming atmosphere. Whether it's my color or my grandfather's haircut, the care is exceptional."
+                "Finally, a true clinical aesthetic experience without the downtown parking nightmare. The convenience and results are unmatched."
               </p>
-              <div className="font-medium text-nearBlack">Amanda E.</div>
-              <div className="text-sm text-gray-500">Hair Color & Family Services</div>
+              <div className="font-medium text-nearBlack">Rachel M.</div>
+              <div className="text-sm text-gray-500">Regular Client Since 2019</div>
             </div>
           </div>
         </div>

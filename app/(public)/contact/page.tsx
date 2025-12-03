@@ -51,7 +51,7 @@ export default function ContactPage() {
             <h1 className="font-serif text-5xl mb-4 text-nearBlack">Get in touch</h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Have questions about our services, availability, or pricing? Want to discuss a custom package
-              or event? We'd love to hear from you.
+              or treatment plan? We'd love to hear from you.
             </p>
           </div>
 

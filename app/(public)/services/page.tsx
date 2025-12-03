@@ -10,15 +10,15 @@ export default function ServicesPage() {
         <div className="text-center mb-16">
           <h1 className="font-serif text-5xl md:text-6xl mb-6 text-nearBlack">Our Services</h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-            MĒL11 delivers high-end, studio-level results directly into the sanctuary of your home.
+            MĒL11 delivers advanced, clinical-grade anti-aging treatments directly to your chosen sanctuary. Whether that's your home, private office, or hotel.
             Every treatment is private, unhurried, and designed around your individual goals.
           </p>
           <div className="max-w-2xl mx-auto">
             <p className="text-base text-gray-600">
-              We prioritize <strong>premium results</strong>, <strong>advanced clinical-grade techniques</strong>, <strong>total discretion</strong>, and <strong>comfort in your own environment</strong>.
+              We prioritize <strong>transformative results</strong>, <strong>paramedical-grade techniques</strong>, <strong>total discretion</strong>, and <strong>comfort in your own space</strong>.
             </p>
             <p className="text-sm text-gray-500 mt-4 italic">
-              All pricing reflects in-home, concierge-level service.
+              All pricing reflects concierge-level, on-location service.
             </p>
             <p className="text-base text-nearBlack mt-4 font-bold">
               Continue below to view individual à la carte service pricing.
@@ -31,10 +31,10 @@ export default function ServicesPage() {
           <div className="bg-gradient-to-br from-nearBlack to-accent/90 text-cream rounded-2xl p-10 md:p-12 luxury-shadow mb-12">
             <div className="text-center mb-8">
               <div className="inline-block px-4 py-1 bg-cream/20 rounded-full mb-4">
-                <span className="text-xs tracking-widest uppercase">New Premium Offering</span>
+                <span className="text-xs tracking-widest uppercase">Premium Offering</span>
               </div>
               <h2 className="font-serif text-4xl md:text-5xl mb-4 text-white">The MĒL11 Signature Transformation</h2>
-              <p className="text-xl text-cream/90">8–12 Week Private Program</p>
+              <p className="text-xl text-cream/90">8–12 Week Private Anti-Aging Program</p>
             </div>
 
             <div className="max-w-4xl mx-auto">
@@ -98,7 +98,7 @@ export default function ServicesPage() {
                   <strong>Ideal for:</strong> clients preparing for events, life transitions, headshots, dating profiles, or a full confidence reset.
                 </p>
                 <Link
-                  href="/book?service=Signature%20Transformation%20Program"
+                  href="/book"
                   className="inline-block px-8 py-4 bg-cream text-nearBlack rounded-lg hover:bg-white transition-colors font-semibold text-lg"
                 >
                   Inquire About Transformation Program
@@ -112,7 +112,10 @@ export default function ServicesPage() {
         <div className="mb-16">
           <h2 className="font-serif text-4xl mb-8 text-nearBlack text-center">Advanced Aesthetic Treatments</h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            Studio-level clinical results. Private in-home comfort.
+            Clinical anti-aging protocols. Private, personalized care.
+          </p>
+          <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            Each treatment targets visible signs of aging using pharmaceutical-grade products, medical-grade equipment, and paramedical protocols. Delivered in the privacy of your chosen space.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -123,7 +126,7 @@ export default function ServicesPage() {
                 <span className="text-accent font-semibold text-xl">$200+</span>
               </div>
               <p className="text-gray-700">
-                Stimulates collagen, smooths texture, reduces scarring, tightens and brightens the skin.
+                Advanced collagen induction therapy. Stimulates collagen, smooths texture, reduces scarring, tightens and brightens the skin. Clinical-grade results for aging, texture, and tone.
               </p>
               <Link
                 href="/book?service=Microneedling"
@@ -434,11 +437,11 @@ export default function ServicesPage() {
           </div>
         </div>
 
-        {/* ADD-ON ENHANCEMENTS */}
+        {/* TREATMENT ENHANCEMENTS */}
         <div className="mb-16">
-          <h2 className="font-serif text-4xl mb-8 text-nearBlack text-center">Treatment Add-Ons</h2>
+          <h2 className="font-serif text-4xl mb-8 text-nearBlack text-center">Treatment Enhancements</h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            Enhance any facial or treatment with these professional upgrades.
+            Elevate any facial or treatment with these professional upgrades.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -468,9 +471,9 @@ export default function ServicesPage() {
           </div>
         </div>
 
-        {/* BROWS & LASHES */}
+        {/* EYES & EXPRESSION */}
         <div className="mb-16">
-          <h2 className="font-serif text-4xl mb-8 text-nearBlack text-center">Brows & Lashes</h2>
+          <h2 className="font-serif text-4xl mb-8 text-nearBlack text-center">Eyes & Expression</h2>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="bg-white p-8 rounded-lg luxury-shadow">
@@ -500,77 +503,16 @@ export default function ServicesPage() {
                 Book Now
               </Link>
             </div>
-
-            <div className="bg-white p-8 rounded-lg luxury-shadow">
-              <h3 className="font-serif text-2xl text-nearBlack mb-2">Sugaring Hair Removal</h3>
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-gray-600">45 min</span>
-                <span className="text-accent font-semibold text-xl">$45+</span>
-              </div>
-              <p className="text-gray-700 mb-4">A gentle alternative to waxing.</p>
-              <Link
-                href="/book?service=Sugaring%20Hair%20Removal"
-                className="inline-block px-6 py-2 bg-accent text-white rounded hover:bg-hover transition-colors font-medium"
-              >
-                Book Now
-              </Link>
-            </div>
           </div>
         </div>
 
-        {/* WAXING SERVICES */}
+        {/* PROFESSIONAL TEETH WHITENING */}
         <div className="mb-16">
-          <h2 className="font-serif text-4xl mb-8 text-nearBlack text-center">Waxing Services</h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            Professional waxing services using premium, gentle formulas. Quick, effective, and private.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <div className="bg-white p-6 rounded-lg luxury-shadow">
-              <h3 className="font-serif text-xl text-nearBlack mb-2">Brow Wax</h3>
-              <p className="text-accent font-semibold text-xl mb-2">$30+</p>
-              <p className="text-gray-700 text-sm">Precise shaping and clean-up</p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg luxury-shadow">
-              <h3 className="font-serif text-xl text-nearBlack mb-2">Lip or Chin</h3>
-              <p className="text-accent font-semibold text-xl mb-2">$30+</p>
-              <p className="text-gray-700 text-sm">Quick, gentle facial waxing</p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg luxury-shadow">
-              <h3 className="font-serif text-xl text-nearBlack mb-2">Underarm</h3>
-              <p className="text-accent font-semibold text-xl mb-2">$40+</p>
-              <p className="text-gray-700 text-sm">Smooth results for weeks</p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg luxury-shadow">
-              <h3 className="font-serif text-xl text-nearBlack mb-2">Brazilian</h3>
-              <p className="text-accent font-semibold text-xl mb-2">$75+</p>
-              <p className="text-gray-700 text-sm">Full bikini waxing with privacy</p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg luxury-shadow">
-              <h3 className="font-serif text-xl text-nearBlack mb-2">Bikini Line</h3>
-              <p className="text-accent font-semibold text-xl mb-2">$50+</p>
-              <p className="text-gray-700 text-sm">Classic bikini area waxing</p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg luxury-shadow">
-              <h3 className="font-serif text-xl text-nearBlack mb-2">Full Leg</h3>
-              <p className="text-accent font-semibold text-xl mb-2">$75+</p>
-              <p className="text-gray-700 text-sm">Smooth, silky legs</p>
-            </div>
-          </div>
-        </div>
-
-        {/* TEETH WHITENING */}
-        <div className="mb-16">
-          <h2 className="font-serif text-4xl mb-8 text-nearBlack text-center">Teeth Whitening</h2>
+          <h2 className="font-serif text-4xl mb-8 text-nearBlack text-center">Professional Teeth Whitening</h2>
 
           <div className="max-w-2xl mx-auto">
             <div className="bg-white p-8 rounded-lg luxury-shadow">
-              <h3 className="font-serif text-2xl text-nearBlack mb-2">Professional In-Home Whitening</h3>
+              <h3 className="font-serif text-2xl text-nearBlack mb-2">In-Home Whitening</h3>
               <div className="flex justify-between items-center mb-4">
                 <span className="text-gray-600">60 min</span>
                 <span className="text-accent font-semibold text-xl">$125+</span>
@@ -588,11 +530,11 @@ export default function ServicesPage() {
           </div>
         </div>
 
-        {/* MAKEUP & SPECIAL SERVICES */}
+        {/* EVENT BEAUTY */}
         <div className="mb-16">
-          <h2 className="font-serif text-4xl mb-8 text-nearBlack text-center">Makeup & Special Services</h2>
+          <h2 className="font-serif text-4xl mb-8 text-nearBlack text-center">Event Beauty</h2>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="max-w-2xl mx-auto">
             <div className="bg-white p-8 rounded-lg luxury-shadow">
               <h3 className="font-serif text-2xl text-nearBlack mb-2">Makeup Application</h3>
               <div className="flex justify-between items-center mb-4">
@@ -609,54 +551,36 @@ export default function ServicesPage() {
                 Book Now
               </Link>
             </div>
-
-            <div className="bg-white p-8 rounded-lg luxury-shadow">
-              <h3 className="font-serif text-2xl text-nearBlack mb-2">Ear or Nose Piercing</h3>
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-gray-600">20 min</span>
-                <span className="text-accent font-semibold text-xl">$45+</span>
-              </div>
-              <p className="text-gray-700 mb-4">
-                Professional piercing with sterile technique and premium jewelry. Includes aftercare instructions.
-              </p>
-              <Link
-                href="/contact"
-                className="inline-block px-6 py-2 bg-accent text-white rounded hover:bg-hover transition-colors font-medium"
-              >
-                Inquire
-              </Link>
-            </div>
           </div>
         </div>
 
-        {/* PEPTIDE WELLNESS */}
+        {/* WELLNESS & LONGEVITY - PEPTIDE WELLNESS */}
         <div className="mb-16">
           <div className="bg-gradient-to-br from-nearBlack/95 to-accent/80 text-cream rounded-2xl p-10 md:p-12 luxury-shadow">
             <div className="max-w-6xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-12 items-start">
-                {/* Left Column */}
-                <div>
-                  <div className="inline-block px-4 py-1 bg-cream/20 rounded-full mb-4">
-                    <span className="text-xs tracking-widest uppercase">Wellness & Longevity</span>
-                  </div>
-                  <h2 className="font-serif text-4xl md:text-5xl mb-4 text-white">Peptide Wellness Consultation</h2>
-                  <p className="text-xl text-cream/90 mb-4">Personalized Peptide Guidance & Referrals</p>
-                  <p className="text-2xl font-serif text-cream mb-6">Starting at $120</p>
-
-                  <p className="text-lg text-cream/90 leading-relaxed mb-8">
-                    Melissa offers private consultations for clients interested in peptide therapy for skin rejuvenation, wellness, recovery, and longevity. This service includes education on safe sourcing, dosing guidance, and referrals to trusted medical providers when needed.
-                  </p>
-
-                  <Link
-                    href="/contact"
-                    className="inline-block px-8 py-4 bg-cream text-nearBlack rounded-lg hover:bg-white transition-colors font-semibold text-lg"
-                  >
-                    Schedule a Peptide Consultation
-                  </Link>
+              {/* Centered Header Section */}
+              <div className="text-center mb-12">
+                <div className="inline-block px-4 py-1 bg-cream/20 rounded-full mb-4">
+                  <span className="text-xs tracking-widest uppercase">Wellness & Longevity</span>
                 </div>
+                <h2 className="font-serif text-4xl md:text-5xl mb-4 text-white">Peptide Wellness Consultation</h2>
+                <p className="text-xl text-cream/90 mb-4">Personalized Peptide Guidance & Referrals</p>
+                <p className="text-2xl font-serif text-cream mb-6">Starting at $120</p>
 
-                {/* Right Column */}
-                <div className="space-y-6">
+                <p className="text-lg text-cream/90 leading-relaxed mb-8 max-w-3xl mx-auto">
+                  Melissa offers private consultations for clients interested in peptide therapy for skin rejuvenation, wellness, recovery, and longevity. This service includes education on safe sourcing, dosing guidance, and referrals to trusted medical providers when needed.
+                </p>
+
+                <Link
+                  href="/book?service=Peptide%20Wellness%20Consultation"
+                  className="inline-block px-8 py-4 bg-cream text-nearBlack rounded-lg hover:bg-white transition-colors font-semibold text-lg"
+                >
+                  Schedule a Peptide Consultation
+                </Link>
+              </div>
+
+              {/* Details Grid */}
+              <div className="grid md:grid-cols-2 gap-6">
                   <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg">
                     <h4 className="font-semibold text-lg mb-4 text-white">What's Covered:</h4>
                     <ul className="space-y-3">
@@ -728,143 +652,6 @@ export default function ServicesPage() {
                     </ul>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* HAIR SERVICES */}
-        <div className="mb-16">
-          <h2 className="font-serif text-4xl mb-8 text-nearBlack text-center">Hair Services</h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto italic">
-            Curated high-end services only. Premium cuts, color, and styling.
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-lg luxury-shadow">
-              <h3 className="font-serif text-2xl text-nearBlack mb-2">Women's Precision Cut</h3>
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-gray-600">75 min</span>
-                <span className="text-accent font-semibold text-xl">$95+</span>
-              </div>
-              <p className="text-gray-700 mb-4">
-                Transformative shaping tailored for face structure and personal style.
-              </p>
-              <Link
-                href="/book?service=Women's%20Haircut"
-                className="inline-block px-6 py-2 bg-accent text-white rounded hover:bg-hover transition-colors font-medium"
-              >
-                Book Now
-              </Link>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg luxury-shadow">
-              <h3 className="font-serif text-2xl text-nearBlack mb-2">Men's Precision Cut & Finish</h3>
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-gray-600">45 min</span>
-                <span className="text-accent font-semibold text-xl">$65+</span>
-              </div>
-              <Link
-                href="/book?service=Men's%20Haircut"
-                className="inline-block px-6 py-2 bg-accent text-white rounded hover:bg-hover transition-colors font-medium"
-              >
-                Book Now
-              </Link>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg luxury-shadow">
-              <h3 className="font-serif text-2xl text-nearBlack mb-2">Special Occasion Style</h3>
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-gray-600">90 min</span>
-                <span className="text-accent font-semibold text-xl">$150+</span>
-              </div>
-              <p className="text-gray-700 mb-4">
-                In-home styling for events, photoshoots, or red-carpet moments.
-              </p>
-              <Link
-                href="/book?service=Updo%20/%20Special%20Occasion%20Style"
-                className="inline-block px-6 py-2 bg-accent text-white rounded hover:bg-hover transition-colors font-medium"
-              >
-                Book Now
-              </Link>
-            </div>
-          </div>
-
-          {/* Color Services */}
-          <div className="mt-12">
-            <h3 className="font-serif text-3xl mb-6 text-nearBlack text-center">Luxury Color Services</h3>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white p-8 rounded-lg luxury-shadow">
-                <h4 className="font-serif text-xl text-nearBlack mb-2">Partial Foil Highlights</h4>
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-gray-600">120 min</span>
-                  <span className="text-accent font-semibold text-xl">$155+</span>
-                </div>
-                <Link
-                  href="/book?service=Partial%20Foil%20Highlights"
-                  className="inline-block mt-4 px-6 py-2 bg-accent text-white rounded hover:bg-hover transition-colors font-medium"
-                >
-                  Book Now
-                </Link>
-              </div>
-
-              <div className="bg-white p-8 rounded-lg luxury-shadow">
-                <h4 className="font-serif text-xl text-nearBlack mb-2">Full Foil Highlights</h4>
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-gray-600">150 min</span>
-                  <span className="text-accent font-semibold text-xl">$195+</span>
-                </div>
-                <Link
-                  href="/book?service=Full%20Foil%20Highlights"
-                  className="inline-block mt-4 px-6 py-2 bg-accent text-white rounded hover:bg-hover transition-colors font-medium"
-                >
-                  Book Now
-                </Link>
-              </div>
-
-              <div className="bg-white p-8 rounded-lg luxury-shadow">
-                <h4 className="font-serif text-xl text-nearBlack mb-2">Solid Color Refresh</h4>
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-gray-600">90 min</span>
-                  <span className="text-accent font-semibold text-xl">$140+</span>
-                </div>
-                <Link
-                  href="/book?service=Solid%20Color"
-                  className="inline-block mt-4 px-6 py-2 bg-accent text-white rounded hover:bg-hover transition-colors font-medium"
-                >
-                  Book Now
-                </Link>
-              </div>
-
-              <div className="bg-white p-8 rounded-lg luxury-shadow">
-                <h4 className="font-serif text-xl text-nearBlack mb-2">Fashion / Vivid Colors</h4>
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-gray-600">180 min</span>
-                  <span className="text-accent font-semibold text-xl">$225+</span>
-                </div>
-                <Link
-                  href="/book?service=Fashion%20Colors"
-                  className="inline-block mt-4 px-6 py-2 bg-accent text-white rounded hover:bg-hover transition-colors font-medium"
-                >
-                  Book Now
-                </Link>
-              </div>
-
-              <div className="bg-white p-8 rounded-lg luxury-shadow">
-                <h4 className="font-serif text-xl text-nearBlack mb-2">Hair Extensions</h4>
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-gray-600">180 min</span>
-                  <span className="text-accent font-semibold text-xl">$250+</span>
-                </div>
-                <p className="text-sm text-gray-600 mb-2">Installation or move-up. Consultation required.</p>
-                <Link
-                  href="/book?service=Hair%20Extensions"
-                  className="inline-block mt-4 px-6 py-2 bg-accent text-white rounded hover:bg-hover transition-colors font-medium"
-                >
-                  Book Now
-                </Link>
-              </div>
             </div>
           </div>
         </div>
@@ -873,7 +660,7 @@ export default function ServicesPage() {
         <div className="mb-16 bg-white p-10 md:p-12 rounded-2xl luxury-shadow">
           <h2 className="font-serif text-4xl mb-8 text-nearBlack text-center">Why Mobile?</h2>
           <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
-            Most clients choose MĒL11 because they want luxury without the salon chaos.
+            Most clients choose MĒL11 for clinical treatments in their own space. Whether that's at home, in a private office, or while traveling.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -881,7 +668,7 @@ export default function ServicesPage() {
               <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-accent text-xl">✓</span>
               </div>
-              <p className="text-gray-700 leading-relaxed">No parking, no traffic<br />No public waiting rooms</p>
+              <p className="text-gray-700 leading-relaxed">No commute, no traffic<br />No public waiting rooms</p>
             </div>
             <div className="text-center">
               <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -893,12 +680,12 @@ export default function ServicesPage() {
               <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-accent text-xl">✓</span>
               </div>
-              <p className="text-gray-700 leading-relaxed">Salon results without salon chaos<br />Fits around work, childcare, home duties</p>
+              <p className="text-gray-700 leading-relaxed">Clinical results on your schedule<br />Fits around work, childcare, family, and travel</p>
             </div>
           </div>
 
           <p className="text-center text-gray-600 mt-10 italic">
-            Beauty designed for real life. Not salon schedules.
+            Professional aesthetics designed for real life. Where you are, when you need it.
           </p>
         </div>
 

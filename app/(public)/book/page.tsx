@@ -10,6 +10,9 @@ const SERVICES = [
   { name: "Signature Transformation Program (8-Week)", price: 899, duration: 480, trending: true },
   { name: "Signature Transformation Program (12-Week)", price: 1350, duration: 720, trending: true },
 
+  // Peptide Wellness
+  { name: "Peptide Wellness Consultation", price: 120, duration: 60, superPopular: true },
+
   // Advanced Aesthetic Treatments
   { name: "Microneedling", price: 200, duration: 90, popular: true },
   { name: "Hydrafacial Treatment", price: 175, duration: 60, popular: true },
@@ -31,44 +34,43 @@ const SERVICES = [
   { name: "Back Facial", price: 110, duration: 60 },
   { name: "Intimate Glow Treatment", price: 95, duration: 60 },
 
-  // Brows & Lashes
+  // Eyes & Expression
   { name: "Brow Shaping & Tint", price: 35, duration: 30 },
   { name: "Lash Lift & Tint", price: 85, duration: 60 },
-  { name: "Sugaring Hair Removal", price: 45, duration: 45 },
 
-  // Waxing Services
-  { name: "Brow Wax", price: 30, duration: 20 },
-  { name: "Lip or Chin Wax", price: 30, duration: 20 },
-  { name: "Underarm Wax", price: 40, duration: 25 },
-  { name: "Brazilian Wax", price: 75, duration: 45 },
-  { name: "Bikini Line Wax", price: 50, duration: 30 },
-  { name: "Full Leg Wax", price: 75, duration: 60 },
-
-  // Teeth Whitening
+  // Professional Teeth Whitening
   { name: "Professional Teeth Whitening", price: 125, duration: 60 },
 
-  // Makeup & Special Services
+  // Event Beauty
   { name: "Makeup Application", price: 150, duration: 75 },
-
-  // Hair Services
-  { name: "Women's Precision Cut", price: 95, duration: 75 },
-  { name: "Men's Precision Cut & Finish", price: 65, duration: 45 },
-  { name: "Special Occasion Style", price: 150, duration: 90 },
-
-  // Luxury Color Services
-  { name: "Partial Foil Highlights", price: 155, duration: 120 },
-  { name: "Full Foil Highlights", price: 195, duration: 150 },
-  { name: "Solid Color Refresh", price: 140, duration: 90 },
-  { name: "Fashion / Vivid Colors", price: 225, duration: 180 },
-  { name: "Hair Extensions", price: 250, duration: 180 },
 ];
 
-// Simulated recent bookings for social proof
-const RECENT_BOOKINGS = [
-  { name: "Sarah", location: "Tacoma", service: "Hydrafacial", time: 12 },
-  { name: "Jennifer", location: "Puyallup", service: "Signature Facial", time: 23 },
-  { name: "Amanda", location: "Seattle", service: "Microneedling", time: 45 },
+// Simulated recent bookings for social proof - expanded pool for variety
+const BOOKING_NAMES = [
+  "Sarah", "Jennifer", "Amanda", "Rachel", "Michelle", "Lauren", "Emily", "Ashley",
+  "Stephanie", "Nicole", "Christina", "Megan", "Jessica", "Heather", "Brittany",
+  "Samantha", "Allison", "Courtney", "Natalie", "Rebecca", "Danielle", "Katherine",
+  "Lisa", "Kelly", "Kristen", "Melissa", "Andrea", "Julie", "Elizabeth", "Christine"
 ];
+
+const BOOKING_LOCATIONS = [
+  "Tacoma", "Seattle", "Puyallup", "Federal Way", "Lakewood", "University Place",
+  "Bellevue", "Kent", "Auburn", "Renton", "Fife", "Gig Harbor", "Bonney Lake"
+];
+
+const BOOKING_SERVICES = [
+  "Hydrafacial", "Signature Facial", "Microneedling", "Chemical Peel",
+  "Dermaplaning", "Lash Lift", "Brow Shaping", "Peptide Consultation"
+];
+
+// Function to generate a random booking
+const generateRandomBooking = () => {
+  const name = BOOKING_NAMES[Math.floor(Math.random() * BOOKING_NAMES.length)];
+  const location = BOOKING_LOCATIONS[Math.floor(Math.random() * BOOKING_LOCATIONS.length)];
+  const service = BOOKING_SERVICES[Math.floor(Math.random() * BOOKING_SERVICES.length)];
+  const time = Math.floor(Math.random() * 55) + 5; // 5-60 minutes ago
+  return { name, location, service, time };
+};
 
 function BookingForm() {
   const searchParams = useSearchParams();
@@ -98,8 +100,8 @@ function BookingForm() {
   const [loadingAvailability, setLoadingAvailability] = useState(false);
   const [totalSlotsThisWeek, setTotalSlotsThisWeek] = useState(0);
 
-  // FOMO state
-  const [recentBookingIndex, setRecentBookingIndex] = useState(0);
+  // FOMO state - initialize with null to avoid hydration mismatch
+  const [recentBooking, setRecentBooking] = useState<{ name: string; location: string; service: string; time: number } | null>(null);
 
   // Pre-select service from URL
   useEffect(() => {
@@ -114,11 +116,14 @@ function BookingForm() {
     fetchAvailability();
   }, [weekStart]);
 
-  // Rotate recent booking notifications
+  // Generate initial booking on client mount and rotate every 2 minutes
   useEffect(() => {
+    // Set initial booking only on client to avoid hydration mismatch
+    setRecentBooking(generateRandomBooking());
+
     const interval = setInterval(() => {
-      setRecentBookingIndex((prev) => (prev + 1) % RECENT_BOOKINGS.length);
-    }, 8000);
+      setRecentBooking(generateRandomBooking());
+    }, 120000); // 2 minutes = 120,000ms
     return () => clearInterval(interval);
   }, []);
 
@@ -177,7 +182,6 @@ function BookingForm() {
   };
 
   const service = SERVICES.find(s => s.name === selectedService);
-  const recentBooking = RECENT_BOOKINGS[recentBookingIndex];
 
   const nextWeek = () => {
     setWeekStart(addDays(weekStart, 7));
@@ -230,7 +234,7 @@ function BookingForm() {
         {/* Header with FOMO */}
         <div className="text-center mb-8">
           <h1 className="font-serif text-4xl md:text-5xl mb-4 text-nearBlack">Book Your Appointment</h1>
-          <p className="text-gray-600 text-lg mb-6">Let's bring luxury beauty to your door</p>
+          <p className="text-gray-600 text-lg mb-6">Studio-level aesthetics, wherever you are. Home, office, or hotel.</p>
 
           {/* FOMO: Scarcity Indicator */}
           {totalSlotsThisWeek > 0 && totalSlotsThisWeek <= 10 && (
@@ -245,11 +249,13 @@ function BookingForm() {
           )}
 
           {/* FOMO: Recent Booking Notification */}
-          <div className="inline-block bg-white/80 backdrop-blur-sm rounded-lg px-4 py-2 shadow-sm animate-fade-in-up">
-            <p className="text-sm text-gray-600">
-              <span className="font-medium text-nearBlack">{recentBooking.name}</span> from {recentBooking.location} booked {recentBooking.service} <span className="text-accent">{recentBooking.time} min ago</span>
-            </p>
-          </div>
+          {recentBooking && (
+            <div className="inline-block bg-white/80 backdrop-blur-sm rounded-lg px-4 py-2 shadow-sm animate-fade-in-up">
+              <p className="text-sm text-gray-600">
+                <span className="font-medium text-nearBlack">{recentBooking.name}</span> from {recentBooking.location} booked {recentBooking.service} <span className="text-accent">{recentBooking.time} min ago</span>
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Progress Steps */}
@@ -301,6 +307,12 @@ function BookingForm() {
                       )}
                       {(svc as any).popular && (
                         <span className="text-xs bg-hover text-white px-2 py-1 rounded-full">Popular</span>
+                      )}
+                      {(svc as any).superPopular && (
+                        <span className="text-xs bg-gradient-to-r from-accent to-hover text-white px-2 py-1 rounded-full font-medium">
+                          <span className="hidden sm:inline">Super Popular</span>
+                          <span className="sm:hidden">Popular+</span>
+                        </span>
                       )}
                     </div>
                     <div className="flex justify-between items-center">

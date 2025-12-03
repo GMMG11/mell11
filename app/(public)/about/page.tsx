@@ -62,24 +62,23 @@ export default function AboutPage() {
 
             <div className="mb-12">
               <p className="text-2xl md:text-3xl text-cream/90 mb-8 font-light leading-relaxed max-w-3xl mx-auto">
-                A new approach to luxury beauty. One that meets you where you already feel safe, calm, and fully yourself.
+                Clinical anti-aging expertise, delivered privately
               </p>
 
               <div className="luxury-divider max-w-md mx-auto mb-8" />
 
               <p className="text-xl md:text-2xl text-cream/90 mb-6 font-serif italic max-w-3xl mx-auto">
-                MĒL11 was built on a simple belief: everyone deserves studio-level results without the stress, inconvenience, or cost of traditional salons.
+                MĒL11 was founded on a powerful insight: exceptional aesthetic results shouldn't require compromising your time, privacy, or comfort.
               </p>
             </div>
 
             <div className="max-w-2xl mx-auto mb-12">
               <p className="text-lg text-cream/80 mb-8 leading-relaxed">
-                After 23 years in the beauty industry, Melissa saw a pattern: clients loved the results, but dreaded the experience.
+                After 23 years specializing in clinical anti-aging aesthetics, Melissa identified a fundamental gap in the industry.
               </p>
 
               <p className="text-2xl md:text-3xl gradient-text font-serif italic leading-relaxed">
-                So instead of bringing clients to the salon,<br className="hidden md:block" />
-                she brought the salon to the client.
+                Traditional aesthetic clinics weren't designed for how people actually live.
               </p>
             </div>
 
@@ -99,11 +98,57 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* About Melissa - Moved Up */}
+      {/* The Model Was Broken */}
       <section className="py-10 md:py-20 bg-white relative z-20">
         <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-serif text-4xl md:text-5xl mb-8 text-nearBlack text-center">
+              The model was broken
+            </h2>
+
+            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+              Clients wanted clinical results but dreaded:
+            </p>
+
+            <ul className="space-y-4 mb-12 text-gray-700">
+              <li className="flex items-start">
+                <span className="text-accent mr-3 mt-1">✗</span>
+                <span>Crowded waiting rooms</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-accent mr-3 mt-1">✗</span>
+                <span>Inflexible appointment times</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-accent mr-3 mt-1">✗</span>
+                <span>Downtown parking</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-accent mr-3 mt-1">✗</span>
+                <span>Public treatment spaces</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-accent mr-3 mt-1">✗</span>
+                <span>Rushed consultations</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-accent mr-3 mt-1">✗</span>
+                <span>Time lost to commutes</span>
+              </li>
+            </ul>
+
+            <p className="text-2xl font-serif text-center text-nearBlack leading-relaxed">
+              So she built a better model: bring paramedical-grade anti-aging treatments to where clients already feel safe, comfortable, and in control.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* About Melissa */}
+      <section className="py-10 md:py-20 bg-gradient-to-br from-cream to-white relative z-20">
+        <div className="container-custom">
           <div className="max-w-5xl mx-auto">
-            <h2 className="font-serif text-4xl mb-12 text-nearBlack text-center">Meet Mel</h2>
+            <h2 className="font-serif text-4xl mb-12 text-nearBlack text-center">Meet Melissa</h2>
 
             <div className="grid md:grid-cols-2 gap-12 items-start mb-12">
               {/* Photo */}
@@ -122,66 +167,76 @@ export default function AboutPage() {
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <p className="font-serif text-2xl text-nearBlack">
                   Melissa Green<br />
-                  Founder & Lead Aesthetician, MĒL11
+                  Founder & Lead Clinical Aesthetician
+                </p>
+
+                <p className="text-lg text-accent font-medium">
+                  Paramedical-Certified Anti-Aging Specialist
                 </p>
 
                 <p>
-                  With 23 years of industry experience, Melissa brings a rare blend of advanced technique, clinical knowledge, and intuitive artistry to every session.
+                  With 23 years of clinical aesthetic experience, Melissa brings advanced technique, medical-grade protocols, and genuine care to every private session.
                 </p>
 
-                <div className="bg-cream p-6 rounded-lg border border-softLine">
+                <div className="bg-white p-6 rounded-lg border border-softLine">
                   <p className="font-semibold text-nearBlack mb-3">Her clients describe her as:</p>
                   <ul className="space-y-2">
                     <li className="flex items-start">
                       <span className="text-accent mr-2">•</span>
-                      <span>gentle but meticulous</span>
+                      <span>Meticulous but warm</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-accent mr-2">•</span>
-                      <span>warm, calm, and grounding</span>
+                      <span>Clinically skilled yet approachable</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-accent mr-2">•</span>
-                      <span>deeply knowledgeable</span>
+                      <span>Never rushed</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-accent mr-2">•</span>
-                      <span>never rushed</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2">•</span>
-                      <span>someone who genuinely cares about their confidence and wellbeing</span>
+                      <span>Genuinely invested in their results and confidence</span>
                     </li>
                   </ul>
                 </div>
 
                 <p>
-                  What sets Melissa apart isn't just her training. It's her ability to make people feel beautiful in their own skin, without ever stepping into a crowded salon.
+                  What distinguishes Melissa isn't just her clinical training. It's her ability to deliver transformative anti-aging results while honoring her clients' need for privacy, flexibility, and genuine connection.
                 </p>
 
                 <p>
-                  As a mother of two with a lifelong passion for aesthetics, she believes beauty should enhance your life. Not complicate it, interrupt it, or drain your wallet.
+                  As a mother balancing professional excellence with family life, she understands that aesthetic care should enhance your life, not complicate it.
                 </p>
 
                 <p className="italic text-center text-nearBlack font-serif text-xl">
-                  MĒL11 is the embodiment of that belief.
+                  MĒL11 embodies that philosophy.
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Certifications - Full Width */}
-            <div className="max-w-4xl mx-auto">
+      {/* Clinical Training & Specializations */}
+      <section className="py-10 md:py-20 bg-white relative z-20">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-serif text-4xl mb-8 text-nearBlack text-center">
+              Clinical Training & Specializations
+            </h2>
+
+            <p className="text-xl text-center text-gray-600 mb-12">
+              Melissa is a paramedical-certified clinical aesthetician specializing in advanced anti-aging protocols.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              {/* Core Credentials */}
               <div className="bg-cream p-8 rounded-lg border border-softLine">
-                <h4 className="font-serif text-2xl mb-6 text-nearBlack">Professional Training & Certifications</h4>
-                <p className="text-gray-700 mb-6 italic">She is professionally trained and certified in:</p>
-                <ul className="grid md:grid-cols-2 gap-3">
+                <h4 className="font-serif text-xl mb-6 text-nearBlack">Core Credentials</h4>
+                <ul className="space-y-3">
                   <li className="flex items-start">
                     <span className="text-accent mr-2">•</span>
-                    <span>Licensed Esthetician (WA)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent mr-2">•</span>
-                    <span>Licensed Barber & Hair Designer (WA)</span>
+                    <span>Licensed Master Esthetician (WA State)</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-accent mr-2">•</span>
@@ -189,47 +244,49 @@ export default function AboutPage() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-accent mr-2">•</span>
-                    <span>Advanced Microneedling & Collagen Induction</span>
+                    <span className="font-semibold">23+ Years Clinical Experience</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Anti-Aging Specializations */}
+              <div className="bg-cream p-8 rounded-lg border border-softLine">
+                <h4 className="font-serif text-xl mb-6 text-nearBlack">Anti-Aging Specializations</h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">•</span>
+                    <span>Advanced Clinical Microneedling (collagen induction, scar revision, age reversal)</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-accent mr-2">•</span>
-                    <span>Chemical Peel (Level I & II) + Dermabrasion</span>
+                    <span>Chemical Peel Protocols (Level I & II)</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-accent mr-2">•</span>
-                    <span>Dermaplaning + Enzyme Resurfacing</span>
+                    <span>Hydrafacial Advanced Certification</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-accent mr-2">•</span>
-                    <span>Hydrafacial & Advanced Facial Protocols</span>
+                    <span>Dermaplaning & Medical-Grade Exfoliation</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-accent mr-2">•</span>
-                    <span>Ultrasound Skin Therapy</span>
+                    <span>Laser Hair Reduction (Certified Technician)</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-accent mr-2">•</span>
-                    <span>LED Light Therapy for Skin Rejuvenation</span>
+                    <span>LED Light Therapy & Ultrasound Skin Therapy</span>
                   </li>
+                </ul>
+              </div>
+
+              {/* Specialized Aesthetic Services */}
+              <div className="bg-cream p-8 rounded-lg border border-softLine">
+                <h4 className="font-serif text-xl mb-6 text-nearBlack">Specialized Aesthetic Services</h4>
+                <ul className="space-y-3">
                   <li className="flex items-start">
                     <span className="text-accent mr-2">•</span>
-                    <span>Laser Hair Reduction (Professional Technician)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent mr-2">•</span>
-                    <span>PMU Lip Blush + Color Theory</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent mr-2">•</span>
-                    <span>Brow Lamination, Tinting & Lash Lift</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent mr-2">•</span>
-                    <span>Sugar Hair Removal Expert ("Queen of Sugaring")</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-accent mr-2">•</span>
-                    <span>Cosmetic Teeth Whitening Technician</span>
+                    <span>PMU Lip Blush & Color Theory</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-accent mr-2">•</span>
@@ -237,15 +294,30 @@ export default function AboutPage() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-accent mr-2">•</span>
-                    <span>Trauma-Informed Aesthetics Training</span>
+                    <span>Brow Lamination & Lash Lift Certification</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-accent mr-2">•</span>
-                    <span>Mobile Aesthetic Safety & Field Protocols</span>
+                    <span>Professional Teeth Whitening Technician</span>
                   </li>
-                  <li className="flex items-start md:col-span-2">
+                </ul>
+              </div>
+
+              {/* Professional Development */}
+              <div className="bg-cream p-8 rounded-lg border border-softLine">
+                <h4 className="font-serif text-xl mb-6 text-nearBlack">Professional Development</h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
                     <span className="text-accent mr-2">•</span>
-                    <span className="font-semibold">23+ years in professional beauty + wellness</span>
+                    <span>Trauma-Informed Care in Aesthetics</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">•</span>
+                    <span>Mobile Clinical Safety Protocols</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">•</span>
+                    <span>Continuous advanced education in aesthetic medicine</span>
                   </li>
                 </ul>
               </div>
@@ -254,94 +326,70 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* The Pattern She Saw */}
+      {/* Why Private, On-Location Aesthetics */}
       <section className="py-10 md:py-20 bg-gradient-to-br from-nearBlack to-accent/90 relative overflow-hidden z-20">
         <div className="container-custom relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <p className="text-xl mb-8 leading-relaxed text-white">
-              After 23 years in the beauty industry, Melissa saw the same pattern everywhere she worked. Clients loved the results, but dreaded the experience:
-            </p>
-
-            <ul className="space-y-4 mb-12 text-white">
-              <li className="flex items-start">
-                <span className="text-cream mr-3 mt-1">•</span>
-                <span>Delayed appointments</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-cream mr-3 mt-1">•</span>
-                <span>Harsh overhead lighting</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-cream mr-3 mt-1">•</span>
-                <span>Crowded waiting rooms</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-cream mr-3 mt-1">•</span>
-                <span>Noise, chaos, and rushed conversations</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-cream mr-3 mt-1">•</span>
-                <span>Lost time in traffic or downtown parking</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-cream mr-3 mt-1">•</span>
-                <span>Premium pricing inflated by salon rent, overhead, and commissions</span>
-              </li>
-            </ul>
-
-            <p className="text-xl leading-relaxed mb-4 text-white">
-              So she decided to change the model entirely.
-            </p>
-
-            <p className="text-3xl md:text-4xl font-serif italic text-center leading-relaxed text-cream">
-              Instead of bringing clients to the salon,<br />
-              she would bring the salon to the client.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Why In-Home Beauty */}
-      <section className="py-10 md:py-20 bg-white relative z-20">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="font-serif text-4xl md:text-5xl mb-6 text-nearBlack text-center">
-              Why In-Home Beauty?
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="font-serif text-4xl md:text-5xl mb-4 text-white">
+              Why Private, On-Location Aesthetics?
             </h2>
-            <p className="text-xl text-center text-gray-600 mb-12 italic">Her Personal Philosophy</p>
+            <p className="text-xl text-cream/90 mb-12 italic">The Philosophy Behind MĒL11</p>
 
-            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-              Melissa's philosophy is simple:
+            <p className="text-xl mb-8 leading-relaxed text-cream/90">
+              Traditional aesthetic clinics weren't designed for modern life.
             </p>
 
-            <p className="text-2xl md:text-3xl font-serif text-center text-nearBlack mb-12 leading-relaxed">
-              Beauty should feel personal, private, and accessible. Not intimidating or overpriced.
-            </p>
+            <div className="grid md:grid-cols-2 gap-8 mb-12 text-left">
+              <div>
+                <h4 className="font-semibold text-lg mb-4 text-white">They require you to:</h4>
+                <ul className="space-y-3 text-cream/90">
+                  <li className="flex items-start">
+                    <span className="text-cream mr-3 mt-1">✗</span>
+                    <span>Drive downtown and find parking</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-cream mr-3 mt-1">✗</span>
+                    <span>Sit in public waiting rooms</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-cream mr-3 mt-1">✗</span>
+                    <span>Work around their schedule, not yours</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-cream mr-3 mt-1">✗</span>
+                    <span>Pay premium prices inflated by commercial rent and overhead</span>
+                  </li>
+                </ul>
+              </div>
 
-            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-              With no salon lease, no chair fees, and no inflated commercial overhead, Melissa can offer:
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-6 mb-12">
-              <div className="flex items-start">
-                <span className="text-accent mr-3 mt-1 text-xl">✓</span>
-                <span className="text-gray-700 text-lg">Lower pricing than traditional studios</span>
-              </div>
-              <div className="flex items-start">
-                <span className="text-accent mr-3 mt-1 text-xl">✓</span>
-                <span className="text-gray-700 text-lg">Higher-end products and equipment</span>
-              </div>
-              <div className="flex items-start">
-                <span className="text-accent mr-3 mt-1 text-xl">✓</span>
-                <span className="text-gray-700 text-lg">Longer, more attentive appointments</span>
-              </div>
-              <div className="flex items-start">
-                <span className="text-accent mr-3 mt-1 text-xl">✓</span>
-                <span className="text-gray-700 text-lg">A level of privacy salons simply can't match</span>
+              <div>
+                <h4 className="font-semibold text-lg mb-4 text-white">Melissa saw an opportunity:</h4>
+                <ul className="space-y-3 text-cream/90">
+                  <li className="flex items-start">
+                    <span className="text-accent mr-3 mt-1">✓</span>
+                    <span>Clinical-grade treatments in private settings</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-3 mt-1">✓</span>
+                    <span>Flexible scheduling that fits professional and family life</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-3 mt-1">✓</span>
+                    <span>Premium pharmaceutical products without commercial markup</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-3 mt-1">✓</span>
+                    <span>Longer, more attentive appointments</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-3 mt-1">✓</span>
+                    <span>Absolute privacy and discretion</span>
+                  </li>
+                </ul>
               </div>
             </div>
 
-            <p className="text-2xl font-serif italic text-center text-nearBlack">
+            <p className="text-2xl font-serif italic text-cream">
               The value isn't in cutting corners.<br />
               The value is in cutting out everything that doesn't serve the client.
             </p>
@@ -349,59 +397,197 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* COVID Section */}
-      <section className="py-10 md:py-20 bg-gradient-to-br from-cream to-white relative z-20">
+      {/* Meeting Clients Where They Are */}
+      <section className="py-10 md:py-20 bg-white relative z-20">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-serif text-4xl md:text-5xl mb-8 text-nearBlack text-center">
-              COVID changed everything and confirmed her vision
+              Meeting Clients Where They Are
             </h2>
 
-            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-              When COVID shut down salons, Melissa noticed something powerful:
+            <p className="text-xl text-gray-700 mb-8 leading-relaxed text-center">
+              MĒL11 serves busy professionals, parents, and discerning individuals who value:
             </p>
 
-            <p className="text-2xl font-serif text-nearBlack mb-8 leading-relaxed">
-              Clients weren't just avoiding public spaces.<br />
-              They thrived in private ones.
-            </p>
-
-            <div className="space-y-4 mb-12">
-              <p className="text-xl text-gray-700 leading-relaxed">They felt calmer.</p>
-              <p className="text-xl text-gray-700 leading-relaxed">They felt safer.</p>
-              <p className="text-xl text-gray-700 leading-relaxed">
-                They felt truly cared for in a way they never had inside a commercial space.
-              </p>
+            <div className="grid md:grid-cols-2 gap-6 mb-12">
+              <div className="flex items-start">
+                <span className="text-accent mr-3 mt-1 text-xl font-bold">Privacy</span>
+                <span className="text-gray-700">→ No public treatment spaces or waiting rooms</span>
+              </div>
+              <div className="flex items-start">
+                <span className="text-accent mr-3 mt-1 text-xl font-bold">Convenience</span>
+                <span className="text-gray-700">→ We fit into your schedule and location</span>
+              </div>
+              <div className="flex items-start">
+                <span className="text-accent mr-3 mt-1 text-xl font-bold">Results</span>
+                <span className="text-gray-700">→ Paramedical protocols and pharmaceutical-grade products</span>
+              </div>
+              <div className="flex items-start">
+                <span className="text-accent mr-3 mt-1 text-xl font-bold">Time</span>
+                <span className="text-gray-700">→ No commute, no parking, no wasted hours</span>
+              </div>
             </div>
 
             <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-              She realized what many professionals missed:<br />
-              <span className="font-serif text-2xl italic text-nearBlack">beauty was never about the salon. It was about the connection.</span>
+              Whether you're working from a home office, traveling for business, or simply prefer the comfort of your own space, MĒL11 delivers transformative anti-aging care on your terms.
             </p>
 
-            <div className="bg-white p-8 rounded-lg luxury-shadow mb-8">
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Her house-call model didn't just survive the pandemic. It became the preferred experience for dozens of clients who refused to go back to the salon chair.
-              </p>
+            <div className="bg-cream p-8 rounded-lg border border-softLine">
+              <h4 className="font-semibold text-lg mb-4 text-nearBlack">Our clients include:</h4>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-start">
+                  <span className="text-accent mr-2">•</span>
+                  <span>Executives and professionals with demanding schedules</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-accent mr-2">•</span>
+                  <span>Parents balancing family and self-care</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-accent mr-2">•</span>
+                  <span>Individuals who value privacy and discretion</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-accent mr-2">•</span>
+                  <span>Anyone seeking clinical results without clinic hassles</span>
+                </li>
+              </ul>
             </div>
-
-            <p className="text-xl text-gray-700 leading-relaxed text-center">
-              Today, the MĒL11 mobile studio is a fully optimized extension of that philosophy:<br />
-              <span className="font-serif text-2xl italic text-nearBlack">quiet, discreet, calming, and deeply personalized.</span>
-            </p>
           </div>
         </div>
       </section>
 
-      {/* Service Area */}
-      <section className="py-10 md:py-20 bg-cream relative z-20">
-        <div className="container-custom">
+      {/* Service Area with Map */}
+      <section className="py-16 md:py-24 relative z-20 overflow-hidden">
+        {/* Stylized Map Background - Full Width - Rich Champagne Gradient */}
+        <div className="absolute inset-0">
+          <svg
+            viewBox="0 0 1600 600"
+            className="w-full h-full"
+            preserveAspectRatio="xMidYMid slice"
+          >
+            {/* Define fonts and gradients */}
+            <defs>
+              <style>
+                {`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');`}
+              </style>
+              {/* Rich champagne gradient - matches accent/hover colors */}
+              <linearGradient id="champagneGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#C9A86C" />
+                <stop offset="50%" stopColor="#B8956A" />
+                <stop offset="100%" stopColor="#A67C52" />
+              </linearGradient>
+              {/* Radial glow effect */}
+              <radialGradient id="centerGlow" cx="50%" cy="50%" r="60%">
+                <stop offset="0%" stopColor="#D4B896" stopOpacity="0.3" />
+                <stop offset="100%" stopColor="#C9A86C" stopOpacity="0" />
+              </radialGradient>
+            </defs>
+
+            {/* Background - Rich Champagne Gradient */}
+            <rect width="1600" height="600" fill="url(#champagneGradient)" />
+            {/* Subtle center glow */}
+            <rect width="1600" height="600" fill="url(#centerGlow)" />
+
+            {/* Water - Puget Sound - White */}
+            <path
+              d="M300 0 L300 80 Q260 140 280 200 L250 300 Q220 380 260 460 L240 520 Q200 560 260 600 L0 600 L0 0 Z"
+              fill="#FFFFFF"
+              fillOpacity="0.6"
+            />
+            {/* Commencement Bay */}
+            <ellipse cx="340" cy="420" rx="80" ry="50" fill="#FFFFFF" fillOpacity="0.5" />
+            {/* Elliott Bay */}
+            <ellipse cx="380" cy="160" rx="70" ry="45" fill="#FFFFFF" fillOpacity="0.5" />
+
+            {/* Roads/Highways - white grid across full width */}
+            <line x1="500" y1="0" x2="500" y2="600" stroke="#FFFFFF" strokeWidth="1.5" strokeOpacity="0.4" />
+            <line x1="800" y1="0" x2="800" y2="600" stroke="#FFFFFF" strokeWidth="1.5" strokeOpacity="0.4" />
+            <line x1="1100" y1="0" x2="1100" y2="600" stroke="#FFFFFF" strokeWidth="1.5" strokeOpacity="0.4" />
+            <line x1="0" y1="200" x2="1600" y2="200" stroke="#FFFFFF" strokeWidth="1.5" strokeOpacity="0.4" />
+            <line x1="0" y1="400" x2="1600" y2="400" stroke="#FFFFFF" strokeWidth="1.5" strokeOpacity="0.4" />
+
+            {/* I-5 Highway */}
+            <path
+              d="M520 0 Q560 150 540 300 Q520 450 560 600"
+              stroke="#FFFFFF"
+              strokeWidth="3"
+              strokeOpacity="0.5"
+              fill="none"
+            />
+
+            {/* City markers with labels - using Playfair Display */}
+            {/* Seattle */}
+            <circle cx="500" cy="140" r="14" fill="#FFFFFF" fillOpacity="0.7" />
+            <circle cx="500" cy="140" r="7" fill="#FFFFFF" />
+            <text x="525" y="148" fill="#FFFFFF" fontSize="18" fontFamily="'Playfair Display', serif" fontWeight="500" opacity="0.9">Seattle</text>
+
+            {/* Tacoma */}
+            <circle cx="480" cy="400" r="18" fill="#FFFFFF" fillOpacity="0.8" />
+            <circle cx="480" cy="400" r="9" fill="#FFFFFF" />
+            <text x="510" y="408" fill="#FFFFFF" fontSize="20" fontFamily="'Playfair Display', serif" fontWeight="600" opacity="1">Tacoma</text>
+
+            {/* Puyallup */}
+            <circle cx="620" cy="420" r="12" fill="#FFFFFF" fillOpacity="0.7" />
+            <circle cx="620" cy="420" r="6" fill="#FFFFFF" />
+            <text x="645" y="428" fill="#FFFFFF" fontSize="16" fontFamily="'Playfair Display', serif" fontWeight="500" opacity="0.9">Puyallup</text>
+
+            {/* Other cities - smaller markers */}
+            <circle cx="620" cy="150" r="8" fill="#FFFFFF" fillOpacity="0.4" />
+            <circle cx="540" cy="300" r="8" fill="#FFFFFF" fillOpacity="0.4" />
+            <circle cx="440" cy="450" r="8" fill="#FFFFFF" fillOpacity="0.4" />
+
+            {/* Service area circle - dashed */}
+            <circle
+              cx="540"
+              cy="350"
+              r="220"
+              fill="none"
+              stroke="#FFFFFF"
+              strokeWidth="2"
+              strokeDasharray="10 5"
+              strokeOpacity="0.5"
+            />
+
+            {/* Decorative elements on right side */}
+            <circle cx="1200" cy="150" r="6" fill="#FFFFFF" fillOpacity="0.3" />
+            <circle cx="1350" cy="280" r="6" fill="#FFFFFF" fillOpacity="0.3" />
+            <circle cx="1150" cy="450" r="6" fill="#FFFFFF" fillOpacity="0.3" />
+            <circle cx="1400" cy="500" r="6" fill="#FFFFFF" fillOpacity="0.3" />
+          </svg>
+        </div>
+
+        {/* Content overlay - no card background */}
+        <div className="container-custom relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="font-serif text-4xl mb-6 text-nearBlack">Service Area</h2>
-            <p className="text-lg text-gray-600 mb-8">
-              Tacoma • Puyallup • Greater Seattle<br />
+            <h2 className="font-serif text-4xl md:text-5xl mb-8 text-nearBlack">Service Area</h2>
+
+            {/* Location Markers */}
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-5 py-3 rounded-full border border-accent/20 shadow-sm">
+                <svg className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                </svg>
+                <span className="font-medium text-nearBlack">Tacoma</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-5 py-3 rounded-full border border-accent/20 shadow-sm">
+                <svg className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                </svg>
+                <span className="font-medium text-nearBlack">Puyallup</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-5 py-3 rounded-full border border-accent/20 shadow-sm">
+                <svg className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                </svg>
+                <span className="font-medium text-nearBlack">Greater Seattle</span>
+              </div>
+            </div>
+
+            <p className="text-gray-600 text-lg mb-10">
               Travel fees may apply based on distance.
             </p>
+
             <Link href="/contact">
               <Button size="lg" variant="primary">
                 Get in touch
