@@ -1,6 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 import Button from '@/components/Button';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Mobile Microneedling, Facials & Anti-Aging Treatments',
+  description: 'In-home microneedling, hydrafacials, chemical peels, dermabrasion & more. Clinical anti-aging treatments delivered to your home in Tacoma, Puyallup & Greater Seattle. Book your mobile aesthetics appointment today.',
+  openGraph: {
+    title: 'Mobile Microneedling, Facials & Anti-Aging – MĒL11 Tacoma',
+    description: 'Clinical anti-aging treatments delivered to your home. Microneedling, hydrafacials, chemical peels & more.',
+  },
+};
 
 export default function ServicesPage() {
   return (
