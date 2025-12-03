@@ -15,7 +15,7 @@ export default function Footer() {
           loop
           preload="auto"
         >
-          <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11about-NMSPD.mp4" type="video/mp4" />
+          <source src="/assets/bottombannerh264_faststart.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-t from-nearBlack via-nearBlack/80 to-nearBlack/60" />
       </div>

@@ -17,17 +17,17 @@ export async function GET(request: Request) {
     const endDate = new Date(startDate);
     endDate.setDate(endDate.getDate() + 7); // Get 1 week of availability
 
-    const availableSlots = await getAvailableSlots(startDate, endDate);
+    const allSlots = await getAvailableSlots(startDate, endDate);
 
-    // Count total available slots
-    const totalSlots = Object.values(availableSlots).reduce(
-      (sum, slots) => sum + slots.length,
+    // Count only available slots (not booked or too soon)
+    const totalAvailable = Object.values(allSlots).reduce(
+      (sum, slots) => sum + slots.filter(s => s.available).length,
       0
     );
 
     return NextResponse.json({
-      slots: availableSlots,
-      totalAvailable: totalSlots,
+      slots: allSlots,
+      totalAvailable,
       startDate: startDate.toISOString(),
       endDate: endDate.toISOString(),
     });

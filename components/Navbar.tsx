@@ -1,12 +1,28 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Auto-close mobile menu after 5 seconds
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      timerRef.current = setTimeout(() => {
+        setMobileMenuOpen(false);
+      }, 5000);
+    }
+
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+    };
+  }, [mobileMenuOpen]);
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -75,8 +91,12 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-softLine">
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          }`}
+        >
+          <div className="py-4 border-t border-softLine">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -92,7 +112,7 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );

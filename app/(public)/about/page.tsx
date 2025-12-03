@@ -34,7 +34,7 @@ export default function AboutPage() {
       {/* Hero Section with Video Background */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Video Background */}
-        <div className="fixed inset-0 z-0 md:absolute">
+        <div className="absolute inset-0 z-0">
           <video
             className="w-full h-full object-cover object-center"
             style={{
@@ -48,7 +48,7 @@ export default function AboutPage() {
             loop
             preload="auto"
           >
-            <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11about-NMSPD.mp4" type="video/mp4" />
+            <source src="/assets/bottombannerh264_faststart.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-nearBlack/60 via-nearBlack/50 to-cream" />
         </div>
@@ -110,7 +110,7 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="aspect-[3/4] relative rounded-2xl overflow-hidden luxury-shadow">
                   <img
-                    src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/MG11.png"
+                    src="/images/MG11.png"
                     alt="Melissa Green - Founder of MĒL11"
                     className="w-full h-full object-cover"
                   />
@@ -394,7 +394,7 @@ export default function AboutPage() {
       </section>
 
       {/* Service Area */}
-      <section className="py-10 md:py-20">
+      <section className="py-10 md:py-20 bg-cream relative z-20">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="font-serif text-4xl mb-6 text-nearBlack">Service Area</h2>

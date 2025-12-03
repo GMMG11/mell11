@@ -18,7 +18,7 @@ interface Service {
 
 function HeroBackground() {
   return (
-    <div className="fixed inset-0 z-0 md:absolute">
+    <div className="absolute inset-0 z-0">
       {/* Video Background - Loops Continuously */}
       <video
         className="w-full h-full object-cover object-center"
@@ -33,7 +33,7 @@ function HeroBackground() {
         loop
         preload="auto"
       >
-        <source src="https://hvujayiaqhixrbwznlxy.supabase.co/storage/v1/object/public/images/Video%20MEL11COM.mp4" type="video/mp4" />
+        <source src="/assets/topbannerh264_faststart.mp4" type="video/mp4" />
       </video>
 
       {/* Gradient Overlay */}
@@ -88,7 +88,7 @@ export default function HomePage() {
   return (
     <div className="bg-cream">
       {/* Hero Section - Ultra Premium */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-20 pt-20">
         {/* Background Media with Video Transition */}
         <HeroBackground />
 

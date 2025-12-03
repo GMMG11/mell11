@@ -42,9 +42,10 @@ export const BUSINESS_HOURS = {
   endHour: 17,
   timezone: 'America/Los_Angeles',
   slotDuration: 60, // minutes
+  minimumNoticeHours: 2, // Can't book within 2 hours of current time
 };
 
-// Generate available time slots for a given date
+// Generate all time slots for a given date (includes past slots for display)
 export function generateTimeSlots(date: Date): Date[] {
   const slots: Date[] = [];
   const dayOfWeek = date.getDay();
@@ -62,6 +63,13 @@ export function generateTimeSlots(date: Date): Date[] {
   }
 
   return slots;
+}
+
+// Check if a slot is too soon to book (within minimum notice period)
+export function isSlotTooSoon(slot: Date): boolean {
+  const now = new Date();
+  const minimumBookingTime = new Date(now.getTime() + BUSINESS_HOURS.minimumNoticeHours * 60 * 60 * 1000);
+  return slot < minimumBookingTime;
 }
 
 // Fetch busy times from Google Calendar
@@ -109,10 +117,17 @@ export function isSlotAvailable(slot: Date, busyTimes: { start: Date; end: Date 
   return true;
 }
 
-// Get available slots for a date range
+// Slot with availability status
+export interface SlotInfo {
+  time: Date;
+  available: boolean;
+  reason?: 'booked' | 'too_soon';
+}
+
+// Get all slots for a date range with availability status
 export async function getAvailableSlots(startDate: Date, endDate: Date) {
   const busyTimes = await getBusyTimes(startDate, endDate);
-  const availableSlots: { [key: string]: Date[] } = {};
+  const allSlots: { [key: string]: SlotInfo[] } = {};
 
   let currentDate = new Date(startDate);
 
@@ -120,14 +135,21 @@ export async function getAvailableSlots(startDate: Date, endDate: Date) {
     const dateKey = currentDate.toISOString().split('T')[0];
     const daySlots = generateTimeSlots(currentDate);
 
-    availableSlots[dateKey] = daySlots.filter(slot =>
-      isSlotAvailable(slot, busyTimes)
-    );
+    allSlots[dateKey] = daySlots.map(slot => {
+      const isBusy = !isSlotAvailable(slot, busyTimes);
+      const tooSoon = isSlotTooSoon(slot);
+
+      return {
+        time: slot,
+        available: !isBusy && !tooSoon,
+        reason: isBusy ? 'booked' : (tooSoon ? 'too_soon' : undefined),
+      };
+    });
 
     currentDate.setDate(currentDate.getDate() + 1);
   }
 
-  return availableSlots;
+  return allSlots;
 }
 
 // Create a booking event in Google Calendar

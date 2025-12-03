@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import Button from '@/components/Button';
+import Footer from '@/components/Footer';
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-cream flex items-center justify-center px-4">
+    <div className="bg-cream">
+    <div className="min-h-[60vh] flex items-center justify-center px-4 py-16">
       <div className="max-w-2xl mx-auto text-center">
         {/* Error Code */}
         <div className="mb-8">
@@ -53,6 +55,8 @@ export default function NotFound() {
           </p>
         </div>
       </div>
+    </div>
+    <Footer />
     </div>
   );
 }

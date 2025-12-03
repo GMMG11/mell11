@@ -43,7 +43,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="bg-cream min-h-screen py-20">
+    <div className="bg-cream py-12">
       <div className="container-custom">
         <div className="max-w-4xl mx-auto">
           {/* Header */}

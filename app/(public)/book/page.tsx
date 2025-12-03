@@ -85,9 +85,16 @@ function BookingForm() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
+  // Slot info type
+  interface SlotInfo {
+    time: string;
+    available: boolean;
+    reason?: 'booked' | 'too_soon';
+  }
+
   // Calendar state
   const [weekStart, setWeekStart] = useState(() => startOfWeek(new Date(), { weekStartsOn: 1 }));
-  const [availability, setAvailability] = useState<{ [key: string]: Date[] }>({});
+  const [availability, setAvailability] = useState<{ [key: string]: SlotInfo[] }>({});
   const [loadingAvailability, setLoadingAvailability] = useState(false);
   const [totalSlotsThisWeek, setTotalSlotsThisWeek] = useState(0);
 
@@ -330,6 +337,11 @@ function BookingForm() {
                   )}
                 </div>
 
+                {/* Booking Notice */}
+                <p className="text-sm text-gray-500 text-center mb-4 font-serif italic">
+                  Appointments require at least 2 hours advance notice
+                </p>
+
                 {/* Week Navigation */}
                 <div className="flex justify-between items-center mb-4">
                   <button
@@ -377,21 +389,30 @@ function BookingForm() {
                           </div>
                           <div className="p-2 space-y-1 max-h-64 overflow-y-auto">
                             {slots.length === 0 ? (
-                              <p className="text-xs text-gray-400 text-center py-2">No slots</p>
+                              <p className="text-xs text-gray-400 text-center py-2 italic">
+                                Closed
+                              </p>
                             ) : (
                               slots.map((slot) => {
-                                const slotTime = parseISO(slot as any);
+                                const slotTime = parseISO(slot.time as any);
                                 const isSelected = selectedSlot && isSameDay(selectedSlot, slotTime) && selectedSlot.getTime() === slotTime.getTime();
+                                const isAvailable = slot.available;
+                                const isBooked = slot.reason === 'booked';
+                                const isTooSoon = slot.reason === 'too_soon';
 
                                 return (
                                   <button
                                     key={slotTime.toISOString()}
-                                    onClick={() => setSelectedSlot(slotTime)}
+                                    onClick={() => isAvailable && setSelectedSlot(slotTime)}
+                                    disabled={!isAvailable}
                                     className={`w-full text-xs py-2 px-1 rounded transition-all ${
                                       isSelected
                                         ? 'bg-accent text-white shadow-md'
-                                        : 'bg-cream hover:bg-accent/10 text-nearBlack'
+                                        : isAvailable
+                                          ? 'bg-cream hover:bg-accent/10 text-nearBlack cursor-pointer'
+                                          : 'bg-gray-100 text-gray-400 cursor-not-allowed line-through'
                                     }`}
+                                    title={isBooked ? 'Booked' : isTooSoon ? 'Too soon to book' : ''}
                                   >
                                     {format(slotTime, 'h:mm a')}
                                   </button>
