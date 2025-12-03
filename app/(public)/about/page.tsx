@@ -471,16 +471,16 @@ export default function AboutPage() {
               <style>
                 {`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');`}
               </style>
-              {/* Rich champagne gradient - matches accent/hover colors */}
+              {/* Rich champagne gradient - deeper brown tones */}
               <linearGradient id="champagneGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#C9A86C" />
-                <stop offset="50%" stopColor="#B8956A" />
-                <stop offset="100%" stopColor="#A67C52" />
+                <stop offset="0%" stopColor="#A67C52" />
+                <stop offset="50%" stopColor="#8C5A3C" />
+                <stop offset="100%" stopColor="#7A4E35" />
               </linearGradient>
               {/* Radial glow effect */}
               <radialGradient id="centerGlow" cx="50%" cy="50%" r="60%">
-                <stop offset="0%" stopColor="#D4B896" stopOpacity="0.3" />
-                <stop offset="100%" stopColor="#C9A86C" stopOpacity="0" />
+                <stop offset="0%" stopColor="#B8956A" stopOpacity="0.2" />
+                <stop offset="100%" stopColor="#8C5A3C" stopOpacity="0" />
               </radialGradient>
             </defs>
 
