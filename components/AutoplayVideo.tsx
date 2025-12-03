@@ -79,7 +79,7 @@ export default function AutoplayVideo({
     <>
       <video
         ref={videoRef}
-        autoplay
+        autoPlay
         muted
         loop
         playsInline
