@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mel11.com'),
   title: {
     default: 'MĒL11 | In-Home Luxury Aesthetics & Microneedling – Tacoma & Greater Seattle',
     template: '%s | MĒL11',
