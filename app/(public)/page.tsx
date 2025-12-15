@@ -26,17 +26,48 @@ function HeroBackground({ playIntroInBackground, onIntroBackgroundEnd }: {
 }) {
   const introVideoRef = useRef<HTMLVideoElement>(null);
   const ambientVideoRef = useRef<HTMLVideoElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [videoError, setVideoError] = useState(false);
+
+  // Detect mobile devices
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     if (playIntroInBackground && introVideoRef.current) {
-      introVideoRef.current.play();
+      introVideoRef.current.play().catch(() => {
+        // Autoplay failed (common on mobile), just show ambient video
+        onIntroBackgroundEnd();
+      });
     }
-  }, [playIntroInBackground]);
+  }, [playIntroInBackground, onIntroBackgroundEnd]);
+
+  // Handle video load errors
+  const handleVideoError = () => {
+    setVideoError(true);
+  };
 
   return (
     <div className="absolute inset-0 z-0">
-      {/* Intro Video for returning visitors - plays once in background */}
-      {playIntroInBackground && (
+      {/* Fallback poster image for mobile or when video fails */}
+      {(isMobile || videoError) && (
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: 'url(/images/intro-poster.jpg)',
+            filter: 'brightness(0.4)',
+          }}
+        />
+      )}
+
+      {/* Intro Video for returning visitors - plays once in background (desktop only) */}
+      {playIntroInBackground && !isMobile && (
         <video
           ref={introVideoRef}
           className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000"
@@ -49,30 +80,37 @@ function HeroBackground({ playIntroInBackground, onIntroBackgroundEnd }: {
           playsInline
           preload="auto"
           onEnded={onIntroBackgroundEnd}
+          onError={handleVideoError}
         >
+          {/* Use smaller video for tablets, full for desktop */}
+          <source src="/assets/websiteintro_mobile.mp4" type="video/mp4" media="(max-width: 1024px)" />
           <source src="/assets/websiteintro_web.mp4" type="video/mp4" />
         </video>
       )}
 
       {/* Ambient Video Background - Loops Continuously (shows after intro or for first-time visitors during overlay) */}
-      <video
-        ref={ambientVideoRef}
-        className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${
-          playIntroInBackground ? 'opacity-0' : 'opacity-100'
-        }`}
-        style={{
-          filter: 'brightness(0.4)',
-          minHeight: '100vh',
-          minWidth: '100vw'
-        }}
-        muted
-        playsInline
-        autoPlay
-        loop
-        preload="auto"
-      >
-        <source src="/assets/topbannerh264_faststart.mp4" type="video/mp4" />
-      </video>
+      {!videoError && (
+        <video
+          ref={ambientVideoRef}
+          className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${
+            playIntroInBackground && !isMobile ? 'opacity-0' : 'opacity-100'
+          } ${isMobile ? 'hidden md:block' : ''}`}
+          style={{
+            filter: 'brightness(0.4)',
+            minHeight: '100vh',
+            minWidth: '100vw'
+          }}
+          muted
+          playsInline
+          autoPlay
+          loop
+          preload="auto"
+          poster="/images/intro-poster.jpg"
+          onError={handleVideoError}
+        >
+          <source src="/assets/topbannerh264_faststart.mp4" type="video/mp4" />
+        </video>
+      )}
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-nearBlack/60 via-nearBlack/50 to-cream" />

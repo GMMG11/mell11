@@ -82,7 +82,7 @@ export default function IntroVideoOverlay({ onComplete, onSkip, isFirstVisit }: 
       {/* Dark backdrop */}
       <div className="absolute inset-0 bg-nearBlack" />
 
-      {/* Video */}
+      {/* Video - uses smaller file for mobile */}
       <video
         ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover"
@@ -90,7 +90,10 @@ export default function IntroVideoOverlay({ onComplete, onSkip, isFirstVisit }: 
         playsInline
         preload="auto"
         onEnded={handleVideoEnd}
+        poster="/images/intro-poster.jpg"
       >
+        {/* Mobile gets smaller video for faster loading */}
+        <source src="/assets/websiteintro_mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
         <source src="/assets/websiteintro_web.mp4" type="video/mp4" />
       </video>
 
