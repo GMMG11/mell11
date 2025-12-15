@@ -10,7 +10,7 @@ interface IntroVideoOverlayProps {
 
 export default function IntroVideoOverlay({ onComplete, onSkip, isFirstVisit }: IntroVideoOverlayProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isMuted, setIsMuted] = useState(false); // Sound ON by default
+  const [isMuted, setIsMuted] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
   const [isFadingOut, setIsFadingOut] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -82,7 +82,7 @@ export default function IntroVideoOverlay({ onComplete, onSkip, isFirstVisit }: 
       {/* Dark backdrop */}
       <div className="absolute inset-0 bg-nearBlack" />
 
-      {/* Video - uses smaller file for mobile */}
+      {/* Video */}
       <video
         ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover"
@@ -90,10 +90,7 @@ export default function IntroVideoOverlay({ onComplete, onSkip, isFirstVisit }: 
         playsInline
         preload="auto"
         onEnded={handleVideoEnd}
-        poster="/images/intro-poster.jpg"
       >
-        {/* Mobile gets smaller video for faster loading */}
-        <source src="/assets/websiteintro_mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
         <source src="/assets/websiteintro_web.mp4" type="video/mp4" />
       </video>
 
@@ -125,7 +122,7 @@ export default function IntroVideoOverlay({ onComplete, onSkip, isFirstVisit }: 
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                       d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
               </svg>
-              <span className="text-sm font-medium">Mute</span>
+              <span className="text-sm font-medium">Sound On</span>
             </>
           )}
         </button>
