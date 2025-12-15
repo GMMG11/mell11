@@ -10,7 +10,7 @@ interface IntroVideoOverlayProps {
 
 export default function IntroVideoOverlay({ onComplete, onSkip, isFirstVisit }: IntroVideoOverlayProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(false); // Sound ON by default
   const [isVisible, setIsVisible] = useState(false);
   const [isFadingOut, setIsFadingOut] = useState(false);
   const [progress, setProgress] = useState(0);

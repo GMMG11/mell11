@@ -258,9 +258,9 @@ export default function HomePage() {
               <div className="mt-8">
                 <button
                   onClick={handleMeetOwner}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 backdrop-blur-sm rounded-full
-                             text-cream/90 hover:bg-white/20 hover:text-cream transition-all duration-300 border border-cream/20
-                             text-sm"
+                  className="inline-flex items-center gap-2 px-6 py-2 bg-accent border-2 border-white rounded-full
+                             text-white hover:bg-hover transition-all duration-300
+                             text-sm tracking-[0.2em] uppercase font-medium"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
