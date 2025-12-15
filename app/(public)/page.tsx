@@ -89,18 +89,21 @@ export default function HomePage() {
   const [isFirstVisit, setIsFirstVisit] = useState(false);
   const [showIntroOverlay, setShowIntroOverlay] = useState(false);
   const [playIntroInBackground, setPlayIntroInBackground] = useState(false);
+  const [hasSeenIntro, setHasSeenIntro] = useState(false);
 
   // Check if user has seen intro before
   useEffect(() => {
-    const hasSeenIntro = localStorage.getItem(INTRO_SEEN_KEY);
-    if (!hasSeenIntro) {
+    const seenIntro = localStorage.getItem(INTRO_SEEN_KEY);
+    if (!seenIntro) {
       // First-time visitor - show overlay
       setIsFirstVisit(true);
       setShowIntroOverlay(true);
+      setHasSeenIntro(false);
     } else {
       // Returning visitor - play intro in background (muted)
       setIsFirstVisit(false);
       setPlayIntroInBackground(true);
+      setHasSeenIntro(true);
     }
   }, []);
 
@@ -108,17 +111,25 @@ export default function HomePage() {
   const handleIntroComplete = () => {
     localStorage.setItem(INTRO_SEEN_KEY, 'true');
     setShowIntroOverlay(false);
+    setHasSeenIntro(true);
   };
 
   // Handle skip button
   const handleIntroSkip = () => {
     localStorage.setItem(INTRO_SEEN_KEY, 'true');
     setShowIntroOverlay(false);
+    setHasSeenIntro(true);
   };
 
   // Handle background intro video end (for returning visitors)
   const handleIntroBackgroundEnd = () => {
     setPlayIntroInBackground(false);
+  };
+
+  // Handle "Meet the Owner" button click - replay intro
+  const handleMeetOwner = () => {
+    setIsFirstVisit(true); // Treat as first visit to show full overlay
+    setShowIntroOverlay(true);
   };
 
   useEffect(() => {
@@ -241,6 +252,26 @@ export default function HomePage() {
                 <span>Private Sessions</span>
               </div>
             </div>
+
+            {/* Meet the Owner button - shows after user has seen intro */}
+            {hasSeenIntro && !showIntroOverlay && (
+              <div className="mt-8">
+                <button
+                  onClick={handleMeetOwner}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 backdrop-blur-sm rounded-full
+                             text-cream/90 hover:bg-white/20 hover:text-cream transition-all duration-300 border border-cream/20
+                             text-sm"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                          d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                          d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>Meet the Owner</span>
+                </button>
+              </div>
+            )}
           </div>
         </div>
 
