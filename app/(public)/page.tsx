@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
 import Button from '@/components/Button';
 import ServiceCard from '@/components/ServiceCard';
 import LoadingSpinner from '@/components/LoadingSpinner';
+import IntroVideoOverlay from '@/components/IntroVideoOverlay';
 
 interface Service {
   id: string;
@@ -16,12 +17,49 @@ interface Service {
   isFeatured: boolean;
 }
 
-function HeroBackground() {
+// Storage key for tracking if user has seen the intro
+const INTRO_SEEN_KEY = 'mel11_intro_seen';
+
+function HeroBackground({ playIntroInBackground, onIntroBackgroundEnd }: {
+  playIntroInBackground: boolean;
+  onIntroBackgroundEnd: () => void;
+}) {
+  const introVideoRef = useRef<HTMLVideoElement>(null);
+  const ambientVideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (playIntroInBackground && introVideoRef.current) {
+      introVideoRef.current.play();
+    }
+  }, [playIntroInBackground]);
+
   return (
     <div className="absolute inset-0 z-0">
-      {/* Video Background - Loops Continuously */}
+      {/* Intro Video for returning visitors - plays once in background */}
+      {playIntroInBackground && (
+        <video
+          ref={introVideoRef}
+          className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000"
+          style={{
+            filter: 'brightness(0.4)',
+            minHeight: '100vh',
+            minWidth: '100vw'
+          }}
+          muted
+          playsInline
+          preload="auto"
+          onEnded={onIntroBackgroundEnd}
+        >
+          <source src="/assets/websiteintro_web.mp4" type="video/mp4" />
+        </video>
+      )}
+
+      {/* Ambient Video Background - Loops Continuously (shows after intro or for first-time visitors during overlay) */}
       <video
-        className="w-full h-full object-cover object-center"
+        ref={ambientVideoRef}
+        className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${
+          playIntroInBackground ? 'opacity-0' : 'opacity-100'
+        }`}
         style={{
           filter: 'brightness(0.4)',
           minHeight: '100vh',
@@ -46,6 +84,42 @@ export default function HomePage() {
   const [featuredServices, setFeaturedServices] = useState<Service[]>([]);
   const [loading, setLoading] = useState(true);
   const [scrollSections, setScrollSections] = useState<{ [key: string]: boolean }>({});
+
+  // Intro video state
+  const [isFirstVisit, setIsFirstVisit] = useState(false);
+  const [showIntroOverlay, setShowIntroOverlay] = useState(false);
+  const [playIntroInBackground, setPlayIntroInBackground] = useState(false);
+
+  // Check if user has seen intro before
+  useEffect(() => {
+    const hasSeenIntro = localStorage.getItem(INTRO_SEEN_KEY);
+    if (!hasSeenIntro) {
+      // First-time visitor - show overlay
+      setIsFirstVisit(true);
+      setShowIntroOverlay(true);
+    } else {
+      // Returning visitor - play intro in background (muted)
+      setIsFirstVisit(false);
+      setPlayIntroInBackground(true);
+    }
+  }, []);
+
+  // Handle intro overlay complete (video ended naturally)
+  const handleIntroComplete = () => {
+    localStorage.setItem(INTRO_SEEN_KEY, 'true');
+    setShowIntroOverlay(false);
+  };
+
+  // Handle skip button
+  const handleIntroSkip = () => {
+    localStorage.setItem(INTRO_SEEN_KEY, 'true');
+    setShowIntroOverlay(false);
+  };
+
+  // Handle background intro video end (for returning visitors)
+  const handleIntroBackgroundEnd = () => {
+    setPlayIntroInBackground(false);
+  };
 
   useEffect(() => {
     fetch('/api/services')
@@ -87,10 +161,22 @@ export default function HomePage() {
 
   return (
     <div className="bg-cream">
+      {/* Intro Video Overlay for first-time visitors */}
+      {showIntroOverlay && (
+        <IntroVideoOverlay
+          onComplete={handleIntroComplete}
+          onSkip={handleIntroSkip}
+          isFirstVisit={isFirstVisit}
+        />
+      )}
+
       {/* Hero Section - Ultra Premium */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-20 pt-20">
         {/* Background Media with Video Transition */}
-        <HeroBackground />
+        <HeroBackground
+          playIntroInBackground={playIntroInBackground}
+          onIntroBackgroundEnd={handleIntroBackgroundEnd}
+        />
 
         {/* Content */}
         <div className="container-custom relative z-10 text-center py-32 animate-fade-in-up">
