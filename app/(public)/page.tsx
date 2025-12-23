@@ -1,11 +1,10 @@
 'use client';
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Button from '@/components/Button';
 import ServiceCard from '@/components/ServiceCard';
 import LoadingSpinner from '@/components/LoadingSpinner';
-import IntroVideoOverlay from '@/components/IntroVideoOverlay';
 
 interface Service {
   id: string;
@@ -17,49 +16,12 @@ interface Service {
   isFeatured: boolean;
 }
 
-// Storage key for tracking if user has seen the intro
-const INTRO_SEEN_KEY = 'mel11_intro_seen';
-
-function HeroBackground({ playIntroInBackground, onIntroBackgroundEnd }: {
-  playIntroInBackground: boolean;
-  onIntroBackgroundEnd: () => void;
-}) {
-  const introVideoRef = useRef<HTMLVideoElement>(null);
-  const ambientVideoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (playIntroInBackground && introVideoRef.current) {
-      introVideoRef.current.play();
-    }
-  }, [playIntroInBackground]);
-
+function HeroBackground() {
   return (
     <div className="absolute inset-0 z-0">
-      {/* Intro Video for returning visitors - plays once in background */}
-      {playIntroInBackground && (
-        <video
-          ref={introVideoRef}
-          className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000"
-          style={{
-            filter: 'brightness(0.4)',
-            minHeight: '100vh',
-            minWidth: '100vw'
-          }}
-          muted
-          playsInline
-          preload="auto"
-          onEnded={onIntroBackgroundEnd}
-        >
-          <source src="/assets/websiteintro_web.mp4" type="video/mp4" />
-        </video>
-      )}
-
-      {/* Ambient Video Background - Loops Continuously (shows after intro or for first-time visitors during overlay) */}
+      {/* Video Background - Loops Continuously */}
       <video
-        ref={ambientVideoRef}
-        className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${
-          playIntroInBackground ? 'opacity-0' : 'opacity-100'
-        }`}
+        className="absolute inset-0 w-full h-full object-cover object-center"
         style={{
           filter: 'brightness(0.4)',
           minHeight: '100vh',
@@ -71,7 +33,7 @@ function HeroBackground({ playIntroInBackground, onIntroBackgroundEnd }: {
         loop
         preload="auto"
       >
-        <source src="/assets/websiteintro_web.mp4" type="video/mp4" />
+        <source src="/assets/bottombannerh264_faststart.mp4" type="video/mp4" />
       </video>
 
       {/* Gradient Overlay */}
@@ -84,53 +46,6 @@ export default function HomePage() {
   const [featuredServices, setFeaturedServices] = useState<Service[]>([]);
   const [loading, setLoading] = useState(true);
   const [scrollSections, setScrollSections] = useState<{ [key: string]: boolean }>({});
-
-  // Intro video state
-  const [isFirstVisit, setIsFirstVisit] = useState(false);
-  const [showIntroOverlay, setShowIntroOverlay] = useState(false);
-  const [playIntroInBackground, setPlayIntroInBackground] = useState(false);
-  const [hasSeenIntro, setHasSeenIntro] = useState(false);
-
-  // Check if user has seen intro before
-  useEffect(() => {
-    const seenIntro = localStorage.getItem(INTRO_SEEN_KEY);
-    if (!seenIntro) {
-      // First-time visitor - show overlay
-      setIsFirstVisit(true);
-      setShowIntroOverlay(true);
-      setHasSeenIntro(false);
-    } else {
-      // Returning visitor - play intro in background (muted)
-      setIsFirstVisit(false);
-      setPlayIntroInBackground(true);
-      setHasSeenIntro(true);
-    }
-  }, []);
-
-  // Handle intro overlay complete (video ended naturally)
-  const handleIntroComplete = () => {
-    localStorage.setItem(INTRO_SEEN_KEY, 'true');
-    setShowIntroOverlay(false);
-    setHasSeenIntro(true);
-  };
-
-  // Handle skip button
-  const handleIntroSkip = () => {
-    localStorage.setItem(INTRO_SEEN_KEY, 'true');
-    setShowIntroOverlay(false);
-    setHasSeenIntro(true);
-  };
-
-  // Handle background intro video end (for returning visitors)
-  const handleIntroBackgroundEnd = () => {
-    setPlayIntroInBackground(false);
-  };
-
-  // Handle "Meet the Owner" button click - replay intro
-  const handleMeetOwner = () => {
-    setIsFirstVisit(true); // Treat as first visit to show full overlay
-    setShowIntroOverlay(true);
-  };
 
   useEffect(() => {
     fetch('/api/services')
@@ -172,22 +87,10 @@ export default function HomePage() {
 
   return (
     <div className="bg-cream">
-      {/* Intro Video Overlay for first-time visitors */}
-      {showIntroOverlay && (
-        <IntroVideoOverlay
-          onComplete={handleIntroComplete}
-          onSkip={handleIntroSkip}
-          isFirstVisit={isFirstVisit}
-        />
-      )}
-
       {/* Hero Section - Ultra Premium */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-20 pt-20">
-        {/* Background Media with Video Transition */}
-        <HeroBackground
-          playIntroInBackground={playIntroInBackground}
-          onIntroBackgroundEnd={handleIntroBackgroundEnd}
-        />
+        {/* Background Video */}
+        <HeroBackground />
 
         {/* Content */}
         <div className="container-custom relative z-10 text-center py-32 animate-fade-in-up">
@@ -253,25 +156,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Meet the Owner button - shows after user has seen intro */}
-            {hasSeenIntro && !showIntroOverlay && (
-              <div className="mt-8">
-                <button
-                  onClick={handleMeetOwner}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent border-2 border-white rounded-full
-                             text-white hover:bg-hover transition-all duration-300
-                             text-sm"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                          d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                          d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span>Meet the Owner</span>
-                </button>
-              </div>
-            )}
           </div>
         </div>
 

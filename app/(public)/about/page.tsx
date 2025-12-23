@@ -74,7 +74,7 @@ export default function AboutPage() {
 
             <div className="max-w-2xl mx-auto mb-12">
               <p className="text-lg text-cream/80 mb-8 leading-relaxed">
-                After 23 years specializing in clinical anti-aging aesthetics, Melissa identified a fundamental gap in the industry.
+                After 23 years specializing in clinical anti-aging aesthetics, our founder identified a fundamental gap in the industry.
               </p>
 
               <p className="text-2xl md:text-3xl gradient-text font-serif italic leading-relaxed">
@@ -144,74 +144,58 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* About Melissa */}
+      {/* Meet the Owner */}
       <section className="py-10 md:py-20 bg-gradient-to-br from-cream to-white relative z-20">
         <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="font-serif text-4xl mb-12 text-nearBlack text-center">Meet Melissa</h2>
+          <div className="max-w-3xl mx-auto">
+            <h2 className="font-serif text-4xl mb-12 text-nearBlack text-center">Meet the Owner</h2>
 
-            <div className="grid md:grid-cols-2 gap-12 items-start mb-12">
-              {/* Photo */}
-              <div className="relative">
-                <div className="aspect-[3/4] relative rounded-2xl overflow-hidden luxury-shadow">
-                  <img
-                    src="/images/MG11.png"
-                    alt="Melissa Green - Founder of MĒL11"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-accent/10 rounded-full blur-2xl -z-10" />
+            <div className="space-y-6 text-gray-700 leading-relaxed">
+              <p className="font-serif text-2xl text-nearBlack text-center">
+                Founder & Lead Clinical Aesthetician
+              </p>
+
+              <p className="text-lg text-accent font-medium text-center">
+                Paramedical-Certified Anti-Aging Specialist
+              </p>
+
+              <p>
+                With 23 years of clinical aesthetic experience, she brings advanced technique, medical-grade protocols, and genuine care to every private session.
+              </p>
+
+              <div className="bg-white p-6 rounded-lg border border-softLine">
+                <p className="font-semibold text-nearBlack mb-3">Her clients describe her as:</p>
+                <ul className="space-y-2">
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">•</span>
+                    <span>Meticulous but warm</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">•</span>
+                    <span>Clinically skilled yet approachable</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">•</span>
+                    <span>Never rushed</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-accent mr-2">•</span>
+                    <span>Genuinely invested in their results and confidence</span>
+                  </li>
+                </ul>
               </div>
 
-              {/* Bio */}
-              <div className="space-y-6 text-gray-700 leading-relaxed">
-                <p className="font-serif text-2xl text-nearBlack">
-                  Melissa Green<br />
-                  Founder & Lead Clinical Aesthetician
-                </p>
+              <p>
+                What distinguishes her isn't just her clinical training. It's her ability to deliver transformative anti-aging results while honoring her clients' need for privacy, flexibility, and genuine connection.
+              </p>
 
-                <p className="text-lg text-accent font-medium">
-                  Paramedical-Certified Anti-Aging Specialist
-                </p>
+              <p>
+                As a mother balancing professional excellence with family life, she understands that aesthetic care should enhance your life, not complicate it.
+              </p>
 
-                <p>
-                  With 23 years of clinical aesthetic experience, Melissa brings advanced technique, medical-grade protocols, and genuine care to every private session.
-                </p>
-
-                <div className="bg-white p-6 rounded-lg border border-softLine">
-                  <p className="font-semibold text-nearBlack mb-3">Her clients describe her as:</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2">•</span>
-                      <span>Meticulous but warm</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2">•</span>
-                      <span>Clinically skilled yet approachable</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2">•</span>
-                      <span>Never rushed</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2">•</span>
-                      <span>Genuinely invested in their results and confidence</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <p>
-                  What distinguishes Melissa isn't just her clinical training. It's her ability to deliver transformative anti-aging results while honoring her clients' need for privacy, flexibility, and genuine connection.
-                </p>
-
-                <p>
-                  As a mother balancing professional excellence with family life, she understands that aesthetic care should enhance your life, not complicate it.
-                </p>
-
-                <p className="italic text-center text-nearBlack font-serif text-xl">
-                  MĒL11 embodies that philosophy.
-                </p>
-              </div>
+              <p className="italic text-center text-nearBlack font-serif text-xl">
+                MĒL11 embodies that philosophy.
+              </p>
             </div>
           </div>
         </div>
@@ -226,7 +210,7 @@ export default function AboutPage() {
             </h2>
 
             <p className="text-xl text-center text-gray-600 mb-12">
-              Melissa is a paramedical-certified clinical aesthetician specializing in advanced anti-aging protocols.
+              She is a paramedical-certified clinical aesthetician specializing in advanced anti-aging protocols.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -363,7 +347,7 @@ export default function AboutPage() {
               </div>
 
               <div>
-                <h4 className="font-semibold text-lg mb-4 text-white">Melissa saw an opportunity:</h4>
+                <h4 className="font-semibold text-lg mb-4 text-white">She saw an opportunity:</h4>
                 <ul className="space-y-3 text-cream/90">
                   <li className="flex items-start">
                     <span className="text-accent mr-3 mt-1">✓</span>
